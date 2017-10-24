@@ -3,12 +3,12 @@ body {
 	background: url('../img/bg4.jfif') no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
-	color: orange;
-	font-family: 'Indie Flower', cursive;
+	color:  crimson;
+	font-family: 'Merriweather', cursive;
 }
 
 p {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -19,6 +19,7 @@ h1 {
 h2 {
 	text-transform: uppercase;
 	letter-spacing: 2px;
+	color: tomato;
 }
 
 #me {
@@ -26,12 +27,14 @@ h2 {
 	border-radius: 50%;
 	border-style: solid;
 	border-width: 5px;
-	border-color: orange;
+	border-color: crimson;
 	margin-top: 50px;
 }
 
 .about {
 	width: 100%;
+	font-size: 20px;
+	line-height: 1.5;
 }
 
 .container {
