@@ -1,0 +1,64 @@
+/* CSS reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper{
+	border: 1px solid violet;
+	width: 70%;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+div.wrapper > div,
+div.wrapper > div > div  {
+	background-color: skyblue;
+	padding: 20px;
+	text-align: center;
+	border-radius: 5px;
+	border: 5px solid purple;
+	margin-top: 25px;
+}
+
+h1,
+p {
+	background-color: #dde0e3;
+}
+/* from inline type to block type elements */
+em,
+strong {
+	background-color: #b2d6ff;
+	display: inline;
+}
+
+h1 {
+	padding: 50px;
+	/*
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 30px;
+	padding-left: 40px;
+	*/
+
+	/*
+	border-top: 1px solid crimson;
+	border-right: 1px solid crimson;
+	border-bottom: 1px solid crimson;
+	border-left: 1px solid crimson;
+	*/
+
+	border: 5px solid blue;
+	/*margin: 10px;*/
+}
+
+strong {
+	/*padding: 50px;*/
+	margin: 50px;
+}
+
+p {
+	padding: 20px 0 20px 10px;
+	/*margin-bottom: 50px;*/
+	margin-top: 25px;
+}
