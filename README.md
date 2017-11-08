@@ -1,7 +1,7 @@
 # Rellie Balagat
 ## tuitt-br01-b3nc-01
 ## Rellie
-## Purpose: To learn more about programming, to create my own website, and to shift career.
+## Purpose: To learn more about programming, and to create my own website.
 
 # Feedback
 ## 2017-10-25
