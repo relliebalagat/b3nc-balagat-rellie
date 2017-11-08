@@ -28,7 +28,7 @@ New list item:
 ```no highlight
 Inline `code` has `back-ticks around` it.
 ```  
-Inline `code` has `back-ticks around` it.
+Inline `code` has `back-ticks around` it.  
 
 ```javascript
 var s = "JavaScript syntax highlighting";
