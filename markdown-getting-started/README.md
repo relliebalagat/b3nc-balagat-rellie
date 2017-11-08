@@ -25,7 +25,7 @@ New list item:
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
 
-```no highlight
+```no-highlight
 Inline `code` has `back-ticks around` it.
 ```  
 Inline `code` has `back-ticks around` it.
@@ -50,3 +50,11 @@ echo('Hello World!');
 :zap:
 
 :v:
+
+## Tables
+
+| firstname | lastname |
+|:----------|:---------|
+|rellie     | balagat  |
+|mark       | balagat  |
+|cherry     | balagat  |

@@ -2,12 +2,14 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;  /*to avoid overflowing elements added in reset*/
+	/*box-sizing: content-box; default valuw of box-sizing. */
 }
 
 .wrapper{
 	border: 1px solid violet;
-	width: 70%;
-	margin: 0 auto;
+	width: 48%;
+	margin: 20px auto;
 	padding: 10px;
 }
 
@@ -19,6 +21,7 @@ div.wrapper > div > div  {
 	border-radius: 5px;
 	border: 5px solid purple;
 	margin-top: 25px;
+	width: 50%;
 }
 
 h1,
@@ -58,7 +61,14 @@ strong {
 }
 
 p {
-	padding: 20px 0 20px 10px;
+	padding: 14px;
 	/*margin-bottom: 50px;*/
 	margin-top: 25px;
 }
+
+span {
+	font-size: 2em; /* 1em = 16px(default font-size) */
+	color: red;
+}
+
+
