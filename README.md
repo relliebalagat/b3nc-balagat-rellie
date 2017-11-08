@@ -12,6 +12,6 @@ This is my first feedback.
 ### CSS Box Model
 CSS Box Model is one of hardest part in CSS.  
 I tried to learn it before on my own and it was not easy.  
-But after learning yesterday about CSS Box Model, tt somehow ease my undestanding on CSS Box model.  
+But after learning yesterday about CSS Box Model, it somehow ease my undestanding on CSS Box model.  
 
 
