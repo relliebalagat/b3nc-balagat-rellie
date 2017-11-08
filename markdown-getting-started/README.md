@@ -33,7 +33,7 @@ Inline `code` has `back-ticks around` it.
 
 ```javascript
 var s = "Javascript syntax highlighting"
-alers(s);
+alerts(s);
 ```
 
 ```php
@@ -42,9 +42,9 @@ echo('Hello World!');
 
 ## Emoji
 
-	:monkey:
+:monkey:
 
-	:star2:
+:star2:
 
 	:speech_balloon:
 
