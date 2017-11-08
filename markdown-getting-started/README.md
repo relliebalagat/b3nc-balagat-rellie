@@ -46,8 +46,8 @@ echo('Hello World!');
 
 :star2:
 
-	:speech_balloon:
+:speech_balloon:
 
-	:zap:
+:zap:
 
-	:v:
+:v:
