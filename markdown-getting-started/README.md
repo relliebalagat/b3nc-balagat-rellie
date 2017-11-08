@@ -31,7 +31,7 @@ Inline `code` has `back-ticks around` it.
 Inline `code` has `back-ticks around` it.
 
 ```javascript
-var s = "Javascript syntax highlighting";
+var s = "JavaScript syntax highlighting";
 alerts(s);
 ```
 
