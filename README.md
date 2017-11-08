@@ -10,7 +10,6 @@ This is my first feedback.
 
 ## 2017-11-08
 ### CSS Box Model
-We learn how does some of the elements in HTML is a box.  
 CSS Box Model is one of hardest part in CSS.  
 I tried to learn it before on my own and it was not easy.  
 But after learning yesterday about CSS Box Model, tt somehow ease my undestanding on CSS Box model.  
