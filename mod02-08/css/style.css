@@ -5,10 +5,15 @@
 
 .grandparent {
 	background-color: skyblue;
+	width: 50%;
+	position: fix;
+	/*bottom: : 0px;
+	left: 0px;*/
 }
 
 .parent {
 	background-color: pink;
+	/*position: relative;*/
 }
 
 div {
@@ -26,9 +31,11 @@ input[name="firstname"] {
 }
 
 strong {
-	position: relative;
-	/*left: 50px;*/
+	/*position: absolute;*/
+	/*left: 10px;*/ /* dependent to browser for absolute position*/
+	/*top: 10px;*/ /* dependent to browser for absolute position*/
+	/*left: 50px;
 	top: 100px;
-	left: 100px;
+	left: 100px;*/
 	background-color: yellow;
 }
