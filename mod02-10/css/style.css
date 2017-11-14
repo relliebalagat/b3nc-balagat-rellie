@@ -61,14 +61,15 @@
 	background-color: #b2d6ff;
 	float: left;
 	margin: 20px 1.16%;
+	position: relative;
 }
 
-.avatar {
-	width: 60px;
-	height: 60px;
+.avatar > img {
+	width: 70px;
+	height: 70px;
 	background-color: #d6e9ff;
-	border-radius: 50%;
-	margin: 25px;
+	border-radius: 10%;
+	margin: 20px;
 	float: left;
 }
 
@@ -95,3 +96,44 @@
 	display: block;
 }
 
+/*
+ *
+ * CSS Workaround for multiline ellipsis
+ *
+ */
+
+/* managing text with overflow */
+.block-with-text {
+	overflow: hidden;
+	position: relative;
+	line-height: 1.2em;
+	max-height: 3.6em;
+	text-align: justify;
+	margin-right: -1em;
+	padding-right: 30px;
+ }
+
+/* for comments longer than alloted height */
+.block-with-text:before {
+ 	content: "...";
+ 	position: absolute;
+ 	right: 17px;
+ 	bottom: 0;
+}
+
+/* for comments shorter that alloted height */
+.block-with-text:after {
+ 	content: "";
+ 	position: absolute;
+ 	right: 17px;
+ 	width: 1em;
+ 	height: 1em;
+ 	margin-top: 0.2em;
+ 	background: #b2d6ff;
+}
+
+.readmore {
+	position: absolute;
+	right: 18px;
+	bottom: 16px;
+}
