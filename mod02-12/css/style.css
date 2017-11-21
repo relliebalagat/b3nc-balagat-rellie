@@ -6,6 +6,15 @@
 
 body {
 	margin: 0;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+h1, h2, h3 {
+	text-align: center;
+}
+
+h1 {
+	text-shadow: 3px 3px gray;
 }
 
 .nav,
@@ -21,7 +30,14 @@ body {
 .logo {
 	width: 140px;
 	height: 140px;
-	background-color: darkgrey;
+	/*background-color: darkgrey;*/
+}
+
+.logo > img {
+	width: 140px;
+	height: 125px;
+	border-radius: 15%;
+	border: 5px solid #50394c;
 }
 
 /*
@@ -31,7 +47,8 @@ body {
  */
 
 .nav {
-	background-color: lightyellow;
+	/*background-color: #ffef96;*/
+	background: linear-gradient(90deg, #4040a1 0%, skyblue 100%);
 	height: 100%;
 	width: 200px;
 	position: fixed;
@@ -43,7 +60,7 @@ ul {
 
 ul > li {
 	list-style: none;
-	background-color: lightblue;
+	/*background-color: #92a8d1;*/
 	margin-bottom: 2px;
 	text-align: center;
 	line-height: 48px;
@@ -54,6 +71,9 @@ ul > li > a {
 	text-decoration: none;
 }
 
+a:hover {
+	text-decoration: underline;
+}
 
 .main {
 	background-color: grey;
@@ -67,13 +87,14 @@ ul > li > a {
  */
 
 .banner {
-	background-color: skyblue;
+	/*background-color: skyblue;*/
+	background: radial-gradient(skyblue 0%, #4040a1 100%);
 	position: relative;
 	height: 700px;
 }
 
 .box {
-	border: 5px solid white;
+	border: 5px dashed white;
 	text-align: center;
 	width: 40%;
 	padding: 40px;
@@ -84,7 +105,9 @@ ul > li > a {
 }
 
 .about {
-	background-color: indianred;
+	/*background-color: indianred;*/
+	/*background: radial-gradient(indianred, #d26c6c);*/
+	background: linear-gradient(90deg, #4040a1 0%, skyblue 100%);
 	min-height: 300px;
 }
 
@@ -95,7 +118,8 @@ ul > li > a {
  */
 
 .services {
-	background-color: midnightblue;
+	/*background-color: #034f84;*/
+	background: linear-gradient(90deg, #4040a1 0%, skyblue 100%);
 	min-height: 300px;
 }
 
@@ -130,7 +154,8 @@ ul > li > a {
 }
 
 .projects {
-	background-color: crimson;
+	/*background-color: crimson;*/
+	background: linear-gradient(90deg, #4040a1 0%, skyblue 100%);
 	min-height: 300px;
 }
 
@@ -141,7 +166,8 @@ ul > li > a {
  */
 
 .gallery {
-	background-color: orange;
+	/*background-color: #f2ae72;*/
+	background: linear-gradient(90deg, #4040a1 0%, skyblue 100%);
 	min-height: 400px;
 }
 
@@ -167,7 +193,8 @@ ul > li > a {
  */
 
 .footer {
-	background-color: green;
+	/*background-color: #82b74b;*/
+	background: linear-gradient(90deg, #4040a1 0%, skyblue 100%);
 	min-height: 70px;
 }
 
@@ -176,9 +203,9 @@ ul > li > a {
 }
 
 
-img[alt*="Social"]{
+/*i[class*="fa"]{
 	width: 50px;
 	height: 50px;
 	border: 1px solid black;
 	border-radius: 50%;
-}
+}*/
