@@ -37,7 +37,7 @@ h1 {
 	width: 140px;
 	height: 125px;
 	border-radius: 15%;
-	border: 5px solid #50394c;
+	border: 5px solid #9f9fd0;
 }
 
 /*
@@ -47,8 +47,7 @@ h1 {
  */
 
 .nav {
-	/*background-color: #ffef96;*/
-	background: linear-gradient(90deg, #4040a1 0%, skyblue 100%);
+	background-color: #202050;
 	height: 100%;
 	width: 200px;
 	position: fixed;
@@ -60,6 +59,7 @@ ul {
 
 ul > li {
 	list-style: none;
+	color: #c5c5e2;
 	/*background-color: #92a8d1;*/
 	margin-bottom: 2px;
 	text-align: center;
@@ -73,6 +73,10 @@ ul > li > a {
 
 a:hover {
 	text-decoration: underline;
+}
+
+a:visited {
+	color: #d8d8ec;
 }
 
 .main {
@@ -106,7 +110,6 @@ a:hover {
 
 .about {
 	/*background-color: indianred;*/
-	/*background: radial-gradient(indianred, #d26c6c);*/
 	background: linear-gradient(90deg, #4040a1 0%, skyblue 100%);
 	min-height: 300px;
 }
