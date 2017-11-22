@@ -1,0 +1,162 @@
+/* CSS reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: lightgrey;
+}
+
+h3 {
+	margin: 15px auto;
+}
+
+.wrapper {
+	background-color: #fff;
+	width: 80%;
+	margin: 20px auto;
+	padding: 20px;
+}
+
+.item-one,
+.item-four,
+.item-five
+/*, .item-two*/ {
+	width: 200px;
+	height: 200px;
+	background-color: indianred;
+}
+
+.item-two {
+	width: 200px; /**/
+	height: 200px; /**/
+	border-left: 10px solid blue;
+	border-right: 10px solid blue;
+	background-color: indianred; /**/	
+}
+
+.item-three {
+	border: 1px solid black;
+	border-bottom-left-radius: 15px;
+	border-top-right-radius: 15px;
+	/* border-radius: 0 5px 0 5px; */
+	padding: 10px;
+	display: inline-block;
+}
+
+.item-four,
+.item-five {
+	background-color: pink;
+	border-radius: 50%;
+}
+
+.item-five > p {
+	position: relative;
+	top: 100px;
+	left: 100px;
+	transform: translate(-13%, -50%);
+	/*line-height: 150px;
+	text-align: center;*/
+}
+
+.item-six, 
+.item-seven,
+.item-eight,
+.item-ten,
+.item-eleven,
+.item-twelve {
+	height: 600px;
+	width: 400px;
+	border: 1px solid black;
+	position: relative;
+}
+
+.item-six > img {
+	width: 80px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.item-seven,
+.item-eight,
+.item-ten {
+	height: 200px;
+	width: 400px;
+}
+
+.item-seven > img,
+.item-eight > img {
+	width: 50px;
+	position: absolute;
+}
+
+.img-sev-one,
+.img-eight-one {
+	top: 0;
+	left: 0;
+}
+
+.img-sev-two,
+.img-eight-two {
+	bottom: 0;
+	right: 0;
+}
+
+.item-eight > p {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.item-nine > img,
+.item-ten > img {
+	width: 200px;
+	border-radius: 50%;
+	display: inline;
+}
+
+.item-ten {
+	display: block;
+}
+
+.item-ten p {
+	position: absolute;
+	display: inline;
+	bottom: 45%;
+	/*text-align: center;
+	line-height: 200px;*/
+}
+
+.item-eleven, .item-twelve {
+	height: 100%;
+	text-align: center;
+}
+
+.item-eleven > img,
+.item-twelve > img {
+	width: 15%;
+}
+
+.item-eleven > h2 {
+	margin: 5px;
+}
+
+.item-twelve > div {
+	background-color: salmon;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 10px;
+	text-align: center;
+}
+
+th {
+	background-color: black;
+	color: white;
+}
