@@ -1,0 +1,250 @@
+/* CSS reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: lightgreen;
+}
+
+.wrapper {
+	width: 90%;
+	background-color: lightblue;
+	margin: 0 auto;
+	position: relative;
+}
+
+li {
+	margin: 0 5px 10px 5px;
+
+}
+
+li > a {
+	font-family: 'Arial', sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+li > a:hover {
+	text-decoration: underline;
+	color: skyblue;
+}
+
+/* social media */
+
+
+.social-media {
+	float: right;
+	position: relative;
+	bottom: 30px;
+	margin-right: 10px;
+}
+
+li > i {
+	height: 50px;
+    width: 50px;
+    background-color: green;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    padding-top: 15px;
+}
+
+i:hover {
+	background-color: red;
+}
+
+
+/* navigation bar */
+
+nav {
+	height: 50px;
+	width: 97%;
+	background-color: lightyellow;
+	margin: 10px auto; 
+}
+
+ul {
+	list-style: none;
+}
+
+nav > ul > li {
+	position: relative;
+	top: 15px;
+}
+
+nav > ul > li,
+div.social-media > ul > li {
+	display: inline;
+	margin: 10px;
+}
+
+nav > ul > li > a {
+	text-decoration: none;
+	color: black;
+	line-height: 100%;
+	font-family: 'Georgia';
+	font-size: 16px;
+}
+
+nav > ul > li > a, 
+h4 {
+	font-family: 'Georgia';
+	font-size: 16px;
+}
+
+nav > ul > li:hover {
+	background-color: crimson;
+}
+
+/* left column bar */
+
+.left-column {
+	width: 15%;
+	margin-left: 1.5%;
+	float: left;
+}
+
+div.left-column > div {
+	margin: 5px;
+}
+
+div.twitter > button {
+	border-radius: 3px;
+	background-color: skyblue;
+	padding: 5px 0;
+	text-align: center;
+	border: none;
+	margin: 5px;
+	width: 93%;
+}
+
+.twitter {
+	border: 1px solid gray;
+}
+
+.template > ul,
+.categories > ul {
+	border: 1px solid gray;
+	border-top: 0;
+}
+
+.template > h4,
+.categories > h4 {
+	background-color: lightgreen;
+	padding: 10px 5px;
+	margin: 0;
+}
+
+.left-column > li::before {
+	margin-top: 10px;
+}
+
+/* content of the page*/
+
+.content {
+	width: 50%;
+	float: left;
+	display: block;
+	margin: 5px;
+}
+
+.content > img {
+	width: 100%;
+	height: 350px;
+}
+
+.articles {
+	background-color: white;
+	margin: 10px 0;
+}
+
+.articles > img {
+	float: left;
+	width: 30%;
+	height: 30%;
+}
+
+div.links {
+	padding: 5px;
+}
+
+div.links > i {
+	margin-left: 8px;
+}
+
+div.articles > h3,
+div.articles > img {
+	margin: 5px 12px 12px 12px;
+}
+
+div.articles > h3 > a {
+	font-style: bold;
+	font-size: 25px;
+	text-decoration: none;
+}
+
+div.articles > h3 > a:hover,
+div.articles > h3 > a:click {
+	color: skyblue;
+	text-decoration: underline;
+}
+
+div.articles > p {
+	margin: 5px;
+}
+
+.readmore {
+	position: relative;
+	top: 100%;
+	left: 50%;
+	background-color: green;
+	border: none;
+	color: #fff;
+	padding: 10px 5px;
+}
+
+button.readmore:hover {
+	background-color: red;
+}
+
+div.article > p {
+	text-align: justify;
+}
+
+/* post, searchbox, blog archive */
+
+.right-side {
+	width: 30%;
+	float: right;
+	margin-right: 1.5%;
+}
+
+div.right-side > div.searchbox {
+	border: 1px solid gray;
+	border-top: 3px solid green;
+	padding: 10px
+}
+
+div.searchbox > input {
+	width: 80%;
+	height: 30px;
+	
+}
+
+
+
+
+
+
+
+/* applied to parent containers */
+.clear:after {
+	content: ""; /* empty string or invisible element*/
+	clear: both;
+	display: block;
+}
+
