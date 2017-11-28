@@ -19,7 +19,7 @@ B. What is important to the audience?
 	III. Students can easily navigate the page or search on the topic for reference
 	IV. Comment section for cooperation with other students
 
-##Wireframe
+## Wireframe
 
 _[Wireframe: Mobile](https://wireframe.cc/U7lESQ) _
 _[Wireframe: Tablet](https://wireframe.cc/oCuK39) _
