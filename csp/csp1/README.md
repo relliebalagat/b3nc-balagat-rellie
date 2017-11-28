@@ -9,7 +9,7 @@ What is important to the owner?
 	III. Contact information of owner
 	IV. Content of the Page
 
-2. Who is the audience?
+Who is the audience?
 *High school and College students*
 
 B. What is important to the audience?
@@ -21,6 +21,6 @@ B. What is important to the audience?
 
 ## Wireframe
 
-_[Wireframe: Mobile](https://wireframe.cc/U7lESQ) _
-_[Wireframe: Tablet](https://wireframe.cc/oCuK39) _
-_[Wireframe: Desktop](https://wireframe.cc/g7j0LK) _
+[Wireframe: Mobile](https://wireframe.cc/U7lESQ) 
+[Wireframe: Tablet](https://wireframe.cc/oCuK39)
+[Wireframe: Desktop](https://wireframe.cc/g7j0LK)
