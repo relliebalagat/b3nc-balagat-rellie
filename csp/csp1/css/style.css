@@ -1,0 +1,20 @@
+/* CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+nav, .page-footer {
+	background-color: #1976d2;
+}
+
+
+h3, h4, h5, img, p {
+	text-align: center;
+}
+
+.courses {
+	border: 1px solid black;
+}
