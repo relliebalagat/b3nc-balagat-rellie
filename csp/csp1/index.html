@@ -18,94 +18,112 @@
 
 	<!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  
 
 </head>
 <body>
 
-	<div class="container">
+	<!-- Navigation Bar -->
+	<div>
+		<nav>
+			<div class="nav-wrapper light-blue darken-3">
 
-		<div class="row">
-		    <div class="col s12">
-		    	
-		    	<!-- navigation bar -->
-		    	<nav>
-				    <div class="nav-wrapper">
-				    	
+				<div class="row">
 
-				    	<a href="#" class="brand-logo">Logo</a>
-			    		
-				    	<!-- to place a search box -->
+					<div class="col s4 m2 l2">
+						<p><a href="#" class="brand-logo left ">Logo</a></p>
+					</div>
 
-				    	<!-- dropdown menu -->
-			    		<ul id="nav-mobile" class="right hide-on-med-and-down">
-				    		<li><a href="#">About</a></li>
-				    		<li><a href="#">Courses</a></li>
-				    		<li><a href="#">Login</a></li>
-				    		<li><a href="#">Sign Up</a></li>
-			    		</ul>  	
-				    </div>
-  				</nav>
+					
+					<div class="col s3 m8 push-m6 l8 right">
+						<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
-		    </div> <!-- /.col -->
-	    </div>	<!-- /.row -->	
+						<ul id="nav-mobile" class="right hide-on-med-and-down">
 
-	    <!-- company about and slogan -->
+							<li><a href="#">Home</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Contact</a></li>
+							<li><a href="#">Log In</a></li>
+							<li><a href="#">Sign Up</a></li>
+						</ul>
+						<ul class="side-nav" id="mobile-demo">
+						    <li><a href="#">Home</a></li>
+						    <li><a href="#">About</a></li>
+						    <li><a href="#">Services</a></li>
+						    <li><a href="#">Log In</a></li>
+						    <li><a href="#">Sign Up</a></li>
+					    </ul>
+					</div>
+
+				</div>	<!-- /.row -->
+			</div> <!-- /.nav-wrapper -->
+		</nav>
+	</div>
+	<!-- End of Navigation Bar -->
+
+	
+    <!-- company slogan -->
+    <div class="row card-panel orange lighten-4">
 	    <div class="col s12">
-	    	<div class="about">
-
-	    		<!-- company name quote/slogan -->
+	    	<div class="light-blue-text text-darken-4">
+	    		
 	    		<h3>Learning is fun and challenging.</h3>
 	    		<h4>It is for everyone and for free.</h4>
 
-	    		<!-- images of computer and students -->
-	    		<!-- use a carousel here -->
-	    		<div class="landing-images">
-	    			<img src="img/computer.jpg" class="responsive-img" alt="computer learning">
-	    		</div>
+	    		<img src="img/icons8-workspace-100.png" alt="A boy typing on his workstation">
 	    	</div>
 	    </div>
+    </div>
 
 
-	    <!-- courses offered -->
-	    <h2>Courses</h2>
+    <!-- courses offered -->
+    
 
-	    <div class="row">
+    <div class="all-course">
+	    <div class="container">
+
 	    	
-	    	<div class="col s12 m6 courses">
-	    		<h5><a href="#">History of Computing</a></h5>
-	    		<img src="img/icons8-computer-100.png" class="responsive-img" alt="colorful computer">
-	    		<p>Learn how computers come to life</p>
-	    	</div> <!-- course 1 -->
+    		<div class="course-header">
+    			<img src="img/icons8-course-50.png" alt="Course to be taken">
+    			<h2 class="light-blue-text text-darken-4">Courses</h2>
+    		</div>
+	  
 
-	    	<div class="courses col s12 m6">
-	    		<h5><a href="#">Basics Programming</a></h5>
-	    		<img src="img/icons8-c-plus-plus-100.png" class="responsive-img">
-	    		<p>Learn the basics of using c++</p>
-	    	</div> <!-- course 2 -->
+		    <div class="row">
+		    	
+		    	<div class="course col s12 card-panel orange lighten-3">
+		    		<h5><a href="#">History of Computing</a></h5>
+		    		<img src="img/icons8-computer-100.png" class="responsive-img" alt="colorful computer">
+		    		<p>Learn how computers come to life</p>
+		    	</div> <!-- course 1 -->
 
-	    </div>
+		    	<div class="course col s12 card-panel light-blue lighten-4">
+		    		<h5><a href="#">Basics Programming</a></h5>
+		    		<img src="img/icons8-c-plus-plus-100.png" class="responsive-img">
+		    		<p>Learn the basics of using c++</p>
+		    	</div> <!-- course 2 -->
 
-	    <div class="row">
+		    	<div class="course col s12 card-panel orange lighten-3">
+		    		<h5><a href="#">Black Screen</a></h5>
+		    		<img src="img/icons8-source-code-100.png" class="responsive-img">
+		    		<p>Learn the basics of Command Prompt</p>
+		    	</div> <!-- course 3 -->
 
-	    	<div class="courses col s12 m6">
-	    		<h5><a href="#">Black Screen</a></h5>
-	    		<img src="img/icons8-source-code-100.png" class="responsive-img">
-	    		<p>Learn the basics of Command Prompt</p>
-	    	</div> <!-- course 3 -->
-
-	    	<div class="courses col s12 m6">
-	    		<h5><a href="#">Book Review</a></h5>
-	    		<img src="img/icons8-open-book-100.png" class="responsive-img">
-	    		<p>List of review of different programming books</p>
-	    	</div> <!-- book review -->
-
-	    </div> <!-- main course -->
-
-
-	</div> <!-- /.container -->
+		    	<div class="course col s12 card-panel light-blue lighten-4">
+		    		<h5><a href="#">Book Review</a></h5>
+		    		<img src="img/icons8-open-book-100.png" class="responsive-img">
+		    		<p>Review of different programming books</p>
+		    	</div> <!-- book review -->
 
 
-	<footer class="page-footer">
+		    </div> <!-- /.row -->
+	    </div> <!-- /.container -->
+    </div>
+
+	  
+	<footer class="page-footer light-blue darken-3 orange-text text-lighten-1">
 
 		<div class="container">
 			<div class="row">
@@ -117,12 +135,12 @@
 
 				<div class="col l4 offset-l2 s12">
 					<h5 class="white-text">Wubba luba dub dub</h5>
-					<ul>
-						<li><a class="grey-text text-lighten-3" href="#!">About</a></li>
-						<li><a class="grey-text text-lighten-3" href="#!">News</a></li>
-						<li><a class="grey-text text-lighten-3" href="#!">Leave a Message</a></li>
+					<ul class="grey-text text-lighten-3">
+						<li><a href="#!">About</a></li>
+						<li><a href="#!">News</a></li>
+						<li><a href="#!">Leave a Message</a></li>
 						<!-- /.to place a dropdown box for social media websites -->
-						<li><a class="grey-text text-lighten-3" href="#!">Connect with us</a></li>
+						<li><a href="#!">Connect with us</a></li>
 					</ul>
 				</div>
 
@@ -138,23 +156,11 @@
 	</footer>
             
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<!-- javascript code for materialize -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/materialize.min.js"></script>
-
+	<script type="text/javascript" src="css/materialize/js/materialize.min.js"></script>
+	<script type="text/javascript">
+		$(".button-collapse").sideNav();
+	</script>
 </body>
 </html>

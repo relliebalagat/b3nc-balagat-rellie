@@ -6,7 +6,7 @@
 }
 
 
-nav, .page-footer {
+/*nav, .page-footer {
 	background-color: #1976d2;
 }
 
@@ -14,7 +14,88 @@ nav, .page-footer {
 h3, h4, h5, img, p {
 	text-align: center;
 }
+*/
 
-.courses {
-	border: 1px solid black;
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Ubuntu Mono', monospace;
 }
+
+
+p, li {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+h3,
+h4,
+h2,
+.course > h5,
+.course > p{
+	text-align: center;
+}
+
+.nav-wrapper > .row > .col > p > a,
+.nav-wrapper > .row > .col > ul > li > a,
+.page-footer > .container > .row > h5,
+.page-footer > .container > .row > p,
+.page-footer > .container > .row > .col > ul > li {
+	/*orange-text text-lighten-1*/
+	color: #ffa726;
+}
+
+.all-course {
+	background-color: #fff3e0;
+	margin-top: -30px;
+	margin-bottom: -20px;
+}
+
+.all-course > .container > img {
+	position: absolute;
+	left: 40%;
+}
+
+.all-course > .h2 {
+	font-style: bold;
+	margin-top: 0;
+}
+
+.course-header img {
+	margin-top: 5px;
+	position: absolute;
+	left: 20%;
+}
+
+.course-header h2 {
+	position: relative;
+}
+
+.course > img,
+.row > .col > div > img {
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0%);	
+}
+
+.card-panel {
+	margin-top: 0;
+	box-shadow: 0 0 0;
+}
+
+.row > .col.m6 {
+	margin: 0 0px;
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 400px, max-width: 700px) {
+  nav a.button-collapse {
+    display: none;
+  }
+}
+
+
