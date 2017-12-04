@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<title>Title bar</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+	<!-- stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/materialize/css/materialize.css"  media="screen,projection">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  
+
+</head>
+<body>
+	
+
+
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#!" class="brand-logo">Logo</a>
+			<ul class="right hide-on-med-and-down">
+				<li><a class="waves-effect waves-light btn">Log in<i class="material-icons right">cloud</i></a></li>
+			</ul>
+		</div>
+	</nav>
+
+
+	<h4>Create your account</h4>
+
+	<div class="container">
+		
+		<div class="row">
+			<div class="col s12">
+				
+				<form action="#">
+					
+					<div class="row">
+						<div class="col s4 input-field">
+
+							
+							<label>First Name</label>					
+							<input type="text" name="lastname">
+							
+						</div>
+
+						<div class="col s4 input-field">
+							<label>Last Name</label>
+							<input type="text" name="lastname">
+						</div>
+						
+						
+
+						<div class="col s8 input-field">
+							<input type="text" name="username">
+							<label>Username</label>
+						</div>
+
+						<div class="col s8 input-field">
+							
+							<input type="text" name="emailadd">
+							<label>Your e-mail</label>
+						</div>
+
+						<div class="col s8 input-field">
+							
+							<input type="password" name="password">
+							<label>Password</label>
+						</div>
+
+						<div class="col s8 input-field">
+							<input type="password" name="re_password">
+							<label>Password Confirmation</label>
+						</div>
+
+						<div class="col s8">
+							<label>Birthday:</label>
+							<input id="date" type="date">
+						</div>
+
+						<div class="col s8">
+							<label>Gender:</label>
+							<input class="with-gap" type="radio" name="gender" id="male">
+							<label for="male">Male</label>
+							<input class="with-gap" name="gender" type="radio" id="female">
+							<label for="female">Female</label>
+						</div>
+
+						<div class="col s6">
+							<a class="waves-effect waves-light btn">Sign Up</a>
+						</div>
+
+					</div>
+	
+				</form>
+
+				<br>
+
+				<div class="row">
+					<div class="col s8">
+						<p>*By signing up, you agree to our Terms of Use, Privacy Policy and to receive emails, newsletters and updates.</p>
+					</div>
+				</div>
+			
+
+			</div>
+		</div>
+	</div>
+
+	<footer class="page-footer light-blue darken-3 orange-text text-lighten-1">
+
+		<div class="container">
+			<div class="row">
+
+				<div class="col l6 s12">
+					<h5 class="white-text">Wubba luba dub dub</h5>
+					<p class="grey-text text-lighten-4">This is a nonprofit website. You can contribute through donation and contribution on topics</p>
+				</div>
+
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Wubba luba dub dub</h5>
+					<ul class="grey-text text-lighten-3">
+						<li><a href="#!">About</a></li>
+						<li><a href="#!">News</a></li>
+						<li><a href="#!">Leave a Message</a></li>
+						<!-- /.to place a dropdown box for social media websites -->
+						<li><a href="#!">Connect with us</a></li>
+					</ul>
+				</div>
+
+			</div> <!-- /.row -->
+		</div> <!-- /.container -->
+			
+		<div class="footer-copyright">
+			<div class="container">
+				<p>© 2017 Rellie Balagat</p>
+			</div>
+		</div> <!-- /.footer-copyright -->
+
+	</footer>
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="css/materialize/js/materialize.min.js"></script>
+	<script type="text/javascript">
+		$(".button-collapse").sideNav();
+
+		
+		$('.datepicker').pickadate({
+			selectMonths: true, // Creates a dropdown to control month
+			selectYears: 15, // Creates a dropdown of 15 years to control year,
+			today: 'Today',
+			clear: 'Clear',
+			close: 'Ok',
+			closeOnSelect: false // Close upon selecting a date,
+		});
+	</script>
+
+</body>
+</html>
