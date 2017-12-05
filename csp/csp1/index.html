@@ -26,116 +26,114 @@
 <body>
 
 	<!-- Navigation Bar -->
-	<div>
-		<nav>
-			<div class="nav-wrapper light-blue darken-3">
+	
+	<nav>
+		<div class="nav-wrapper light-blue darken-3">
 
-				<div class="row">
+			<div class="row">
 
-					<div class="col s4 m2 l2">
-						<p><a href="#" class="brand-logo left ">Logo</a></p>
-					</div>
+				<div class="col s12">
+					<p><a href="#" class="brand-logo left" style="color: #C8F7C5;">Logo</a></p>
+					<a href="#"><i class="large material-icons right">search</i></a>
+				</div>
 
-					
-					<div class="col s3 m8 push-m6 l8 right">
-						<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			</div>	<!-- /.row -->
+		</div> <!-- /.nav-wrapper -->
+	</nav>
 
-						<ul id="nav-mobile" class="right hide-on-med-and-down">
-
-							<li><a href="#">Home</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Contact</a></li>
-							<li><a href="#">Log In</a></li>
-							<li><a href="#">Sign Up</a></li>
-						</ul>
-						<ul class="side-nav" id="mobile-demo">
-						    <li><a href="#">Home</a></li>
-						    <li><a href="#">About</a></li>
-						    <li><a href="#">Services</a></li>
-						    <li><a href="#">Log In</a></li>
-						    <li><a href="#">Sign Up</a></li>
-					    </ul>
-					</div>
-
-				</div>	<!-- /.row -->
-			</div> <!-- /.nav-wrapper -->
-		</nav>
-	</div>
 	<!-- End of Navigation Bar -->
 
 	
     <!-- company slogan -->
-    <div class="row card-panel orange lighten-4">
-	    <div class="col s12">
+    <div class="row">
+	    <div class="col s12 m6 l4 push-l2">
 	    	<div class="light-blue-text text-darken-4">
-	    		
-	    		<h3>Learning is fun and challenging.</h3>
-	    		<h4>It is for everyone and for free.</h4>
-
-	    		<img src="img/icons8-workspace-100.png" alt="A boy typing on his workstation">
+	    			<h3>Learning has no boundaries</h3>
+	    			<h4>For everyone</h4>
+	    			<h4>For free</h4>
+	    			<img class="center-element" src="img/icons8-workspace-100.png" alt="A boy typing on his workstation">
 	    	</div>
+	    </div>
+
+	    <div class="col s12 m6 l4 push-l2">    			
+			<form method="#">
+				<h4 class="blue-text text-darken-4">LOG IN</h4>
+				<label>Your username or email</label>
+				<input id="input-format" type="text" name="#">
+
+				<label>Your password</label>
+				<input id="input-format" type="password" name="#">
+				<p class="center"><a href="#">I forgot my username or password</a></p>
+				<button id="button-flat" class="waves-effect waves-light btn">LOG IN</button>
+				<button id="button-flat" class="waves-effect waves-light btn">SIGN UP</button>
+			</form>
 	    </div>
     </div>
 
-
     <!-- courses offered -->
     
-
+    <br>
+   
     <div class="all-course">
+		
 	    <div class="container">
-
-	    	
-    		<div class="course-header">
-    			<img src="img/icons8-course-50.png" alt="Course to be taken">
-    			<h2 class="light-blue-text text-darken-4">Courses</h2>
-    		</div>
-	  
-
+	    	<h2 class="light-blue-text text-darken-4">Courses</h2>  	
+		    
 		    <div class="row">
-		    	
-		    	<div class="course col s12 card-panel orange lighten-3">
-		    		<h5><a href="#">History of Computing</a></h5>
+		    
+		    	<div id="course" class="col s12 m5 push-m1">
+		    		<a href="#"><h5>History of Computing</h5>
 		    		<img src="img/icons8-computer-100.png" class="responsive-img" alt="colorful computer">
-		    		<p>Learn how computers come to life</p>
-		    	</div> <!-- course 1 -->
+		    		<p class="text-flow">Learn how computers come to life</p></a>
+		    	</div>
 
-		    	<div class="course col s12 card-panel light-blue lighten-4">
-		    		<h5><a href="#">Basics Programming</a></h5>
-		    		<img src="img/icons8-c-plus-plus-100.png" class="responsive-img">
-		    		<p>Learn the basics of using c++</p>
-		    	</div> <!-- course 2 -->
+		    	<div id="course" class="col s12 m5 push-m1">
+		    		<a href="#"><h5>Basics of Programming</h5>
+		    		<img src="img/icons8-c-plus-plus-100.png" class="responsive-img" alt="cplusplus logo">
+		    		<p>Learn programming by using C++</p></a>
+		    	</div>
 
-		    	<div class="course col s12 card-panel orange lighten-3">
-		    		<h5><a href="#">Black Screen</a></h5>
-		    		<img src="img/icons8-source-code-100.png" class="responsive-img">
-		    		<p>Learn the basics of Command Prompt</p>
-		    	</div> <!-- course 3 -->
+		    	<div id="course" class="col s12 m5 push-m1">
+		    		<a href="#"><h5>Command Line</h5>
+		    		<img src="img/icons8-source-code-100.png" class="responsive-img" alt="command line">
+		    		<p>Learn the basics of Command Prompt</p></a>
+		    	</div> 
 
-		    	<div class="course col s12 card-panel light-blue lighten-4">
-		    		<h5><a href="#">Book Review</a></h5>
-		    		<img src="img/icons8-open-book-100.png" class="responsive-img">
-		    		<p>Review of different programming books</p>
-		    	</div> <!-- book review -->
+		    	<div id="course" class="col s12 m5 push-m1">
+		    		<a href="#"><h5>Book Review</h5>
+		    		<img src="img/icons8-open-book-100.png" class="responsive-img" alt="unknown books">
+		    		<p>Reviews of computer science books</p></a>
+		    	</div>
 
+		    </div> 
 
-		    </div> <!-- /.row -->
+			<div class="row">
+			 	<div class="col s12  light-blue-text text-darken-4">
+			 		<h5>Contribute to our goal of educating students around the world by clicking to</h5>
+			 		<h5>You could also learn by contributing.</h5>
+			 		<button id="button-flat" class="waves-effect waves-light btn center-element">CONTRIBUTE</button>
+			 	</div>
+			 </div> 
+
 	    </div> <!-- /.container -->
-    </div>
+    </div> <!-- /.all-course --> 
 
-	  
-	<footer class="page-footer light-blue darken-3 orange-text text-lighten-1">
 
-		<div class="container">
+	<footer class="page-footer light-blue darken-3 " >
+
+		<div class="container center" style="color: #C8F7C5;">
 			<div class="row">
 
 				<div class="col l6 s12">
 					<h5 class="white-text">Wubba luba dub dub</h5>
-					<p class="grey-text text-lighten-4">This is a nonprofit website. You can contribute through donation and contribution on topics</p>
+					<p class="grey-text text-lighten-4">This is a nonprofit website.</p>
+					<br>
 				</div>
 
+
 				<div class="col l4 offset-l2 s12">
-					<h5 class="white-text">Wubba luba dub dub</h5>
-					<ul class="grey-text text-lighten-3">
+					
+					<ul class="white-text">
 						<li><a href="#!">About</a></li>
 						<li><a href="#!">News</a></li>
 						<li><a href="#!">Leave a Message</a></li>

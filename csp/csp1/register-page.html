@@ -26,112 +26,100 @@
 </head>
 <body>
 	
-
-
 	<nav>
-		<div class="nav-wrapper">
-			<a href="#!" class="brand-logo">Logo</a>
-			<ul class="right hide-on-med-and-down">
-				<li><a class="waves-effect waves-light btn">Log in<i class="material-icons right">cloud</i></a></li>
-			</ul>
+		<div class="nav-wrapper light-blue darken-3">
+			<div class="row">
+				<div class="col s12">
+					<a href="#!" class="brand-logo left">Logo</a>
+					<ul class="right">
+   						<li><button id="button-flat" class="waves-effect waves-light btn">Log in</button></li>
+   						<li><a href="#"><i class="large material-icons">search</i></a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</nav>
-
-
-	<h4>Create your account</h4>
-
-	<div class="container">
 		
-		<div class="row">
-			<div class="col s12">
-				
-				<form action="#">
-					
-					<div class="row">
-						<div class="col s4 input-field">
-
-							
-							<label>First Name</label>					
-							<input type="text" name="lastname">
-							
-						</div>
-
-						<div class="col s4 input-field">
-							<label>Last Name</label>
-							<input type="text" name="lastname">
-						</div>
-						
-						
-
-						<div class="col s8 input-field">
-							<input type="text" name="username">
-							<label>Username</label>
-						</div>
-
-						<div class="col s8 input-field">
-							
-							<input type="text" name="emailadd">
-							<label>Your e-mail</label>
-						</div>
-
-						<div class="col s8 input-field">
-							
-							<input type="password" name="password">
-							<label>Password</label>
-						</div>
-
-						<div class="col s8 input-field">
-							<input type="password" name="re_password">
-							<label>Password Confirmation</label>
-						</div>
-
-						<div class="col s8">
-							<label>Birthday:</label>
-							<input id="date" type="date">
-						</div>
-
-						<div class="col s8">
-							<label>Gender:</label>
-							<input class="with-gap" type="radio" name="gender" id="male">
-							<label for="male">Male</label>
-							<input class="with-gap" name="gender" type="radio" id="female">
-							<label for="female">Female</label>
-						</div>
-
-						<div class="col s6">
-							<a class="waves-effect waves-light btn">Sign Up</a>
-						</div>
-
-					</div>
+	<h4 class="light-blue-text text-darken-4">Create your account</h4>
 	
-				</form>
+	<div class="row">
 
-				<br>
+		<div class="col s12 m6 light-blue-text text-darken-4">
+			<h5>Be one of us</h5>
+			<h5>Join other learners today</h5>
 
+			<img class="img-registration center-element responsive-img" src="img/programmers.jpg">
+
+		</div>
+
+		<div class="col s12 m6">
+			
+			<form action="#">
 				<div class="row">
-					<div class="col s8">
-						<p>*By signing up, you agree to our Terms of Use, Privacy Policy and to receive emails, newsletters and updates.</p>
+					<div class="col s12 m6 input-field">
+						<label>First Name</label>					
+						<input type="text" name="lastname">			
+					</div>
+
+					<div class="col s12 m6 input-field">
+						<label>Last Name</label>
+						<input type="text" name="lastname">
+					</div>
+
+					<div class="col s12 input-field">
+						<input type="text" name="username">
+						<label>Username</label>
+					</div>
+
+					<div class="col s12 input-field">
+						
+						<input type="text" name="emailadd">
+						<label>Your e-mail</label>
+					</div>
+
+					<div class="col s12 input-field">
+						
+						<input type="password" name="password">
+						<label>Password</label>
+					</div>
+
+					<div class="col s12 input-field">
+						<input type="password" name="re_password">
+						<label>Password Confirmation</label>
+					</div>
+					
+					<div class="center">
+						<a id="button-flat" class="waves-effect waves-light btn">Sign Up</a>
 					</div>
 				</div>
-			
+			</form>
 
+			<br>
+
+			<div class="row center">
+				<div class="col s12">
+					<p>*By signing up, you agree to our Terms of Use, Privacy Policy and to receive emails, newsletters and updates.</p>
+				</div>
 			</div>
+
 		</div>
 	</div>
 
-	<footer class="page-footer light-blue darken-3 orange-text text-lighten-1">
+	<footer class="page-footer light-blue darken-3 " >
 
-		<div class="container">
+		<div class="container center" style="color: #C8F7C5;">
 			<div class="row">
 
 				<div class="col l6 s12">
 					<h5 class="white-text">Wubba luba dub dub</h5>
-					<p class="grey-text text-lighten-4">This is a nonprofit website. You can contribute through donation and contribution on topics</p>
+					<p class="grey-text text-lighten-4">This is a nonprofit website.</p>
+					<br>
 				</div>
 
+
 				<div class="col l4 offset-l2 s12">
-					<h5 class="white-text">Wubba luba dub dub</h5>
-					<ul class="grey-text text-lighten-3">
+					
+					<ul class="white-text">
 						<li><a href="#!">About</a></li>
 						<li><a href="#!">News</a></li>
 						<li><a href="#!">Leave a Message</a></li>
@@ -151,22 +139,9 @@
 
 	</footer>
 
-
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="css/materialize/js/materialize.min.js"></script>
-	<script type="text/javascript">
-		$(".button-collapse").sideNav();
-
-		
-		$('.datepicker').pickadate({
-			selectMonths: true, // Creates a dropdown to control month
-			selectYears: 15, // Creates a dropdown of 15 years to control year,
-			today: 'Today',
-			clear: 'Clear',
-			close: 'Ok',
-			closeOnSelect: false // Close upon selecting a date,
-		});
-	</script>
+	
 
 </body>
 </html>
