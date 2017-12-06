@@ -15,72 +15,65 @@
 	<!-- stylesheets -->
 	<link rel="stylesheet" type="text/css" href="css/materialize/css/materialize.css"  media="screen,projection">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">  
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Lato|Quattrocento+Sans" rel="stylesheet"> 
 
 </head>
 <body>
 
 	<!-- Navigation Bar -->
-	
-	<nav>
-		<div class="nav-wrapper light-blue darken-3">
 
-			<div class="row">
+	<div class="container">
+		<nav>
+			<div class="nav-wrapper">
+				<div class="row">
+					<div class="col s12">
+						<span><a href="#" class="brand-logo left"><i class="small material-icons">android</i></a></span>
+						<ul class="right">
+							<li><a href="#"><i class="small material-icons">search</i></a></li>
+							<li><a href="#"><i class="small material-icons">account_circle</i></a></li>
+							<li><button id="button-flat" class="waves-effect waves-light btn center-element">LOG IN</button></li>
+						</ul>	
+					</div>
 
-				<div class="col s12">
-					<p><a href="#" class="brand-logo left" style="color: #C8F7C5;">Logo</a></p>
-					<a href="#"><i class="large material-icons right">search</i></a>
+					<div class="col s12">
+						<h2>YOUR GATEWAY TO COMPUTER</h2>
+						<h2>FOR FREE</h2>
+						<h2>FOR EVERYONE</h2>
+						<button id="button-flat" class="waves-effect waves-light btn center-element">CREATE AN ACCOUNT</button>
+					</div>	
+
 				</div>
-
-			</div>	<!-- /.row -->
-		</div> <!-- /.nav-wrapper -->
-	</nav>
-
-	<!-- End of Navigation Bar -->
-
-	
-    <!-- company slogan -->
-    <div class="row">
-	    <div class="col s12 m6 l4 push-l2">
-	    	<div class="light-blue-text text-darken-4">
-	    			<h3>Learning has no boundaries</h3>
-	    			<h4>For everyone</h4>
-	    			<h4>For free</h4>
-	    			<img class="center-element" src="img/icons8-workspace-100.png" alt="A boy typing on his workstation">
-	    	</div>
-	    </div>
-
-	    <div class="col s12 m6 l4 push-l2">    			
-			<form method="#">
-				<h4 class="blue-text text-darken-4">LOG IN</h4>
-				<label>Your username or email</label>
-				<input id="input-format" type="text" name="#">
-
-				<label>Your password</label>
-				<input id="input-format" type="password" name="#">
-				<p class="center"><a href="#">I forgot my username or password</a></p>
-				<button id="button-flat" class="waves-effect waves-light btn">LOG IN</button>
-				<button id="button-flat" class="waves-effect waves-light btn">SIGN UP</button>
-			</form>
-	    </div>
-    </div>
-
-    <!-- courses offered -->
-    
-    <br>
-   
-    <div class="all-course">
+			</div> 
 		
-	    <div class="container">
-	    	<h2 class="light-blue-text text-darken-4">Courses</h2>  	
-		    
+			<!-- <div class="row">
+				
+			</div> -->
+		</nav>
+	
+	
+	
+		<div class="row">
+			<div class="col s12">
+				<div class="parallax-container">
+					<div class="parallax">
+						<img src="img/history-of-computer.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+	
+        	
+		<div>
 		    <div class="row">
-		    
+		    	
+		    	<h2>COURSES</h2>
+		    	<p class="center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		    	tempor incididunt ut labore et dolore magna aliqua.</p>
+
 		    	<div id="course" class="col s12 m5 push-m1">
 		    		<a href="#"><h5>History of Computing</h5>
 		    		<img src="img/icons8-computer-100.png" class="responsive-img" alt="colorful computer">
@@ -106,34 +99,43 @@
 		    	</div>
 
 		    </div> 
+		</div>
 
-			<div class="row">
-			 	<div class="col s12  light-blue-text text-darken-4">
-			 		<h5>Contribute to our goal of educating students around the world by clicking to</h5>
-			 		<h5>You could also learn by contributing.</h5>
-			 		<button id="button-flat" class="waves-effect waves-light btn center-element">CONTRIBUTE</button>
-			 	</div>
-			 </div> 
+		<div class="row">
+			<div class="col s12">
+				<div class="parallax-container">
+					<div class="parallax">
+						<img src="img/history-of-computer.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> <!-- /.container -->
 
-	    </div> <!-- /.container -->
-    </div> <!-- /.all-course --> 
+
+    <div class="row teal accent-2 contribute-area">
+		<div class="col s12  light-blue-text text-darken-4">
+			 <h5>Contribute to our goal of educating every students around the world.</h5>
+			 <button id="button-flat" class="waves-effect waves-light btn center-element">CONTRIBUTE</button>
+		</div>
+	</div> 
 
 
 	<footer class="page-footer" id="gradient-background">
 
-		<div class="container center" style="color: #C8F7C5;">
+		<div class="container center">
 			<div class="row">
 
 				<div class="col l6 s12">
 					<h5 class="white-text">Wubba luba dub dub</h5>
-					<p class="grey-text text-lighten-4">This is a nonprofit website.</p>
+					<p class="grey-text text-lighten-4">This is a not for profit website.</p>
 					<br>
 				</div>
 
 
 				<div class="col l4 offset-l2 s12">
 					
-					<ul class="white-text">
+					<ul>
 						<li><a href="#!">About</a></li>
 						<li><a href="#!">News</a></li>
 						<li><a href="#!">Leave a Message</a></li>
@@ -152,13 +154,30 @@
 		</div> <!-- /.footer-copyright -->
 
 	</footer>
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<!-- javascript code for materialize -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="css/materialize/js/materialize.min.js"></script>
 	<script type="text/javascript">
-		$(".button-collapse").sideNav();
+
+		 $(document).ready(function(){
+     		 $('.parallax').parallax();
+   		 });
+
 	</script>
 </body>
 </html>
