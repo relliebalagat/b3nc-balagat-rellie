@@ -6,139 +6,122 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-	<title>Title bar</title>
+	<title>Computer Gateway</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="img/computer.ico" type="image/x-icon">
+	<link rel="icon" href="img/computer.ico" type="image/x-icon">
 
 	<!-- stylesheets -->
 	<link rel="stylesheet" type="text/css" href="css/materialize/css/materialize.css"  media="screen,projection">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<!--Import Google Icon Font-->
+	<!--Import Google Icon-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">  
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  
+   	<link href="https://fonts.googleapis.com/css?family=Lato|Quattrocento+Sans" rel="stylesheet"> 
 
 </head>
 <body>
-
-	<!-- Navigation Bar -->
 	
-	<nav>
-		<div class="nav-wrapper light-blue darken-3">
-
+	<nav class="blue lighten-2">
+		<div class="nav-wrapper">
 			<div class="row">
-
 				<div class="col s12">
-					<p><a href="#" class="brand-logo left" style="color: #C8F7C5;">Logo</a></p>
-					<a href="#"><i class="large material-icons right">search</i></a>
+					<span><a href="#" class="brand-logo left"><i class="small material-icons">computer</i></a></span>
+					<ul class="right">
+						<li><a href="#"><i class="small material-icons">search</i></a></li>
+						<li><a href="#"><i class="small material-icons">account_circle</i></a></li>
+						<li><button class="waves-effect waves-light btn center-element button-flat">LOG IN</button></li>
+					</ul>
 				</div>
-
-			</div>	<!-- /.row -->
-		</div> <!-- /.nav-wrapper -->
+			</div>	
+		</div>
 	</nav>
 
-	<!-- End of Navigation Bar -->
+	<div class="row" id="gradient-background">
+		<div class="col s12 teal-text text-accent-2">
+			<div class="welcome-page">
+				<h3>YOUR GATEWAY TO COMPUTER LEARNING</h3>
+				<h5>An educational website where you will learn about computers</h5>
+				<h4>FOR FREE</h4>
+				<h4>FOR EVERYONE</h4>
+				<a href="register-page.html" class="white-text"><button class="waves-effect waves-light btn center-element button-flat">CREATE AN ACCOUNT</button></a>
+			</div>
+		</div>	
+	</div>
 
-	
-    <!-- company slogan -->
-    <div class="row">
-	    <div class="col s12 m6 l4 push-l2">
-	    	<div class="light-blue-text text-darken-4">
-	    			<h3>Learning has no boundaries</h3>
-	    			<h4>For everyone</h4>
-	    			<h4>For free</h4>
-	    			<img class="center-element" src="img/icons8-workspace-100.png" alt="A boy typing on his workstation">
+	<div class="parallax-landing-page">
+		<div class="parallax-container">
+			<div class="parallax">
+				<img class="responsive-img" src="img/children-programming.jpg" alt="children enjoying computer">
+			</div>
+		</div>
+	</div>
+		
+    <div class="container">
+    	<h2 class="light-blue-text text-darken-4">What we teach</h2>  	
+	    
+	    <div class="row">
+	    	<div class="col s12 m5 push-m1 box">
+	    		<a href="history-computing.html"><h5>History of Computing</h5>
+	    		<img src="img/icons8-computer-100.png" class="responsive-img" alt="colorful computer">
+	    		<p class="text-flow">Learn how computers come to life</p></a>
 	    	</div>
-	    </div>
 
-	    <div class="col s12 m6 l4 push-l2">    			
-			<form method="#">
-				<h4 class="blue-text text-darken-4">LOG IN</h4>
-				<label>Your username or email</label>
-				<input id="input-format" type="text" name="#">
+	    	<div class="col s12 m5 push-m1 box">
+	    		<a href="programming.html"><h5>Basics of Programming</h5>
+	    		<img src="img/icons8-c-plus-plus-100.png" class="responsive-img" alt="cplusplus logo">
+	    		<p>Learn programming by using C++</p></a>
+	    	</div>
 
-				<label>Your password</label>
-				<input id="input-format" type="password" name="#">
-				<p class="center"><a href="#">I forgot my username or password</a></p>
-				<button id="button-flat" class="waves-effect waves-light btn">LOG IN</button>
-				<button id="button-flat" class="waves-effect waves-light btn">SIGN UP</button>
-			</form>
-	    </div>
+	    	<div class="col s12 m5 push-m1 box">
+	    		<a href="command-line.html"><h5>Command Line Interface</h5>
+	    		<img src="img/icons8-source-code-100.png" class="responsive-img" alt="command line">
+	    		<p>Learn the basics of Command Prompt</p></a>
+	    	</div> 
+
+	    	<div class="col s12 m5 push-m1 box">
+	    		<a href="book-review.html"><h5>Book Review</h5>
+	    		<img src="img/icons8-open-book-100.png" class="responsive-img" alt="unknown books">
+	    		<p>Reviews of books about computer</p></a>
+	    	</div>
+
+	    </div> 
+
+    </div> 
+
+    <div class="parallax-container">
+    	<div class="parallax">
+    		<img class="responsive-img" src="img/coding.jpg" alt="a man coding in a dark room">
+    	</div>
     </div>
 
-    <!-- courses offered -->
-    
-    <br>
-   
-    <div class="all-course">
-		
-	    <div class="container">
-	    	<h2 class="light-blue-text text-darken-4">Courses</h2>  	
-		    
-		    <div class="row">
-		    
-		    	<div id="course" class="col s12 m5 push-m1">
-		    		<a href="#"><h5>History of Computing</h5>
-		    		<img src="img/icons8-computer-100.png" class="responsive-img" alt="colorful computer">
-		    		<p class="text-flow">Learn how computers come to life</p></a>
-		    	</div>
-
-		    	<div id="course" class="col s12 m5 push-m1">
-		    		<a href="#"><h5>Basics of Programming</h5>
-		    		<img src="img/icons8-c-plus-plus-100.png" class="responsive-img" alt="cplusplus logo">
-		    		<p>Learn programming by using C++</p></a>
-		    	</div>
-
-		    	<div id="course" class="col s12 m5 push-m1">
-		    		<a href="#"><h5>Command Line</h5>
-		    		<img src="img/icons8-source-code-100.png" class="responsive-img" alt="command line">
-		    		<p>Learn the basics of Command Prompt</p></a>
-		    	</div> 
-
-		    	<div id="course" class="col s12 m5 push-m1">
-		    		<a href="#"><h5>Book Review</h5>
-		    		<img src="img/icons8-open-book-100.png" class="responsive-img" alt="unknown books">
-		    		<p>Reviews of computer science books</p></a>
-		    	</div>
-
-		    </div> 
-
-			<div class="row">
-			 	<div class="col s12  light-blue-text text-darken-4">
-			 		<h5>Contribute to our goal of educating students around the world by clicking to</h5>
-			 		<h5>You could also learn by contributing.</h5>
-			 		<button id="button-flat" class="waves-effect waves-light btn center-element">CONTRIBUTE</button>
-			 	</div>
-			 </div> 
-
-	    </div> <!-- /.container -->
-    </div> <!-- /.all-course --> 
+    <div class="row teal accent-2 contribute-area">
+		<div class="col s12  light-blue-text text-darken-4">
+			 <h5>Contribute to our goal of educating every students around the world.</h5>
+			 <button class="waves-effect waves-light btn center-element button-flat">CONTRIBUTE</button>
+		</div>
+	</div> 
 
 
-	<footer class="page-footer" id="gradient-background">
-
-		<div class="container center" style="color: #C8F7C5;">
+	<footer class="page-footer light-blue darken-3">
+		<div class="container center">
 			<div class="row">
 
-				<div class="col l6 s12">
-					<h5 class="white-text">Wubba luba dub dub</h5>
-					<p class="grey-text text-lighten-4">This is a nonprofit website.</p>
-					<br>
+				<div class="col m6 s12">
+					<h5 class="white-text">Computer School</h5>
+					<p class="grey-text text-lighten-4">This is a not for profit website.</p>
+					
 				</div>
 
-
-				<div class="col l4 offset-l2 s12">
-					
-					<ul class="white-text">
-						<li><a href="#!">About</a></li>
-						<li><a href="#!">News</a></li>
-						<li><a href="#!">Leave a Message</a></li>
-						<!-- /.to place a dropdown box for social media websites -->
-						<li><a href="#!">Connect with us</a></li>
+				<div class="col m4 offset-m2 s12">
+					<ul class="footer-nav white-text" id="footer-links">
+						<li><a href="about.html">About</a></li>
+						<li><a href="about.html">Mission</a></li>
+						<li><a href="about.html">Contributors</a></li>
+						<li><a href="about.html">Message</a></li>
 					</ul>
 				</div>
 
@@ -146,11 +129,24 @@
 		</div> <!-- /.container -->
 			
 		<div class="footer-copyright">
-			<div class="container">
+			<div class="container ">
 				<p>© 2017 Rellie Balagat</p>
+
+				<div class="row">
+					<div class="col s12">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></a></i>
+							</li>
+							<li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></a></i>
+							</li>
+							<li><a href="#"><i class="fa fa-reddit-square" aria-hidden="true"></a></i>
+							</li>
+						</ul>
+					</div>
+				</div>
+
 			</div>
 		</div> <!-- /.footer-copyright -->
-
 	</footer>
             
 
@@ -158,7 +154,9 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="css/materialize/js/materialize.min.js"></script>
 	<script type="text/javascript">
-		$(".button-collapse").sideNav();
+		$(document).ready(function(){
+	    	$('.parallax').parallax();
+	    });
 	</script>
 </body>
 </html>

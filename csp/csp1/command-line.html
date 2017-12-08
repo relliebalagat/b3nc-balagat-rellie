@@ -6,154 +6,125 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-	<title>Title bar</title>
+	<title>Command Line Tutorial</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="img/computer.ico" type="image/x-icon">
+	<link rel="icon" href="img/computer.ico" type="image/x-icon">
 
 	<!-- stylesheets -->
 	<link rel="stylesheet" type="text/css" href="css/materialize/css/materialize.css"  media="screen,projection">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
 
 	<!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">  
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  
-
+   	<link href="https://fonts.googleapis.com/css?family=Lato|Quattrocento+Sans" rel="stylesheet"> 
   
 </head>
 <body>
 
-	<nav>
-		<div class="nav-wrapper light-blue darken-3">
+	<nav class="blue lighten-2">
+		<div class="nav-wrapper">
 			<div class="row">
 				<div class="col s12">
-					<a href="#!" class="brand-logo left">Logo</a>
+					<span><a href="#" class="brand-logo left"><i class="small material-icons">computer</i></a></span>
 					<ul class="right">
-   						<li><a href="#"><i class="large material-icons">search</i></a></li>
-   						<li><button id="button-flat" class="waves-effect waves-light btn">Sign Up</button></li>
-   						<li><button id="button-flat" class="waves-effect waves-light btn">Log in</button></li>
+						<li><a href="#"><i class="small material-icons">search</i></a></li>
+						<li><a href="#"><i class="small material-icons">account_circle</i></a></li>
+						<li><button class="waves-effect waves-light btn center-element button-flat">SIGN OUT</button></li>
 					</ul>
 				</div>
-			</div>
+			</div>	
 		</div>
 	</nav>
 
 	
     <div class="parallax-container">
      	<div class="parallax">
-     		<img src="img/command-line.png">
+     		<img src="img/command-line.png" alt="windows comman line">
      	</div>
     </div>
 
 
 	<div class="container">
 
-		<h2>Command Line</h2>
-		<p class="center">In this subject, you will learn how not to use your mouse on a Windows operating system.</p>
+		<h2 class="light-blue-text text-darken-4">Command Line</h2>
+		<p class="center">In this subject, you will learn the basics of command line.</p>
 
-		<br>
-
-		<div class="row">
-			
+		<div class="row center-element" id="lessons">
 			<div class="col s12">
 
-				<ul class="collapsible" data-collapsible="collapsible">
+				<ul class="collapsible" data-collapsible="accordion">
 					<li>
-						<div class="collapsible-header"><i class="material-icons">filter_1</i>Introduction</div>
-						<div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+						<div class="collapsible-header"><i class="small material-icons">filter_1</i>Introduction</div>
+						<div class="collapsible-body">
+							<p>Before Windows was created, the most common operating system that ran on IBM PC compatibles was DOS. DOS stands for Disk Operating System and was what you would use if you had started your computer much like you do today with Windows. The difference was that DOS was not a graphical operating system but rather purely textual. That meant in order to run programs or manipulate the operating system you had to manually type in commands. When Windows was first created it was actually a graphical user interface that was created in order to make using the DOS operating system easier for a novice user. As time went on and newer versions of Windows were developed DOS was finally phased out with Windows ME. Though the newer operating systems do not run on DOS, they do have something called the command prompt, which has a similar appearance to DOS. In this tutorial we will cover the basic commands and usage of the command prompt so that you feel comfortable in using this resource.</p>
+						</div>
 					</li>
 					<li>
-						<div class="collapsible-header"><i class="material-icons">filter_2</i>Data types</div>
-						<div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+						<div class="collapsible-header"><i class="material-icons">filter_2</i>Using Command Prompt</div>
+						<div class="collapsible-body">
+							<p>When people refer to the command prompt they may we refer to it in different ways. They may refer to it as a shell, console window, a command prompt, a cmd prompt, or even dos. In order to enter the command prompt you need to run a program that is dependent on your operating system.</p>
+							<p>To run these programs and start a command prompt you would do the following steps:</p>
+							<ul class="lesson-list">
+								<li>Click on the Start Menu</li>
+								<li>Click on the Run option</li>
+								<li>Type the appropriate command in the Open: field. For example if we are using Windows XP we would type <b>cmd.exe.</b></li>
+								<li>Click on the OK button</li>
+							</ul>
+						</div>
 					</li>
 					<li>
-						<div class="collapsible-header"><i class="material-icons">filter_3</i>Arrays</div>
-						<div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+						<div class="collapsible-header"><i class="material-icons">filter_3</i>Help Command</div>
+						<div class="collapsible-body">
+							<p>The <b>Help command</b> - This command will list all the commands built into the command prompt. If you would like further information about a particular command you can type help commandname. For example <b>help</b> cd will give you more detailed information on a command. For all commands you can also type the command name followed by a /? to see help on the command. For example, <b>cd /?</b></p>
+						</div>
 					</li>
 					<li>
-						<div class="collapsible-header"><i class="material-icons">filter_4</i>Loops</div>
-						<div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+						<div class="collapsible-header"><i class="material-icons">filter_4</i>Exit command</div>
+						<div class="collapsible-body">
+							<p>The <b>Exit command</b> - This command will close the command prompt. Simply type exit and press enter and the command prompt will close.</p>
+						</div>
 					</li>
 					<li>
-						<div class="collapsible-header"><i class="material-icons">filter_5</i>Condition Statement</div>
-						<div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+						<div class="collapsible-header"><i class="material-icons">filter_5</i>CD Command</div>
+						<div class="collapsible-body">
+							<p>The <b>CD command</b> - This command allows you to change your current directory or see what directory you are currently in. To use the CD command you would type <code>cd directoryname</code> and press enter. This would then change the directory you are currently in to the one specified. When using the cd command you must remember how paths work in Windows. A path to a file is always the root directory, which is symbolized by the \ symbol, followed by the directories underneath it. For example the file notepad.exe which is located in c:\windows\system32 would have a path as follows \windows\system32\notepad.exe. If you want to change to a directory that is currently in your current directory you do not need the full path, but can just type <code>cd directoryname</code> and press enter. For example if you are in a directory called c:\test, and there were three directories in that the test directory called A, B, and C, you could just type cd a and press enter. You would then be in the c:\test\a. If on the other hand you wanted to change your directory to the c:\windows\system32 directory, you would have to type <code>xcd \windows\system</code> and press enter.</p>
+						</div>
 					</li>
 					<li>
-						<div class="collapsible-header"><i class="material-icons">filter_6</i>Functions</div>
-						<div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+						<div class="collapsible-header"><i class="material-icons">filter_6</i>DIR Command</div>
+						<div class="collapsible-body">
+							<p>The DIR command - This command will list the files and directories contained in your current directory, if used without an argument, or the directory you specify as an argument. To use the command you would just type <code>dir</code> and press enter and you will see a listing of the current files in the directory you are in, including information about their file sizes, date and time they were last written to. The command will also show how much space the files in the directory are using and the total amount of free disk space available on the current hard drive. If I typed <code>dir \test</code> I would see the contents of the c:\test directory as shown in Figure 2 below.</p>
+						</div>
 					</li>
 					<li>
-						<div class="collapsible-header"><i class="material-icons">filter_7</i>Pointers</div>
-						<div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
-					</li>
-					<li>
-						<div class="collapsible-header"><i class="material-icons">filter_8</i>Third</div>
-						<div class="collapsible-body"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+						<div class="collapsible-header"><i class="material-icons">filter_7</i>Reference</div>
+						<div class="collapsible-body">
+							<p>All of lessons here are from <a href="https://www.bleepingcomputer.com/tutorials/windows-command-prompt-introduction/">Computer Bleep</a>.</p>
+						</div>
 					</li>
 				</ul>
 			</div>
 		</div>
 
 		<div class="row center">
-			<h4>Where will you go next</h4>
+			<h4 class="light-blue-text text-darken-4">Where to go next</h4>
 			<div class="col s12 l4">
-				<img id="books" class="responsive-img" src="img/books-command-line1.jpg" alt="">
-				<p><a href="">The InnovatorsCMD Your Computer : Version 2.0: The Ultimate Guide to Command Prompt, PowerShell and Run Commands</a></p>
+				<img class="responsive-img book" src="img/books-command-line1.jpg" alt="The InnovatorsCMD Your Computer : Version 2.0: The Ultimate Guide to Command Prompt, PowerShell and Run commands front cover">
+				<p><a href="https://www.goodreads.com/book/show/17124328-cmd-your-computer">The InnovatorsCMD Your Computer : Version 2.0: The Ultimate Guide to Command Prompt, PowerShell and Run commands</a></p>
 				<span>by Cask J. Thomson</span>
 			</div>
 			<div class="col s12 l4">
-				<img id="books" class="responsive-img" src="img/books-command-line2.jpg" alt="">
-				<p><a href="">The Linux Command Line: A Complete Introduction</a></p>
+				<img class="responsive-img book" src="img/books-command-line2.jpg" alt="The Linux Command Line: A Complete Introduction front cover">
+				<p><a href="https://www.goodreads.com/book/show/11724436-the-linux-command-line">The Linux Command Line: A Complete Introduction</a></p>
 				<span>by William E. Shotts</span>
 			</div>
 			<div class="col s12 l4">
-				<img id="books" class="responsive-img" src="img/books-command-line3.png" alt="">
-				<p><a href="">Take Control of the Mac Command Line with Terminal</a></p>
+				<img class="responsive-img book" src="img/books-command-line3.png" alt="Take Control of the Mac Command Line with Terminal">
+				<p><a href="https://www.goodreads.com/book/show/12077196-take-control-of-the-mac-command-line-with-terminal">Take Control of the Mac Command Line with Terminal</a></p>
 				<span>by Joe Kissell</span>
 			</div>
 				
@@ -163,30 +134,27 @@
 
 	<div class="parallax-container">
      	<div class="parallax">
-     		<img src="img/command-line.png">
+     		<img src="img/command-line.png" alt="windows comman line">
      	</div>
     </div>
 
-	<footer class="page-footer light-blue darken-3 " >
-
-		<div class="container center" style="color: #C8F7C5;">
+	
+	<footer class="page-footer light-blue darken-3">
+		<div class="container center">
 			<div class="row">
 
-				<div class="col l6 s12">
-					<h5 class="white-text">Wubba luba dub dub</h5>
-					<p class="grey-text text-lighten-4">This is a nonprofit website.</p>
-					<br>
+				<div class="col m6 s12">
+					<h5 class="white-text">Computer School</h5>
+					<p class="grey-text text-lighten-4">This is a not for profit website.</p>
+					
 				</div>
 
-
-				<div class="col l4 offset-l2 s12">
-					
-					<ul class="white-text">
-						<li><a href="#!">About</a></li>
-						<li><a href="#!">News</a></li>
-						<li><a href="#!">Leave a Message</a></li>
-						<!-- /.to place a dropdown box for social media websites -->
-						<li><a href="#!">Connect with us</a></li>
+				<div class="col m4 offset-m2 s12">
+					<ul class="footer-nav white-text" id="footer-links">
+						<li><a href="about.html">About</a></li>
+						<li><a href="about.html">Mission</a></li>
+						<li><a href="about.html">Contributors</a></li>
+						<li><a href="about.html">Message</a></li>
 					</ul>
 				</div>
 
@@ -194,13 +162,26 @@
 		</div> <!-- /.container -->
 			
 		<div class="footer-copyright">
-			<div class="container">
+			<div class="container ">
 				<p>© 2017 Rellie Balagat</p>
+
+				<div class="row">
+					<div class="col s12">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></a></i>
+							</li>
+							<li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></a></i>
+							</li>
+							<li><a href="#"><i class="fa fa-reddit-square" aria-hidden="true"></a></i>
+							</li>
+						</ul>
+					</div>
+				</div>
+
 			</div>
 		</div> <!-- /.footer-copyright -->
-
 	</footer>
-
+            
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="css/materialize/js/materialize.min.js"></script>

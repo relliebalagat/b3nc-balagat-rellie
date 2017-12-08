@@ -6,37 +6,37 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-	<title>Title bar</title>
+	<title>Register Page</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="img/computer.ico" type="image/x-icon">
+	<link rel="icon" href="img/computer.ico" type="image/x-icon">
 
 	<!-- stylesheets -->
 	<link rel="stylesheet" type="text/css" href="css/materialize/css/materialize.css"  media="screen,projection">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<!--Import Google Icon Font-->
+	<!--Import Google Icon-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">  
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Lato|Quattrocento+Sans" rel="stylesheet"> 
 
 </head>
 <body>
 	
-	<nav>
-		<div class="nav-wrapper light-blue darken-3">
+	<nav class="blue lighten-2">
+		<div class="nav-wrapper">
 			<div class="row">
 				<div class="col s12">
-					<a href="#!" class="brand-logo left">Logo</a>
+					<span><a href="#" class="brand-logo left"><i class="small material-icons">computer</i></a></span>
 					<ul class="right">
-   						<li><button id="button-flat" class="waves-effect waves-light btn">Log in</button></li>
-   						<li><a href="#"><i class="large material-icons">search</i></a></li>
+						<li><a href="#"><i class="small material-icons">search</i></a></li>
+						<li><a href="#"><i class="small material-icons">account_circle</i></a></li>
+						<li><button class="waves-effect waves-light btn center-element button-flat">LOG IN</button></li>
 					</ul>
 				</div>
-			</div>
+			</div>	
 		</div>
 	</nav>
 		
@@ -46,14 +46,12 @@
 
 		<div class="col s12 m6 light-blue-text text-darken-4">
 			<h5>Be one of us</h5>
-			<h5>Join other learners today</h5>
+			<h5>Join other students today</h5>
 
 			<img class="img-registration center-element responsive-img" src="img/programmers.jpg">
-
 		</div>
 
 		<div class="col s12 m6">
-			
 			<form action="#">
 				<div class="row">
 					<div class="col s12 m6 input-field">
@@ -89,12 +87,10 @@
 					</div>
 					
 					<div class="center">
-						<a id="button-flat" class="waves-effect waves-light btn">Sign Up</a>
+						<a class="waves-effect waves-light btn button-flat">Sign Up</a>
 					</div>
 				</div>
 			</form>
-
-			<br>
 
 			<div class="row center">
 				<div class="col s12">
@@ -105,43 +101,51 @@
 		</div>
 	</div>
 
-	<footer class="page-footer light-blue darken-3 " >
-
-		<div class="container center" style="color: #C8F7C5;">
+	<footer class="page-footer light-blue darken-3">
+		<div class="container center">
 			<div class="row">
 
-				<div class="col l6 s12">
-					<h5 class="white-text">Wubba luba dub dub</h5>
-					<p class="grey-text text-lighten-4">This is a nonprofit website.</p>
-					<br>
+				<div class="col m6 s12">
+					<h5 class="white-text">Computer School</h5>
+					<p class="grey-text text-lighten-4">This is a not for profit website.</p>
+					
 				</div>
 
-
-				<div class="col l4 offset-l2 s12">
-					
-					<ul class="white-text">
-						<li><a href="#!">About</a></li>
-						<li><a href="#!">News</a></li>
-						<li><a href="#!">Leave a Message</a></li>
-						<!-- /.to place a dropdown box for social media websites -->
-						<li><a href="#!">Connect with us</a></li>
+				<div class="col m4 offset-m2 s12">
+					<ul class="footer-nav white-text" id="footer-links">
+						<li><a href="about.html">About</a></li>
+						<li><a href="about.html">Mission</a></li>
+						<li><a href="about.html">Contributors</a></li>
+						<li><a href="about.html">Message</a></li>
 					</ul>
 				</div>
 
-			</div> <!-- /.row -->
-		</div> <!-- /.container -->
+			</div> 
+		</div> 
 			
 		<div class="footer-copyright">
-			<div class="container">
+			<div class="container ">
 				<p>© 2017 Rellie Balagat</p>
-			</div>
-		</div> <!-- /.footer-copyright -->
 
+				<div class="row">
+					<div class="col s12">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></a></i>
+							</li>
+							<li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></a></i>
+							</li>
+							<li><a href="#"><i class="fa fa-reddit-square" aria-hidden="true"></a></i>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
 	</footer>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="css/materialize/js/materialize.min.js"></script>
-	
 
 </body>
 </html>

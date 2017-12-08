@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<title>C++ Programming</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="img/computer.ico" type="image/x-icon">
+	<link rel="icon" href="img/computer.ico" type="image/x-icon">
+
+	<!-- stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/materialize/css/materialize.css"  media="screen,projection">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Quattrocento+Sans" rel="stylesheet"> 
+  
+
+  
+</head>
+<body>
+
+	<nav class="blue lighten-2">
+		<div class="nav-wrapper">
+			<div class="row">
+				<div class="col s12">
+					<span><a href="#" class="brand-logo left"><i class="small material-icons">computer</i></a></span>
+					<ul class="right">
+						<li><a href="#"><i class="small material-icons">search</i></a></li>
+						<li><a href="#"><i class="small material-icons">account_circle</i></a></li>
+						<li><button class="waves-effect waves-light btn center-element button-flat">SIGN OUT</button></li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+	</nav>
+	
+    <div class="parallax-container">
+     	<div class="parallax">
+     		<img src="img/cpp_home.png">
+     	</div>
+    </div>
+
+
+	<div class="container">
+
+		<h2 class="light-blue-text text-darken-4">C++ Programming</h2>
+		<p class="center">In this course, you will learn the basics of programming using C++.</p>
+
+		<div class="row center-element lesson ">
+			
+			<div class="col s12">
+
+				<ul class="collapsible" data-collapsible="accordion">
+					<li>
+						<div class="collapsible-header"><i class="material-icons">filter_1</i>Introduction</div>
+						<div class="collapsible-body"><p>C++ is a middle-level programming language developed by Bjarne Stroustrup starting in 1979 at Bell Labs. C++ runs on a variety of platforms, such as Windows, Mac OS, and the various versions of UNIX. This tutorial adopts a simple and practical approach to describe the concepts of C++.
+						</p></div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">filter_2</i>Basic Syntax</div>
+						<div class="collapsible-body">
+							<p>Let us look at the various parts of the above program - </p>
+							<div>
+								<p><code>#include &lt;iostream&gt;</code></p>
+								<p><code>using namespace std;</code></p>
+								<p><code>// main() is where program execution begins.</code></p>
+								<p><code>int main() {</code></p>
+								<p class="code-indentation"><code>cout << "Hello World"; // prints Hello World</code></p>
+								<p class="code-indentation"><code>return 0;</code></p>
+								<p><code>}</code></p>
+							</div>
+							<ul class="lesson-list">
+								<li>The C++ language defines several headers, which contain information that is either necessary or useful to your program. For this program, the header <code>&lt;iostream&gt;</code> is needed.</li>
+								<li>The line <b>using namespace std;</b> tells the compiler to use the std namespace. Namespaces are a relatively recent addition to C++.</li>
+								<li>The next line <b>'// main() is where program execution begins.'</b> is a single-line comment available in C++. Single-line comments begin with // and stop at the end of the line.</li>
+								<li>The line <b>int main()</b> is the main function where program execution begins.</li>
+								<li>The next line <b>cout << "This is my first C++ program.";</b> causes the message "This is my first C++ program" to be displayed on the screen.</li>
+								<li>The next line <b>return 0;</b> terminates main( )function and causes it to return the value 0 to the calling process.</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">filter_3</i>Comments</div>
+							<div class="collapsible-body">
+								<p>Program comments are explanatory statements that you can include in the C++ code. These comments help anyone reading the source code. All programming languages allow for some form of comments. C++ supports single-line and multi-line comments. All characters available inside any comment are ignored by C++ compiler. C++ comments start with /* and end with */. For example - </p>
+								<p><code>/* This is a comment */</code></p>
+								<p><code>/* C++ comments can also</code></p>
+								<p><code> * span multiple lines</code></p>
+								<p><code>*/</code></p>
+								<p>A comment can also start with //, extending to the end of the line. For example</p>
+								<p><code> cout << "Hello World"; // prints Hello World</code></p>
+							</div>
+					
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">filter_4</i>Data Types</div>
+						<div class="collapsible-body">
+							<p>While writing program in any language, you need to use various variables to store various information. Variables are nothing but reserved memory locations to store values. This means that when you create a variable you reserve some space in memory. You may like to store information of various data types like character, wide character, integer, floating point, double floating point, boolean etc. Based on the data type of a variable, the operating system allocates memory and decides what can be stored in the reserved memory.</p>
+							<p>C++ offers the programmer a rich assortment of built-in as well as user defined data types. Following table lists down seven basic C++ data types</p>
+							<table>
+								<tr>
+									<th>Type</th>
+									<th>Keyword</th>
+								</tr>
+								<tr>
+									<td>Boolean</td>
+									<td><code>bool</code></td>
+								</tr>
+								<tr>
+									<td>Character</td>
+									<td><code>char</code></td>
+								</tr>
+								<tr>
+									<td>Integer</td>
+									<td><code>int</code></td>
+								</tr>
+								<tr>
+									<td>Floating point</td>
+									<td><code>float</code></td>
+								</tr>
+								<tr>
+									<td>Double Floating Point</td>
+									<td><code>double</code></td>
+								</tr>
+							</table>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">filter_5</i>Operators</div>
+						<div class="collapsible-body">
+							<p>An operator is a symbol that tells the compiler to perform specific mathematical or logical manipulations. C++ is rich in built-in operators and provide the following types of operators</p>
+							<ul class="lesson-list">
+								<li>Arithmetic Operators</li>
+								<li>Relational Operators</li>
+								<li>Logical Operators</li>
+							</ul>
+							<p>For detailed discussion of each operators, check it <a href="https://www.tutorialspoint.com/cplusplus/cpp_operators.htm">here</a>.</p>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">filter_6</i>Arrays</div>
+						<div class="collapsible-body">
+							<p>C++ provides a data structure, the array, which stores a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type. Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables. A specific element in an array is accessed by an index. All arrays consist of contiguous memory locations. The lowest address corresponds to the first element and the highest address to the last element. To declare an array in C++, the programmer specifies the type of the elements and the number of elements required by an array as follows:</p>	
+
+							<p><code>type arrayName [ arraySize ];</code></p>
+
+							<p>This is called a single-dimension array. The arraySize must be an integer constant greater than zero and type can be any valid C++ data type. For example, to declare a 10-element array called balance of type double, use this statement:</p>
+
+							<p><code>double balance[10];</code></p>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">filter_7</i>Decision Making</div>
+						<div class="collapsible-body">
+							<p>Decision making structures require that the programmer specify one or more conditions to be evaluated or tested by the program, along with a statement or statements to be executed if the condition is determined to be true, and optionally, other statements to be executed if the condition is determined to be false.</p>
+							<p>An if statement consists of a boolean expression followed by one or more statements.</p>
+							<p><code>if(boolean_expression) {</code></p>
+							<p class="code-indentation"><code>// statement(s) will execute if the boolean expression is true</code></p>
+							<p><code>}</code></p>
+							<p>If the boolean expression evaluates to true, then the block of code inside the if statement will be executed. If boolean expression evaluates to false, then the first set of code after the end of the if statement (after the closing curly brace) will be executed.</p>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">filter_8</i>Loops</div>
+						<div class="collapsible-body">
+							<p>There may be a situation, when you need to execute a block of code several number of times. In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on. Programming languages provide various control structures that allow for more complicated execution paths. A loop statement allows us to execute a statement or group of statements multiple times</p>
+						
+							<p>A for loop is a repetition control structure that allows you to efficiently write a loop that needs to execute a specific number of times.</p>
+							<p><code>for ( init; condition; increment ) {</code></p>
+							<p class="code-indentation"><code>statement(s);</code></p>
+							<p><code>}</code></p>
+
+							<ul class="lesson-list">
+								<li>The <b>init</b> step is executed first, and only once. This step allows you to declare and initialize any loop control variables. You are not required to put a statement here, as long as a semicolon appears.</li>
+								<li>Next, the <b>condition</b> is evaluated. If it is true, the body of the loop is executed. If it is false, the body of the loop does not execute and flow of control jumps to the next statement just after the for loop.</li>
+								<li>After the body of the for loop executes, the flow of control jumps back up to the <b>increment</b> statement. This statement can be left blank, as long as a semicolon appears after the condition.</li>
+								<li>The condition is now evaluated again. If it is true, the loop executes and the process repeats itself (body of loop, then increment step, and then again condition). After the condition becomes false, the for loop terminates</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">filter_9</i>Reference</div>
+						<div class="collapsible-body">
+							<p>All of lessons here are from <a href="https://www.tutorialspoint.com/cplusplus/index.htm">C++ Tutorials Point</a>.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="row center">
+			<h4 class="light-blue-text text-darken-4">Where to go next</h4>
+			<div class="col s12 l4">
+				<img class="responsive-img book" src="img/cplusplus1.jpg" alt="programming: principles and practice using c++ front cover">
+				<p><a href="https://www.goodreads.com/book/show/2914066-programming">Programming: Principles and Practice Using C++</a></p>
+				<span>by Bjarne Stroustrup</span>
+			</div>
+			<div class="col s12 l4">
+				<img class="responsive-img book" src="img/cplusplus2.jpg" alt="sams teach yourself c++ in one hour a day front conver">
+				<p><a href="https://www.goodreads.com/book/show/1874956.Sams_Teach_Yourself_C_in_21_Days">Sams Teach Yourself C++ in One Hour a Day</a></p>
+				<span>by Siddhartha Rao</span>
+			</div>
+			<div class="col s12 l4">
+				<img class="responsive-img book" src="img/cplusplus3.jpg" alt="Effective Modern C++: 42 Specific Ways to Improve Your Use of C++11 and C++14 front cover">
+				<p><a href="https://www.goodreads.com/book/show/22800553-effective-modern-c">Effective Modern C++: 42 Specific Ways to Improve Your Use of C++11 and C++14</a></p>
+				<span>by Scott Meyers</span>
+			</div>
+				
+		</div>
+
+	</div>
+
+	<div class="parallax-container">
+     	<div class="parallax">
+     		<img src="img/cpp_home.png">
+     	</div>
+    </div>
+
+	
+	<footer class="page-footer light-blue darken-3">
+		<div class="container center">
+			<div class="row">
+
+				<div class="col m6 s12">
+					<h5 class="white-text">Computer School</h5>
+					<p class="grey-text text-lighten-4">This is a not for profit website.</p>
+					
+				</div>
+
+				<div class="col m4 offset-m2 s12">
+					<ul class="footer-nav white-text" id="footer-links">
+						<li><a href="about.html">About</a></li>
+						<li><a href="about.html">Mission</a></li>
+						<li><a href="about.html">Contributors</a></li>
+						<li><a href="about.html">Message</a></li>
+					</ul>
+				</div>
+
+			</div> <!-- /.row -->
+		</div> <!-- /.container -->
+			
+		<div class="footer-copyright">
+			<div class="container ">
+				<p>© 2017 Rellie Balagat</p>
+
+				<div class="row">
+					<div class="col s12">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></a></i>
+							</li>
+							<li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></a></i>
+							</li>
+							<li><a href="#"><i class="fa fa-reddit-square" aria-hidden="true"></a></i>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div> <!-- /.footer-copyright -->
+	</footer>
+            
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="css/materialize/js/materialize.min.js"></script>
+	<script type="text/javascript">
+		
+	    $(document).ready(function(){
+	      $('.parallax').parallax();
+	    });
+        
+
+	</script>
+
+</body>
+</html>

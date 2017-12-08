@@ -15,20 +15,6 @@
 	background: linear-gradient(135deg, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,99,188,1) 4%, rgba(21,101,192,1) 6%, rgba(150,198,243,1) 100%);
 }
 
-.material-icons {
-	color: #fff;
-}
-
-nav {
-	border: 0;
-	box-shadow: 0 0 0;
-	background: linear-gradient(135deg, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,99,188,1) 4%, rgba(21,101,192,1) 6%, rgba(150,198,243,1) 100%);
-}
-
-.container > nav > .row {
-	background: linear-gradient(135deg, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,101,192,1) 0%, rgba(21,99,188,1) 4%, rgba(21,101,192,1) 6%, rgba(150,198,243,1) 100%);
-}
-
 h1,
 h2,
 h3, 
@@ -52,17 +38,22 @@ h2,
 h3,
 h4,
 h5,
+button,
 .course > h5,
-.course > p,
-button {
+.course > p {
 	text-align: center;
 }
 
-.all-course {
-	border: 1px solid black;
-	opacity: 0.9;
-	margin-bottom: -20px;
-	padding-top: 10px;
+.material-icons {
+	color: #fff;
+}
+
+ul.collapsible .material-icons {
+	color: #000;
+}
+
+.container {
+	width: 100%;
 }
 
 .contribute-area {
@@ -71,14 +62,13 @@ button {
 	margin-bottom: 0;
 }
 
-
 .center-element {
 	position: relative;
 	left: 50%;
 	transform: translate(-50%, 0%);	
 }
 
-form, #course, #books, #contributors{
+form, .contributor, .box, .book {
 	text-align: center;
 	margin: 25px 5px;
 	background-color: #fff;
@@ -86,8 +76,14 @@ form, #course, #books, #contributors{
 	box-shadow: 2px 2px 10px rgba(0,0,0,.4);
 }
 
-#contributors {
-	margin: 15px;
+.book {
+	width: 250px;
+	height: 300px;
+	overflow: hidden;
+}
+
+.col > .course {
+	width: 40%;
 }
 
 label {
@@ -97,19 +93,15 @@ label {
 	color: #3A539B;
 }
 
-#input-format {
+#input-format, .lesson {
 	width: 80%;
 }
 
-#button-flat {
+.button-flat {
 	border-radius: 0;
 	background-color: #1abc9c;
 	box-shadow: 0 0 0;
 	margin: 0 5px 5px 5px;
-}
-
-nav, footer {
-	color: #C8F7C5;
 }
 
 .img-registration {
@@ -119,55 +111,79 @@ nav, footer {
 }
 
 .parallax-container {
-	height: 300px;
-	opacity: 0.6;
+	opacity: .9;
 }
 
-#books {
-	width: 250px;
-	height: 300px;
-	overflow: hidden;
+div.parallax-container > div.parallax > img[src*="img/children"] {
+	margin-top: -60px;
 }
 
-.container {
-	width: 100%;
+.parallax-landing-page {
+	margin-top: -20px;
 }
 
-footer a:link {
-	color: white;
-}
-
-footer > .container > .row > .col > ul li > a:hover {
+.page-footer a:hover {
 	color: #64ffda;
  	text-decoration: underline;
 }
 
-.row > .col > .parallex-container {
-	padding: 0;
+.footer-copyright li {
+	display: inline-block;
+	float: right;
+	margin: 10px;
+	margin-top: -25px;
+}
+
+.welcome-page {
+	padding: 15px;
+	margin-bottom: 10px;
+}
+
+.footer-nav {
+	padding: 20px;
+}
+
+.lesson-list,
+.collapsible-body p {
+	margin: 10px;
+}
+
+.lesson-list > li {
+	list-style-type: square !important;
+	margin-left: 15px;
+}
+
+.code-indentation {
+	padding-left: 20px;
+}
+
+.collapsible {
+	margin-left: 20px;
 }
 
 @media (max-width: 600px) {
 
-	#course, #contributors {
-		margin-left: 10px;
-		margin-right: 10px;
+	.contributor, .lesson {
+		margin: 10px;
+		
 	}
 
-
+	.lesson {
+		width: 100%;
+	}
 }
 
 @media (min-width: 601px) and (max-width: 1039px) {
 
-	#course, #contributors {
-		margin-left: 0;
+	.contributor {
+		margin-left: 15px;
 	}
-
 
 	.page-footer {
 		text-align: center;
 	}
 
-	#contributors {
+	.contributor {
 		width: 47%;
 	}
 
@@ -175,8 +191,13 @@ footer > .container > .row > .col > ul li > a:hover {
 
 @media (min-width: 1040px) {
 
-	#contributors {
+	.contributor {
 		width: 32%;
+		margin: 5px;
+	}
+
+	.lesson {
+		width: 80%;
 	}
 
 }
