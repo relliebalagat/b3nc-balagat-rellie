@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess the Number</title>
+</head>
+<body>
+
+	
+
+	<h1>Guess The Number 1 - 100</h1>
+	<input type="text" name="" id="number">
+	<button onclick="guessTheNumber()">Check!</button>
+	<h2 id="message"></h2>
+
+	<script type="text/javascript">
+			
+		var randomNumber =  20;
+		// Math.floor(Math.random() * 100)
+		
+		function guessTheNumber() {
+			
+			var tries = 0;
+			var message = document.getElementById("message");
+			var input = document.getElementById("number").value;
+
+			while(tries < 3){
+				var promptInput = prompt("Guess the number:");
+				var input = promptInput;
+				if(input < randomNumber) {
+					message.innerHTML = "HIGHER";		
+					alert("NICE TRY");
+				} else if (input < randomNumber) {
+					message.innerHTML = "LOWER";		
+					alert("NICE TRY");
+				} else {
+					message.innerHTML = "You're RIGHT!";
+				}
+
+				tries++;	
+				
+			}
+
+			
+
+		}
+
+		function clearInput() {
+			document.getElementById("number").value = "";
+
+		}
+
+	</script>
+
+
+
+
+</body>
+</html>
