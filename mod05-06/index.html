@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS - SUM of a number</title>
+</head>
+<style type="text/css">
+	
+	h1 {
+		text-align: center;
+	}
+
+
+</style>
+<body>
+
+
+	<!-- <h1>Sum of a number up to...</h1>
+	<input type="number" name="" id="num">
+	<button onclick="getSum()">SUM</button>
+	<h3 id="message"></h3>
+	<h3 id="even-message"></h3>
+	<h3 id="odd-message"></h3> -->
+
+	<input type="number" id="input" onclick="clearDraw()">
+	<button onclick="drawAsterisk()">DRAW!</button>
+	<h1 id="asterisk"></h1>
+
+	<script type="text/javascript">
+		
+		/*function getSum() {
+			var sum = 0;
+			var message = document.getElementById("message");
+			var evenMessage = document.getElementById("even-message");
+			var oddMessage = document.getElementById("odd-message");
+			var value = document.getElementById("num").value;
+			var even = 0;
+			var odd = 0;
+
+			var i = 0;
+			while(i <= value) {
+				sum += i;
+			
+				if(i % 2 == 0) {
+					even += i;
+				} else {
+					odd += i;
+				}
+				i++;
+			}
+
+			for(var i = 0; i < value; i++){
+				if(i % 2 == 0) {
+					even += i;
+				} else {
+					odd += i;
+				}
+			}
+
+
+
+			message.innerHTML = "The sum of numbers up to " + value + " is " + sum;
+			evenMessage.innerHTML = "The sum of EVEN numbers up to " + value + " is " + even;
+			oddMessage.innerHTML = "The sum of ODD numbers up to " + value + " is " + odd;
+
+			alert("The sum of number up to " + value + " is " + sum);
+			alert("Sum of even numbers up to " + value + " is " + even);
+			alert("Sum of odd numbers up to " + value + " is " + odd);	
+		}
+
+		
+
+		// for (var i = 0; i <= 20; i++) {
+
+		// 	if((i % 3 === 0) && (i % 5 === 0)) {
+		// 		console.log(i + " is a multiple of 3 and 5.");
+		// 	} else if (i % 3 === 0) {
+		// 		console.log(i + " is a multiple of 3 but not of 5.");
+		// 	} else if (i % 5 === 0) {
+		// 		console.log(i + " is a multiple of 5 but not of 3.");
+		// 	} else {
+		// 		console.log(i + " not a multiple of 3 and 5")
+		// 	}
+
+		// }
+		*/
+		
+		function drawAsterisk() {
+			var num = document.getElementById("input").value;
+
+			for(var i = 1; i <= num; i++) {
+				//document.getElementById("asterisk").innerHTML += "* ";
+				for(var j = 1; j <= num; j++) {
+					document.getElementById("asterisk").innerHTML += "* ";
+				}
+				document.getElementById("asterisk").innerHTML += "<br>";
+				
+			}
+
+			// i = 1
+			// j = 4 * * *
+			// i = 2
+			// j = 3 
+
+			// i = 1
+			// j = 1
+
+
+
+			// for(var i = 1; i <= num; i++) {
+			// 	document.getElementById("asterisk").innerHTML += "*<br>";
+			// }
+		}
+
+		function clearDraw() {
+			document.getElementById("asterisk").innerHTML = "";
+		}
+		
+	</script>
+</body>
+</html>
