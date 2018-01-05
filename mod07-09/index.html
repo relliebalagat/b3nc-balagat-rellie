@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		p {
+			color: green;
+			height: 100;
+		}
+	</style>
+</head>
+<body>
+
+	<p>I am a paragraph.</p>
+	<p>I am a paragraph.</p>
+	<p>I am a paragraph.</p>
+
+	<p class="para-to-hide">I am a paragraph with class.</p>
+	<p class="para-to-hide">I am a paragraph with class.</p>
+	<p class="para-to-hide">I am a paragraph with class.</p>
+
+	<p id="paraToHideWithId">I am a paragraph with ID.</p>
+	<p id="paraToHideWithId">I am a paragraph with ID.</p>
+
+	<!-- Import jQuery -->
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+
+	<script type="text/javascript">
+		// $('p').hide();
+
+		// $('.para-to-hide').hide();
+
+		// $("#paraToHideWithId").hide();
+
+		// $('p').click(function() {
+		//	 $(this).hide();
+		// });
+
+		$('#paraToHideWithId').hover(function() {
+			$(this).html("I'm a changed paragraph.");
+		});
+
+		$("p").click(function() {
+			$(this).attr("align", "right");
+			$(this).css("color", "red");
+		});
+
+		
+
+
+	</script>
+
+</body>
+</html>
