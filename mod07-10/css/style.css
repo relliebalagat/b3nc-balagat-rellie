@@ -7,7 +7,7 @@ body {
 	/*background-color: lightgrey;*/
 	width: 40%;
 	margin: 0 auto;
-	border: 2px solid black;
+	border: 1px solid black;
 	text-align: center;
 }
 
@@ -32,16 +32,12 @@ body {
 	text-decoration: line-through;
 }
 
-h1, li {
-	text-align: center;
-}
-
 h1 {
 	font-size: 300%;
 }
 
-li {
-	font-size: 150%;
+h1, li {
+	text-align: center;
 }
 
 input {
@@ -55,7 +51,7 @@ input {
 }
 
 input::placeholder {
-	font-size: 130%;
+	font-size: 120%;
 	color: #446CB3;
 }
 
@@ -84,6 +80,7 @@ ul {
 li {
 	list-style-type: none;
 	padding: 20px;
+	font-size: 150%;
 }
 
 li:hover, .completed, h1 {
