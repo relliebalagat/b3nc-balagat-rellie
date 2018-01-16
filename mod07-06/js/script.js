@@ -95,7 +95,6 @@ function computeExpression() {
 	expression = "";
 }
 
-
 function clearButton() {
 	document.getElementById("display").innerHTML = 0;
 }

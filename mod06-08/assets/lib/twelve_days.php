@@ -4,9 +4,9 @@ function getTitle() {
 	return '12 Days of Christmas';
 }
 
-function getLyrics() {
+function getLyrics($day) {
 
-	$days = array('first', 'second', 'third', 'fourth', 'sixth', 'seventh', 'eigth', 'ninth', 'tenth', 'eleventh', 'twelfth');
+	$days = array('first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eigth', 'ninth', 'tenth', 'eleventh', 'twelfth');
 
 	$gifts = array(
 		'A partridge in a pear tree',
@@ -23,25 +23,30 @@ function getLyrics() {
 		'Twelve drummers drumming'
 	);
 
+	
+	for($i = 0; $i < $day; $i++){
+		echo "<div style='display: none;' id='day" . ($i + 1) . "'>";
+		$line = array();
+		$line[0] = "<h3>On the " . $days[$i] . " of Christmas my true love sent to me: " . "</h3>";	
 
+		$j = $i;
+		$k = 0;
 
-	foreach ($days as $value) {
+		while($j >= 0){
+			$line[++$k] = "<p>" . $gifts[$j] . "</p>";
+			$j--;
+		}
 		
-		$line = 'On the ' . $value . ' of Christmas my true love sent to me: ' . '<br>';
-		echo $line;
-
-		for($i = 0; $i < 12; $i++){
-				
-			$message = $gifts[$i];
-			 
-			$message1 = $line . $message . $message1;
-
-			echo $message1 . "<br>";
-
+		for($print_ctr = 0; $print_ctr < count($line); $print_ctr++){
+			echo $line[$print_ctr] . "<br>";
+		}
+		echo "</div>";
+		echo "<br>";
+		
+		if($i == 0){
+			$gifts[0] = "and A partridge in a pear tree.";
 		}
 	}
-
-
 
 
 }

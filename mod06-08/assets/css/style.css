@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Indie Flower', cursive;
+}
+
+h1, 
+div.main h3, 
+div.main p,
+button {
+	text-align: center;
+}
+
+div#main {
+	margin: 0 auto;
+}
+
+.main {
+	max-width: 960px;
+	border: 1px solid black;
+}
+
+input {
+	display: block;
+}
+
+button {
+	display: inline-block;
+}
+
+#div1,
+#div2,
+#div3,
+#div4,
+#div5,
+#div6,
+#div7,
+#div8,
+#div9,
+#div10,
+#div11,
+#div12, {
+	display: none;
+}
+
