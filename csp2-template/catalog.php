@@ -4,7 +4,6 @@ function getTitle() {
 	echo 'Index | Welcome to Beeer Web App'; 
 }	
 
-
 include ('partials/head.php');
 
 ?>
@@ -20,15 +19,13 @@ include ('partials/head.php');
 
 	<main class="wrapper">
 		
-		<h1>Index</h1>
+		<h1>Catalog</h1>
 
 	</main>
 
 	<footer>
 		<?php
-		
-		include 'partials/footer.php';
-
+			include 'partials/footer.php';
 		?>
 	</footer>
 
