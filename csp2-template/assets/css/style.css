@@ -25,3 +25,8 @@ body {
 .navbar-inverse, h1 {
 	margin: 0;
 }
+
+table, th, td, tr {
+	padding: 15px;
+	border: 1px solid black;
+}

@@ -23,11 +23,11 @@ include ('partials/head.php');
 		
 
 		<?php 
-			if (isset($_SESSION['current_user']))
+			if (isset($_SESSION['current_user'])) {
 				echo "<p>". $_SESSION['message'] ."</p>";
-			// } else {
-			// 	echo "<p>No user currently login.</p>";
-			// }
+			} else {
+				echo "<p>No user currently login.</p>";
+			}
 		?>
 		<h1>Log In</h1>
 

@@ -8,6 +8,9 @@ $users = [
 	['username' => 'user1', 'password' => 'abc123ABC*()']
 ];
 
+$file = file_get_contents('assets/users.json');
+$users = json_decode($file, true);
+
 $isLoginSuccessful = false; // monitor log in status
 
 $userName = htmlspecialchars($_POST['username']);
@@ -25,6 +28,7 @@ foreach ($users as $user) {
 		// echo 'Password is correct.';
 		// header('location: home.php');
 		$isLoginSuccessful = true;
+		$_SESSION['role'] = $user['role']; // get the role of current user
 		break;	
 	}
 }
