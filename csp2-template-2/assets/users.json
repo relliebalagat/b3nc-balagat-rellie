@@ -1,0 +1,32 @@
+[
+    {
+        "username": "admin",
+        "password": "admin",
+        "email": "admin@tuitt.com"
+    },
+    {
+        "username": "user1",
+        "password": "user1",
+        "email": "user1@facebook.com"
+    },
+    {
+        "username": "user2",
+        "password": "user2",
+        "email": "user2@gmail.com"
+    },
+    {
+        "username": "user5",
+        "password": "user5",
+        "email": "user5@yahoo.com"
+    },
+    {
+        "username": "rellie",
+        "password": null,
+        "email": "rellie@gmail.com"
+    },
+    {
+        "username": "zbc",
+        "password": "zbcasd",
+        "email": "zxasd@asd.com"
+    }
+]
