@@ -2,31 +2,31 @@
     {
         "username": "admin",
         "password": "admin",
-        "email": "admin@tuitt.com"
+        "email": "admin@tuitt.com",
+        "role": "admin"
     },
     {
         "username": "user1",
         "password": "user1",
-        "email": "user1@facebook.com"
+        "email": "user1@facebook.com",
+        "role": "admin"
     },
     {
         "username": "user2",
         "password": "user2",
-        "email": "user2@gmail.com"
+        "email": "user2@gmail.com",
+        "role": "user"
     },
     {
         "username": "user5",
         "password": "user5",
-        "email": "user5@yahoo.com"
+        "email": "user5@yahoo.com",
+        "role": "user"
     },
     {
-        "username": "rellie",
-        "password": null,
-        "email": "rellie@gmail.com"
-    },
-    {
-        "username": "zbc",
-        "password": "zbcasd",
-        "email": "zxasd@asd.com"
+        "username": "user7",
+        "password": "user7",
+        "email": "user7@asd.com",
+        "role": "user"
     }
 ]

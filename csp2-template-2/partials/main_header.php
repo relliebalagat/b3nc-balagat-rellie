@@ -8,20 +8,56 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">Kraff Beeer</a>
+      <a class="navbar-brand" href="home.php">Kraff Beeer</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <?php
+
+        if(isset($_SESSION['current_user'])) {
+          echo '
+            <li>
+              <a href="#"> ' . ucfirst($_SESSION['current_user']) . '</a>
+            </li>
+          ';
+        }
+
+        ?>
+
         <li><a href="about.php">About</a></li>
         <li><a href="careers.php">Careers</a></li>
         <li><a href="catalog.php">Catalog</a></li>
-        <li><a href="profile.php">Profile</a></li>
-        <li><a href="settings.php">Settings</a></li>
-        <li><a href="login.php">Login</a></li>
-        <li><a href="logout.php">Logout</a></li>
-        <li><a href="register.php">Register</a></li>
+        
+        <?php
+
+        if (isset($_SESSION['current_user'])) {
+          echo '<li><a href="profile.php">Profile</a></li>';
+          
+          if($_SESSION['role'] == 'admin') {
+            echo "<li><a href='settings.php'>Settings</a></li>
+            ";
+          }          
+        } else {
+          echo '
+            <li><a href="login.php">Login</a></li>
+            <li><a href="register.php">Register</a></li>
+          ';
+        }
+
+        ?>
+        
+        <?php
+
+        if(isset($_SESSION['current_user'])) {
+          echo ' 
+            <li><a href="logout.php">Logout</a></li>
+          ';
+        }
+        
+        ?>
+        
         <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">

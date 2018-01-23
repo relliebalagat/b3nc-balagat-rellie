@@ -48,5 +48,17 @@ include 'partials/foot.php';
 
 ?>
 
+<script type="text/javascript">
+	$('#username').keypress(function() {
+		var usernameText = $(this).val();
+		// console.log(usernameText);
+		$.post('assets/username_validation.php', {username: usernameText}, function(data, status) {
+			console.log(data);
+		});
+	});
+
+
+</script>
+
 </body>
 </html>
