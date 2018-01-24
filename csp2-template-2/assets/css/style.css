@@ -35,9 +35,43 @@ td {
 	border-collapse: collapse;
 }
 
+.red-message {
+	color: red;
+}
+
+.green-message {
+	color: green;
+}
+
+.item-container {
+	width: 30%;
+	background-color: lightgrey;
+	padding: 15px;
+	margin: 10px;
+	text-align: center;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+.item-container img {
+	height: 200px;
+	width: 100%;
+}
+
+.item-container p:last-child {
+	height: 100px;
+	overflow: hidden;
+}
+
+.item-container h3 {
+	height: 50px;
+}
+
 /* footer */
 .main-footer {
 	background-color: grey;
 	padding: 15px;
 	text-align: center;
 }
+
+
