@@ -45,8 +45,12 @@ include 'partials/head.php';
 
 	</main>
 
+
 	<!-- main footer -->
 	<?php include 'partials/main_footer.php'; ?>
+
+
+
 
 <?php
 

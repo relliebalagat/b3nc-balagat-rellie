@@ -43,7 +43,7 @@ include 'partials/head.php';
 				foreach ($users as $key => $user) {
 					echo "
 						<tr>
-							<td><a href='users.php?id=" . $key . "'>" . $user['username'] . "</a></td>
+							<td><a href='user.php?id=" . $key . "'>" . $user['username'] . "</a></td>
 							<td>" . $user['password'] . "</td>
 							<td>" . $user['email'] . "</td>
 							<td>" . $user['role'] . "</td>

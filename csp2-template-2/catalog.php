@@ -30,6 +30,13 @@ $items = json_decode($file, true);
 		<a href="create_new_item.php">
 			<button class="btn btn-primary">Add New Item</button>
 		</a>
+		<!-- <a href="assets/edit_item.php" id="editItem">
+			<button class="btn btn-info">Edit Item</button>
+		</a>
+		<a href="">
+			<button class="btn btn-danger">Delete Item</button>
+		</a> -->
+		
 
 		<div class="items-wrapper">
 			<?php
@@ -46,6 +53,7 @@ $items = json_decode($file, true);
 						</div>  <!-- /.item-container -->
 						</a>
 						<button class="btn btn-primary form-control">Add to Cart</button>
+						
 					</div>
 				';
 			}
@@ -55,6 +63,10 @@ $items = json_decode($file, true);
 		
 	</main>  <!-- /.wrapper -->
 
+
+	
+
+
 	<!-- main footer -->
 	<?php include 'partials/main_footer.php'; ?>
 
@@ -63,6 +75,9 @@ $items = json_decode($file, true);
 include 'partials/foot.php';
 
 ?>
+
+	
+
 
 </body>
 </html>

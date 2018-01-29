@@ -59,13 +59,13 @@ include 'partials/head.php';
 		<!-- <button class="btn btn-primary">Edit</button> -->
 		<!-- Trigger the modal with a button -->
 		<button id="editUser" type="button" class="btn btn-info" data-toggle="modal"  data-target="#editUserModal" data-index="<?php echo $id; ?>">Edit</button>
-
-		<!-- <button class="btn btn-danger">Delete</button> -->
+<!-- 
+		<button class="btn btn-danger">Delete</button> -->
 		<button id="deleteUser" type="button" class="btn btn-danger" data-toggle="modal"  data-target="#deleteUserModal" data-index="<?php echo $id; ?>">Delete</button>
 
 	</main>
 
-	<!-- Edit -->
+	<!-- edit modal -->
 	<div id="editUserModal" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
 
@@ -89,7 +89,7 @@ include 'partials/head.php';
 	  </div>
 	</div>
 
-	<!-- Delete -->
+	<!-- delete modal -->
 	<div id="deleteUserModal" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
 
@@ -102,9 +102,10 @@ include 'partials/head.php';
 		        <h4 class="modal-title">Delete User</h4>
 		      </div>
 		      <div id="deleteUserModalBody" class="modal-body">
+		      	<p>Do you really want to delete this user's account?</p>
 		      </div>
 		      <div class="modal-footer">
-		        <button type="submit" class="btn btn-Danger">Yes</button>
+		        <button type="submit" class="btn btn-danger">Yes</button>
 		        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
 		      </div>
 		    </div>

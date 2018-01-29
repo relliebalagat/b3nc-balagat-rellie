@@ -59,10 +59,35 @@ include 'partials/head.php';
 		</table>
 		
 		<a href="catalog.php"><button class="btn btn-default">Back</button></a>
-		<button class="btn btn-primary">Edit</button>
-		<button class="btn btn-danger">Delete</button>
+		
+		<button id="editItem" type="button" class="btn btn-info" data-toggle="modal"  data-target="#editItemModal" data-index="<?php echo $id; ?>">Edit</button>
+		
+		<!-- <button id="deleteUser" type="button" class="btn btn-danger" data-toggle="modal"  data-target="#deleteUserModal" data-index="<?php echo $id; ?>">Delete</button> -->
 	</main>
 
+	<!-- edit modal -->
+	<div id="editItemModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <form method="POST" action="assets/update_item.php">
+	    	<input hidden name="product_id" value="<?php echo $id; ?>">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Edit Item Details</h4>
+		      </div>
+		      <div id="editItemModalBody" class="modal-body">
+		      </div>
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-default">Save</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		      </div>
+		    </div>
+	    </form>
+
+	  </div>
+	</div>
 
 	<!-- main footer -->
 	<?php include 'partials/main_footer.php'; ?>
@@ -73,6 +98,35 @@ include 'partials/head.php';
 include 'partials/foot.php';
 
 ?>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$('#editItem').click(function() {
+				var itemId = $(this).data('index');
+
+				$.get('assets/edit_item.php',
+					{
+						id: itemId
+					},
+					function(data, status) {
+						$('#editItemModalBody').html(data);
+				});
+			});
+
+			// $('#deleteUser').click(function() {
+			// 	var userId = $(this).data('index');
+
+			// 	$.get('assets/remove_user.php',
+			// 		{
+			// 			id: userId
+			// 		},
+			// 		function(data, status) {
+			// 			$('#editUserModalBody').html(data);
+			// 	});
+			// });
+		});
+	</script>
 
 </body>
 </html>
