@@ -50,8 +50,6 @@ include 'partials/head.php';
 	<?php include 'partials/main_footer.php'; ?>
 
 
-
-
 <?php
 
 include 'partials/foot.php';

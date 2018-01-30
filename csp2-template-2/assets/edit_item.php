@@ -1,40 +1,10 @@
 <?php
 
 $id = $_GET['id'];
-echo $id;
 // successful processing
 
 $file = file_get_contents('items.json');
 $items = json_decode($file, true);
-
-// echo '
-// <div>
-// 	<label>Username</label>
-// 	<input name="username" class="form-control" type="text" value="'.$users[$id]['username'].'">
-
-// 	<label>Password</label>
-// 	<input type="password" value="'.$users[$id]['password'].'">
-
-// 	<label>Email Address</label>
-// 	<input type="email" value="'.$users[$id]['email'].'">
-// ';
-
-// $roles = ['admin', 'user', 'staff', 'maintenance', 'security'];
-
-// echo'
-// 	<label>Role</label>
-// 	<select class="form-control">';
-// 		foreach($roles as $key => $role) {
-// 			if ($users[$id]['role'] === $role) {
-// 				echo '<option selected>'. $role .'</option>';
-// 			} else {
-// 				echo '<option>'. $role .'</option>';
-// 			}
-// 		}
-// 	echo '
-// 	</select>
-// </div>
-// ';
 
 echo '
 <div>
@@ -42,7 +12,7 @@ echo '
 	<input class="form-control" name="product-name" type="text" value="'.$items[$id]['name'].'">
 
 	<label>Description</label>
-	<input class="form-control" name="descripton" type="text" value="'.$items[$id]['description'].'">
+	<input class="form-control" name="description" type="text" value="'.$items[$id]['description'].'">
 
 	<label>Image</label>
 	<input class="form-control" name="image" type="file" value="'.$items[$id]['image'].'">
@@ -51,19 +21,19 @@ echo '
 	<input class="form-control" name="price" type="number" value="'.$items[$id]['price'].'">
 ';
 
-// $roles = ['admin', 'user', 'staff', 'maintenance', 'security'];
+$categories = ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5', 'Category 6'];
 
-// echo'
-// 	<label>Role</label>
-// 	<select class="form-control">';
-// 		foreach($roles as $key => $role) {
-// 			if ($items[$id]['role'] === $role) {
-// 				echo '<option selected>'. $role .'</option>';
-// 			} else {
-// 				echo '<option>'. $role .'</option>';
-// 			}
-// 		}
-// 	echo '
-// 	</select>
-// </div>
-// ';
+echo'
+	<label>Role</label>
+	<select class="form-control">';
+		foreach($categories as $key => $category) {
+			if ($items[$id]['category'] === $category) {
+				echo '<option selected>'. $category .'</option>';
+			} else {
+				echo '<option>'. $category .'</option>';
+			}
+		}
+	echo '
+	</select>
+</div>
+';

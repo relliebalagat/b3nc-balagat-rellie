@@ -1,17 +1,5 @@
 [
     {
-        "username": "admin",
-        "password": "admin",
-        "email": "admin@gmail.com",
-        "role": "admin"
-    },
-    {
-        "username": "user1",
-        "password": "user1",
-        "email": "user1@bluebottle.com",
-        "role": "user"
-    },
-    {
         "username": "user9",
         "password": "user9",
         "email": "user9@gmail.com",

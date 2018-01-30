@@ -11,7 +11,7 @@ $category = $_POST['category'];
 
 $new_item = array(
 	"name" => $product_name,
-	"image" => 'assets/images/' . $image,
+	"image" => 'assets/img/' . $image,
 	"price" => $price,
 	"description" => $description,
 	"category" => $category

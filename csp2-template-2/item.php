@@ -58,11 +58,11 @@ include 'partials/head.php';
 			</tr>
 		</table>
 		
-		<a href="catalog.php"><button class="btn btn-default">Back</button></a>
+		<a href="catalog.php?category=<?php echo $items[$id]['category']; ?>&search="><button class="btn btn-default">Back</button></a>
 		
 		<button id="editItem" type="button" class="btn btn-info" data-toggle="modal"  data-target="#editItemModal" data-index="<?php echo $id; ?>">Edit</button>
 		
-		<!-- <button id="deleteUser" type="button" class="btn btn-danger" data-toggle="modal"  data-target="#deleteUserModal" data-index="<?php echo $id; ?>">Delete</button> -->
+		<button id="deleteItem" type="button" class="btn btn-danger" data-toggle="modal"  data-target="#deleteItemModal" data-index="<?php echo $id; ?>">Delete</button>
 	</main>
 
 	<!-- edit modal -->
@@ -71,7 +71,7 @@ include 'partials/head.php';
 
 	    <!-- Modal content-->
 	    <form method="POST" action="assets/update_item.php">
-	    	<input hidden name="product_id" value="<?php echo $id; ?>">
+	    	<input hidden name="user-id" value="<?php echo $id; ?>">
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -88,6 +88,33 @@ include 'partials/head.php';
 
 	  </div>
 	</div>
+
+
+	<!-- delete modal -->
+	<div id="deleteItemModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <form method="POST" action="assets/delete_item.php">
+	    	<input hidden name="product_id" value="<?php echo $id; ?>">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Delete Item</h4>
+		      </div>
+		      <div id="deleteItemModalBody" class="modal-body">
+		      	<p>Do you really want to delete this item?</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-danger">Yes</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+		      </div>
+		    </div>
+	    </form>
+
+	  </div>
+	</div>
+
 
 	<!-- main footer -->
 	<?php include 'partials/main_footer.php'; ?>
@@ -114,17 +141,17 @@ include 'partials/foot.php';
 				});
 			});
 
-			// $('#deleteUser').click(function() {
-			// 	var userId = $(this).data('index');
+			$('#deleteItem').click(function() {
+				var itemId = $(this).data('index');
 
-			// 	$.get('assets/remove_user.php',
-			// 		{
-			// 			id: userId
-			// 		},
-			// 		function(data, status) {
-			// 			$('#editUserModalBody').html(data);
-			// 	});
-			// });
+				$.get('assets/remove_user.php',
+					{
+						id: itemId
+					},
+					function(data, status) {
+						$('#deleteItemModalBody').html(data);
+				});
+			});
 		});
 	</script>
 
