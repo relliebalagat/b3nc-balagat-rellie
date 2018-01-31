@@ -28,7 +28,7 @@ include 'partials/head.php';
 			<input type="password" name="confirmPassword" id="confirmPassword" placeholder="Enter password again" class="form-control" required>	
 
 			<label for="email">Email Address</label>
-			<input type="email" name="emails" id="email" placeholder="email@domain.com" class="form-control" required>	
+			<input type="email" name="email" id="email" placeholder="email@domain.com" class="form-control" required>	
 
 
 			<input type="submit" name="submit" id="submit" value="Login" class="btn btn-primary">

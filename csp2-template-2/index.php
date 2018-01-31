@@ -1,10 +1,21 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['current_user'])) {
+	header('location: login.php');
+}
 
 function getTitle() {
 	echo 'Welcome to Kraff Beer Philippines';
 }
 
 include 'partials/head.php';
+
+// create session variable for cart 
+$_SESSION['cart'] = array();
+
+// create session variable for item counter
+$_SESSION['item_count'] = 0;
 
 ?>
 </head>
@@ -16,9 +27,6 @@ include 'partials/head.php';
 	<!-- wrapper -->
 	<main class="wrapper">
 		<h1>Index Page</h1>
-
-
-
 
 	</main>
 

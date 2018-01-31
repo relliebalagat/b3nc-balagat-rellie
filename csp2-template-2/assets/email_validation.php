@@ -1,6 +1,6 @@
 <?php
 
-$emailAdd = $_POST['emails'];
+$emailAdd = $_POST['email'];
 
 // processing
 $file = file_get_contents('users.json');
@@ -8,11 +8,11 @@ $emails = json_decode($file, true);
 $emailnames = [];
 
 foreach ($emails as $user) {
-	array_push($emailnames, $user['emails']);
+	array_push($emailnames, $user['email']);
 }
 
-if(isset($_POST['emails'])){
-	$email_entered = $_POST['emails'];
+if(isset($_POST['email'])){
+	$email_entered = $_POST['email'];
 
 	if (!empty($email_entered)) {
 		if(in_array($email_entered, $emailnames)){

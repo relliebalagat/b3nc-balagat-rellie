@@ -58,7 +58,7 @@ include 'partials/head.php';
 			</tr>
 		</table>
 		
-		<a href="catalog.php?category=<?php echo $items[$id]['category']; ?>&search="><button class="btn btn-default">Back</button></a>
+		<a href="<?php echo $_SERVER['HTTP_REFERER']?>;"><button class="btn btn-default">Back</button></a>
 		
 		<button id="editItem" type="button" class="btn btn-info" data-toggle="modal"  data-target="#editItemModal" data-index="<?php echo $id; ?>">Edit</button>
 		

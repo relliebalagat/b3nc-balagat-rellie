@@ -87,7 +87,9 @@ if(isset($_GET['search']) && $_GET['category'] !== 'All') {
 							<p>'.$item['description'].'</p>
 						</div>  <!-- /.item-container -->
 						</a>
-						<button class="btn btn-primary form-control">Add to Cart</button>
+						<input id="itemQuantity'. $item['id'] .'" type="number" value="0" min="0">
+						<button class="btn btn-primary form-control"
+						onclick="addToCart('.$item['id'].')">Add to Cart</button>
 						
 					</div>
 				';
@@ -99,11 +101,33 @@ if(isset($_GET['search']) && $_GET['category'] !== 'All') {
 	<!-- main footer -->
 	<?php include 'partials/main_footer.php'; ?>
 
-<?php
+	<?php
+	include 'partials/foot.php';
+	?>
 
-include 'partials/foot.php';
+	<script type="text/javascript">
+		
+		function addToCart(itemId) {
+			// console.log(itemId);
+			var id = itemId;
 
-?>
+			// retrieve value of item quantity
+			var quantity = $('#itemQuantity' + id).val();
+			// console.log(quantity);
+
+			// create a post request to update session cart variable
+			$.post('assets/add_to_cart.php',
+			 	{ 
+			 		item_id: id,
+			 		item_quantity: quantity
+			 	}, 
+			 	function(data, status) {
+			 		// console.log(data);
+			 		$('a[href="cart.php"]').html('My Cart ' + data);
+			 	});
+		}	
+
+	</script>
 
 </body>
 </html>
