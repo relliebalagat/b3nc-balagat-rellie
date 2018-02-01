@@ -1,8 +1,8 @@
-
+ 
 
 <?php
 
-$product_id = $_POST['user-id'];
+$user_id = $_POST['user-id'];
 
 $file = file_get_contents('users.json');
 $users = json_decode($file, true);

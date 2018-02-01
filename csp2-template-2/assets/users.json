@@ -1,26 +1,36 @@
 [
     {
-        "username": "user9",
-        "password": "user9",
-        "email": "user9@gmail.com",
-        "role": "admin"
+        "username": "user3",
+        "password": "user3",
+        "email": "user3@abc.com",
+        "role": "user",
+        "image": "\/assets\/images\/user\/"
     },
     {
         "username": "user4",
         "password": "user4",
         "email": "user4@google.com",
-        "role": "user"
+        "role": "user",
+        "image": "\/assets\/images\/user\/"
     },
     {
         "username": "user5",
-        "password": "user5",
-        "email": "user5@yahoo.com",
-        "role": "user"
+        "password": "123",
+        "email": "user5@google.com",
+        "role": "user",
+        "image": "\/assets\/images\/user\/"
     },
     {
         "username": "user6",
         "password": "user6",
         "email": "user6@hotmail.com",
-        "role": "user"
+        "role": "user",
+        "image": "\/assets\/images\/user\/"
+    },
+    {
+        "username": "user7",
+        "password": "user7",
+        "email": "user7@gmail.com",
+        "role": "admin"
     }
 ]

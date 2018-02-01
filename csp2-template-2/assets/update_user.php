@@ -20,7 +20,3 @@ fwrite($jsonFile, json_encode($users, JSON_PRETTY_PRINT));
 fclose($jsonFile);
 
 header("location: ../user.php?id=$user_id");
-
-
-
-
