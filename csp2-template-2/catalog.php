@@ -8,19 +8,26 @@ function getTitle() {
 
 include 'partials/head.php';
 // import items.json file
-$file = file_get_contents('assets/items.json');
-$items = json_decode($file, true);
+// $file = file_get_contents('assets/items.json');
+require 'connect.php';
+// $items = json_decode($file, true);
+$sql = "SELECT * FROM items";
+$items = mysqli_query($conn, $sql); 
+$item = mysqli_fetch_assoc($items);
 
 // Retrieve all categories
-$categories = array_column($items, 'category');
+// $categories = array_column($items, 'category');
 // var_export($categories);
+$sql1 = "SELECT description FROM categories";
+$categories = mysqli_query($conn, $sql1);
+
 
 // Filter unique entry of category
-$categories = array_unique($categories);
+// $categories = array_unique($categories);
 // var_export($categories);
 
 // sort items in ascending order
-sort($categories);
+// sort($categories);
 $result = array();	// Empty array
 // category chosen for filter
 if(isset($_GET['search']) && $_GET['category'] !== 'All') {
@@ -33,6 +40,7 @@ if(isset($_GET['search']) && $_GET['category'] !== 'All') {
 			array_push($result, $item);
 		}
 	}
+	
 } else { // show all items
 	$result = $items;
 }
@@ -59,13 +67,18 @@ if(isset($_GET['search']) && $_GET['category'] !== 'All') {
 				<option>All</option>
 				<?php
 
-				foreach ($categories as $category) {
-					# code...
-					if($category === $_GET['category']) {
-						echo '<option selected>'. $category .'</option>';
-					} else {
-						echo '<option>'. $category .'</option>';
-					}
+				// foreach ($categories as $category) {
+				// 	# code...
+				// 	if($category === $_GET['category']) {
+				// 		echo '<option selected>'. $category .'</option>';
+				// 	} else {
+				// 		echo '<option>'. $category .'</option>';
+				// 	}
+				// }
+
+				while ($category = mysqli_fetch_assoc($categories)) {
+					extract($category);
+					echo '<option>' . $description . '</option>';
 				}
 
 				?>
@@ -76,23 +89,44 @@ if(isset($_GET['search']) && $_GET['category'] !== 'All') {
 
 		<div class="items-wrapper">
 			<?php
-			foreach ($result as $key => $item) {
-				echo '
-					<div class="item-parent-container form-group">
-						<a href="item.php?id='. $item['id'] .'">
-						<div class="item-container">
-							<h3>'.$item['name'].'</h3>
-							<img src="'.$item['image'].'" alt="Mock data">
-							<p>PHP '.$item['price'].'</p>
-							<p>'.$item['description'].'</p>
-						</div>  <!-- /.item-container -->
-						</a>
-						<input id="itemQuantity'. $item['id'] .'" type="number" value="0" min="0">
-						<button class="btn btn-primary form-control"
-						onclick="addToCart('.$item['id'].')">Add to Cart</button>
+			// foreach ($result as $key => $item) {
+			// 	echo '
+			// 		<div class="item-parent-container form-group">
+			// 			<a href="item.php?id='. $item['id'] .'">
+			// 			<div class="item-container">
+			// 				<h3>'.$item['name'].'</h3>
+			// 				<img src="'.$item['image'].'" alt="Mock data">
+			// 				<p>PHP '.$item['price'].'</p>
+			// 				<p>'.$item['description'].'</p>
+			// 			</div>  <!-- /.item-container -->
+			// 			</a>
+			// 			<input id="itemQuantity'. $item['id'] .'" type="number" value="0" min="0">
+			// 			<button class="btn btn-primary form-control"
+			// 			onclick="addToCart('.$item['id'].')">Add to Cart</button>
 						
-					</div>
+			// 		</div>
+			// 	';
+			// }
+
+			while($item = mysqli_fetch_assoc($items)) {
+				extract($item);
+				echo '
+				<div class="item-parent-container form-group">
+			 			<a href="item.php?id='. $id .'">
+			 			<div class="item-container">
+			 				<h3>'.$product_name.'</h3>
+			 				<img src="http://lorempixel.com/300/300" alt="Mock data">
+			 				<p>PHP '.$price.'</p>
+			 				<p>'.$description.'</p>
+			 			</div>  <!-- /.item-container -->
+			 			</a>
+			 			<input id="itemQuantity'. $id .'" type="number" value="0" min="0">
+			 			<button class="btn btn-primary form-control"
+			 			onclick="addToCart('.$id.')">Add to Cart</button>
+						
+			 		</div>
 				';
+
 			}
 			?>
 		</div>  <!-- /.items-wrapper -->

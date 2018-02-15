@@ -1,5 +1,7 @@
 <?php
 
+require 'connect.php';
+
 session_start();
 
 if (isset($_SESSION['current_user'])) {
@@ -28,27 +30,31 @@ include 'partials/head.php';
 		<?php
 
 		$id = $_GET['id'];
+		$sql = "select * from users where id=$id";
+		$result = mysqli_query($conn, $sql);
+		$user = mysqli_fetch_assoc($result);
+		extract($user);
 
-		$file = file_get_contents('assets/users.json');
-		$users = json_decode($file, true);
+		// $file = file_get_contents('assets/users.json');
+		// $users = json_decode($file, true);
 
 		?>
 		<table>
 			<tr>
 				<td>Username</td>
-				<td><?php echo $users[$id]['username']; ?></td>
+				<td><?php echo $username; ?></td>
 			</tr>
 			<tr>
 				<td>Password</td>
-				<td><?php echo $users[$id]['password']; ?></td>
+				<td><?php echo $password; ?></td>
 			</tr>
 			<tr>
 				<td>Email</td>
-				<td><?php echo $users[$id]['email']; ?></td>
+				<td><?php echo $email; ?></td>
 			</tr>
 			<tr>
 				<td>Role</td>
-				<td><?php echo $users[$id]['role']; ?></td>
+				<td><?php echo $role_id; ?></td>
 			</tr>
 		</table>
 

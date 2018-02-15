@@ -1,0 +1,75 @@
+who are the customers from the Philippines?
+-SELECT customerName FROM customers WHERE country = 'Philippines';
+
+Who is the contact person of La Rochelle Gift's customer?
+-SELECT contactLastName, contactFirstName FROM customers WHERE customerName = 'La Rochelle Gift's';
+
+How much is Manufacturer suggested retail price (MSRP) of the Titanic product?
+-SELECT MSRP FROM products WHERE productName = 'The Titanic';
+
+Who uses the jfirrelli@classicmodelcars.com email?
+-SELECT lastName, firstName, extension FROM employees WHERE email = 'jfirrelli@classicmodelcars.com';
+
+Who are the customers that does not have a state?
+-SELECT customerName FROM customers WHERE state = NULL;
+
+First name and last name of employees who has office in Tokyo?
+-SELECT firstName, lastName, FROM employees e JOIN offices o ON (e.officeCode = o.officeCode) WHERE o.city = 'Tokyo';
+
+Who are the customers being served by Leslie Thompson?
+-SELECT customerName FROM customers c JOIN employees e ON (c.salesRepEmployeeNumber = e.employeeNumber) WHERE e.firstName = 'Leslie' AND e.lastName = 'Thompson';
+
+What products(productName) did the customer Baane Mini Imports ordered?
+-SELECT productName FROM products p JOIN orderDetails ON (p.productCode = od.productCode) JOIN orders o ON (od.orderNumber = o.orderNumber) JOIN customers c ON (o.customerNumber = c.customerNumber) WHERE customerName = 'Baane Mini Imports';
+
+List of employees who are in the same country with the customers they serve?
+-SELECT firstName, lastName FROM employees e JOIN customers ON (c.salesRepEmployeesNumber = e.employeesNumber) JOIN offices o ON(e.officeCode = o.officeCoe) WHERE c.country = o.country;
+
+Who are the employees who report to Anthony Bow?
+
+What is Anthony Bow's employeeNumber?
+-SELECT employeeNumber WHERE firstName = 'Anthony' AND lastName = 'Bow';
+
+Update the extension column for all the Sales Rep Number to x003?
+-UPDATE employees SET extension = 'x003' WHERE jobTitle = 'Sales Rep';
+
+Customer name without the letter 'A';
+-SELECT customerName FROM customers WHERE customerName NOT LIKE BINARY '%A%';
+
+Who is the customer who specified something like 'Malutong ang balat.' in their order?
+-SELECT customerName FROM customers c JOIN orders o ON (c.customerNumber = o.customerNumber) WHERE o.comments LIKE 'Malutong%';
+
+Which productline containes the "state of the art" product description?
+-SELECT productLine FROM products WHERE productDescription LIKE '%state of the art%';
+
+List all the countries of the customers
+-SELECT DISTINCT country FROM customers;
+
+List all the unique order status
+-SELECT DISTINCT status FROM orders;
+
+LIST of customers who are in USA, France, Canada, UK and Italy
+-SELECT customerName FROM customers WHERE country IN (USA, France, Canada, UK, Italy);
+
+Who is the producer of starwars?
+-SELECT me.name FROM MovieExec me WHERE cert# = (SELECT m.producerC# FROM Movies m WHERE m.title = 'Star wars');
+
+Who are the producers of Harrsion Ford's Movies?
+-SELECT name FROM MovieExec WHERE cert# IN (SELECT producerC# FROM Movies WHERE title = (SELECT movieTitle FROM starsIn WHERE starName = 'Harrison Ford'));
+
+// Movie titles that appear more than once(movies with multiple years)?
+// -SELECT movieTitle FROM starsIn WHERE 
+
+Find the average speed of PCs
+-SELECT AVG(speed) FROM pc;
+-SELECT AVG(speed) FROM pc GROUP BY speed;
+
+Find the average speed of laptops costing over $1000.
+-SELECT AVG(speed) FROM laptop WHERE price > '1000.00';
+-SELECT AVG(speed) FROM laptop GROUP BY price HAVING price > 1000.00;
+
+Find for each different speed, the average price of a PC.
+-SELECT AVG(price) from pc GROUP BY speed;
+
+Find the number of battleship classes
+-SELECT COUNT(class) from classes GROUP BY classes HAVING type = 'battleship'; ???

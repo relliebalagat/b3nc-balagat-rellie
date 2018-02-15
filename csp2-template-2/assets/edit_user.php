@@ -1,28 +1,32 @@
 <?php
-
+require '../connect.php';
 $id = $_GET['id'];
+$sql = "select * from users where id=$id";
+$result = mysqli_query($conn, $sql);
+$user = mysqli_fetch_assoc($result);
+extract($user);
 
 // successful processing
 
-$file = file_get_contents('users.json');
-$users = json_decode($file, true);
+// $file = file_get_contents('users.json');
+// $users = json_decode($file, true);
 
 echo '
 <div class="form-group">
 	<label>Username</label>
-	<input name="username" class="form-control" type="text" value="'.$users[$id]['username'].'">
+	<input name="username" class="form-control" type="text" value="'. $username .'">
 
 	<labe>Password</label>
-	<input name="password" class="form-control" type="password" value="'.$users[$id]['password'].'">
+	<input name="password" class="form-control" type="password" value="'.$password.'">
 
 	<labe>Confirm Password</label>
 	<input name="confirm_password" class="form-control" type="password">
 
 	<label>Email Address</label>
-	<input name="email" class="form-control" type="email" value="'.$users[$id]['email'].'">
+	<input name="email" class="form-control" type="email" value="'.$email.'">
 ';
 
-	$roles = ['admin', 'user'];
+	$roles = ['1', '2', '3'];
 	echo '
 	<label>Role</label>
 	<select class="form-control" name="user_role">';
@@ -35,3 +39,5 @@ echo '
 	echo'
 	</select>
 </div>';
+
+mysqli_close($conn);

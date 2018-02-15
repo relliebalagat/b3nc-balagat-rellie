@@ -26,7 +26,7 @@ include 'partials/head.php';
 		<?php
 
 		if(isset($_SESSION['current_user'])) {
-			echo '<h3>Welcome ' . $_SESSION['current_user'] . '!</h3>';
+			echo '<h3>Welcome ' . $_SESSION['current_user'] . '(' . $_SESSION['role'] . ')</h3>';
 		}
 
 		?>

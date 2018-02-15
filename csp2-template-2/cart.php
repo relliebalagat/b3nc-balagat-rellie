@@ -67,13 +67,7 @@ $items = json_decode($file, true);
 				        <h4 class="modal-title">Delete Item</h4>
 				      </div>
 				      <div id="deleteItemCartModalBody" class="modal-body">
-				      	<p>Do you really want to delete this item on your cart?'. $items[$key]['id'] .'</p>
-						<div class="item-container">
-							<h3>' . (int)$value .' '. $items[$key]['name'] .'</h3>
-							<img src="'. $items[$key]['image'] .'" alt="Mock data">
-							<p>PHP '.$items[$key]['price'].'</p>
-							<p>'.$items[$key]['description'].'</p>
-						</div>  <!-- /.item-container -->
+				      	<p>Do you really want to delete this '.$items[$key]['name'].' on your cart?</p>
 				      </div>
 				      <div class="modal-footer">
 				        <button type="submit" class="btn btn-danger">Yes</button>

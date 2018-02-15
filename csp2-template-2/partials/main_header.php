@@ -39,7 +39,6 @@
         <li><a href="about.php">About</a></li>
         <li><a href="careers.php">Careers</a></li>
         <li><a href="catalog.php">Catalog</a></li>
-        <li><a href="catalog.php">Test</a></li>
         
         <?php
 

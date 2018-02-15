@@ -1,22 +1,34 @@
 <?php
 
+require '../connect.php';
+
 $user_id = $_POST['user_id'];
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = sha1($_POST['password']);
 $email = $_POST['email'];
-$user_role = $_POST['role'];
+$user_role = $_POST['user_role'];
+$image = 'http://lorempixel.com/300/300';
+$first_name = 'Juan';
+$last_name = 'Dela Cruz';
+$address = 'Mandaluyong City';
+$contact = '09997785468';
 
-$file = file_get_contents('users.json');
+$sql = "UPDATE users SET username='$username', password='$password', email='$email', role_id= '$user_role', image='$image', first_name='$first_name', last_name='$address', contact='$contact' WHERE id='$user_id'";
 
-$users = json_decode($file, true);
+mysqli_query($conn, $sql);
 
-$users[$user_id]['username'] = $username;
-$users[$user_id]['password'] = $password;
-$users[$user_id]['email'] = $email;
-$users[$user_id]['role'] = $user_role;
+// $file = file_get_contents('users.json');
 
-$jsonFile = fopen('users.json', 'w');
-fwrite($jsonFile, json_encode($users, JSON_PRETTY_PRINT));
-fclose($jsonFile);
+// $users = json_decode($file, true);
+
+// $users[$user_id]['username'] = $username;
+// $users[$user_id]['password'] = $password;
+// $users[$user_id]['email'] = $email;
+// $users[$user_id]['role'] = $user_role;
+
+// $jsonFile = fopen('users.json', 'w');
+// fwrite($jsonFile, json_encode($users, JSON_PRETTY_PRINT));
+// fclose($jsonFile);
 
 header("location: ../user.php?id=$user_id");
+mysqli_close($conn);
