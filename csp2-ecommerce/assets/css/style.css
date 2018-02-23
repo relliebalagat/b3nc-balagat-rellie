@@ -2,7 +2,8 @@ body,
 .panel h4,
 .jumbotron h1,
 .footer-list li,
-.footer-last-list li {
+.footer-last-list li,
+.my-account .panel-heading h3 {
 	font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -325,4 +326,59 @@ select.form-control {
 .save-price {
 	font-style: italic;
 	text-align: center;
+}
+
+/* HOME PAGE */
+
+.message-board {
+	width: 100%;
+	border: 1px #55efc4 solid;
+	height: 8rem;
+	display: block;
+	margin-top: 70px;
+	margin-bottom: 20px;
+	color: #218c74;
+	background-color: #55efc4;
+}
+
+
+/* my account page */
+.my-account {
+	width: 70%;
+	height: 50rem;
+	margin-top: 70px;
+	border: 1px #55efc4 solid;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.my-account .panel {
+	width: 70%;
+	margin-top: 30px;
+}
+
+.my-account .panel li {
+	list-style-type: none;
+	text-align: center;
+	/*padding: 10px 0;
+	border-bottom: 1px solid gray;*/
+}
+
+.my-account .panel li:hover {
+	background-color: rgba(0, 184, 148, .2);
+}
+
+.my-account .panel li a:hover {
+	color: #337ab7;
+}
+
+.my-account .panel-heading {
+	height: 50px;
+}
+
+.my-account .panel-heading h3{
+	line-height: 30px;
+	font-size: 20px;
+	font
 }
