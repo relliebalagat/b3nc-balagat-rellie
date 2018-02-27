@@ -22,3 +22,10 @@ B. What is important to the audience?
 [Home page](https://wireframe.cc/6urHx4) 
 [Admin page](https://wireframe.cc/5hguWk)
 [Collections Page](https://wireframe.cc/ay5ttw)
+[Registration Page](https://wireframe.cc/tS0eJu)
+[Login Page](https://wireframe.cc/Xx2iP7)
+
+
+## Database Design
+![alt text](capstone2-database-design.png "Database Design for capstone2")
+
