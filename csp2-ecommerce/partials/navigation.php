@@ -19,18 +19,18 @@ session_start();
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="home.php">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Collections</a></li>
+					<li><a href="about.php">About</a></li>
+					<li><a href="collections.php">Collections</a></li>
 					<?php
 
 					if(isset($_SESSION['first_name'])) {
-						echo '<li><a href="#"><span class="glyphicon glyphicon-user"></span>My Account</a></li>';
-						echo '<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>';
-						echo '<li><a href="#">Log out</a></li>';
+						echo '<li><a href="account.php"><span class="glyphicon glyphicon-user"></span>My Account</a></li>';
+						echo '<li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>';
+						echo '<li><a href="assets/logout.php">Log out</a></li>';
 					}  else {
-						echo '<li><a href="#">Sign In</a></li>';
-						echo '<li><a href="#">Register</a></li>';
-						echo '<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>';
+						echo '<li><a href="login.php">Sign In</a></li>';
+						echo '<li><a href="registration.php">Register</a></li>';
+						echo '<li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>';
 					}
 
 					?>

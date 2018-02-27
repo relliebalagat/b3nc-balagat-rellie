@@ -37,18 +37,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$errors[] = 'You forgot to enter your password.';
 	}
 
+	
 
 	if(empty($errors)) {
 
 		// sql query
-		$query = "INSERT INTO users (first_name, last_name, email, pass, registration_date) VALUES ('$first_name', '$last_name', '$email', SHA1('$password'), NOW())";
+		$query = "INSERT INTO users (first_name, last_name, email, password, registration_date) VALUES ('$first_name', '$last_name', '$email', SHA1('$password'), NOW())";
 
 		$result = mysqli_query($dbconn, $query);
-
 		
 		if($result) {
-
-
 			header('location: ../login.php');
 		} else {
 			

@@ -2,7 +2,6 @@
 
 session_start();
 
-
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	require '../mysqli_connect.php';
@@ -17,8 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	if($email && $password) {
 
-		
-		$query = "SELECT users.email, users.password, users.first_name FROM users WHERE email='$email'";
+		$query = "SELECT users.id, users.email, users.password, users.first_name, users.role_id FROM users WHERE email='$email'";
 
 		$result = mysqli_query($dbconn, $query);
 
@@ -26,11 +24,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 			$data = mysqli_fetch_assoc($result);
 
-			//var_export($data);
+			$_SESSION['user_id'] = $data['id'];
+			$_SESSION['roles'] = $data['role_id'];
 			$_SESSION['first_name'] = $data['first_name'];
+			$_SESSION['email'] = $data['email'];			
+
+			// echo $_SESSION['user_id'];
+
+
+			// if($_SESSION['roles'] == "1") {
+			// 	header('location: ../admin.php');
+			// } else {
+			// 	header('location: ../home.php');	
+			// }
 
 			header('location: ../home.php');
 		}
 	}
-
 }
