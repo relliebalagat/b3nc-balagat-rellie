@@ -23,14 +23,12 @@ include 'partials/header.php';
 					<img src="assets/img/profile_picture.png">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title text-center">Personal and Order Details</h3>
+							<h3 class="panel-title text-center">Personal and Orders Details</h3>
 						</div>
 						<ul class="list-group">
 							<li class="list-group-item"><a href="password.php">Change Password</a></li>
 							<li class="list-group-item"><a href="#">My Wishlist</a></li>
 							<li class="list-group-item"><a href="#">Order History, Status, &amp; Returns</a></li>
-							<li class="list-group-item"><a href="#">Payment Options</a></li>
-							<li class="list-group-item"><a href="#">Personal Details</a></li>
 							
 						</ul>
 					</div>	<!-- ./panel panel-default -->
@@ -44,6 +42,8 @@ include 'partials/header.php';
 
 <?php
 
-include 'partials/footer.php'
+include 'partials/footer.php';
+
+include 'partials/foot.php';
 
 ?>

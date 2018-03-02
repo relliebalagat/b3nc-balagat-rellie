@@ -286,6 +286,8 @@ include 'partials/header.php';
 	
 <?php
 
-include 'partials/footer.php'
+include 'partials/footer.php';
+
+include 'partials/foot.php';
 
 ?>

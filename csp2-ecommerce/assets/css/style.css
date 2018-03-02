@@ -93,7 +93,7 @@ footer a:hover {
 a.thumbnail:hover,
 .thumbnail:hover,
 .offer:hover {
-	border: 1px solid rgb(38, 166, 91);
+	outline: 1px solid rgb(38, 166, 91);
 	box-shadow: 5px 10px 5px #bdc3c7;
 }
 
@@ -236,7 +236,8 @@ input {
 	border-radius: 0;
 }
 
-form input[type="submit"] {
+form input[type="submit"],
+.full-width {
 	width: 100%;
 }
 
@@ -342,23 +343,28 @@ select.form-control {
 /* HOME PAGE */
 
 .message-board {
-	width: 100%;
+	width: 85%;
 	border: 1px #55efc4 solid;
 	height: 8rem;
 	display: block;
 	margin-top: 70px;
 	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
 	color: #218c74;
-	background-color: #55efc4;
+	background-color: rgba(85, 239, 196, .3);
+}
+
+.message-board h2 {
+	margin-top: 23px;
 }
 
 
-/* my account page */
+/* MY ACCOUNT */
 .my-account {
 	width: 70%;
 	height: 50rem;
 	margin-top: 70px;
-	/*border: 1px #55efc4 solid;*/
 	margin-bottom: 30px;
 	margin-left: auto;
 	margin-right: auto;
@@ -366,18 +372,16 @@ select.form-control {
 
 .my-account .panel {
 	width: 70%;
-	margin-top: 30px;
+	margin-top: 40px;
 }
 
 .my-account .panel li {
 	list-style-type: none;
 	text-align: center;
-	/*padding: 10px 0;
-	border-bottom: 1px solid gray;*/
 }
 
 .my-account .panel li:hover {
-	background-color: rgba(0, 184, 148, .2);
+	background-color: rgba(85, 239, 196, .5);
 }
 
 .my-account .panel li a:hover {
@@ -395,8 +399,14 @@ select.form-control {
 }
 
 .my-account img {
-	margin-top: 20px;
+	margin-top: 25px;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
+	background-color: rgb(85,239,196);
+	padding: 20px;
+}
+
+.modal-content {
+	border-radius: 0;
 }

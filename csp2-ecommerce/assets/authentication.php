@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	if($email && $password) {
 
-		$query = "SELECT users.id, users.email, users.password, users.first_name, users.role_id FROM users WHERE email='$email'";
+		$query = "SELECT users.id, users.email, users.password, users.first_name, users.role_id FROM users WHERE email='$email' AND password=SHA1('$password')";
 
 		$result = mysqli_query($dbconn, $query);
 
@@ -39,6 +39,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			// }
 
 			header('location: ../home.php');
+		} else {
+			echo 'wrong username or password';
 		}
 	}
 }

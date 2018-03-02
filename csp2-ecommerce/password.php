@@ -10,49 +10,8 @@ include 'partials/header.php';
 // 	header('location: ../index.php');
 // }
 
-echo $_SESSION['user_id'];
-
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-	require 'mysqli_connect.php';
-
-	$password = false;
-
-	if($_POST['new_password'] == $_POST['confirm_password']) {
-		$password = mysqli_real_escape_string($dbconn, $_POST['new_password']);
-	}
-
-	if($password) {
-		$query = "UPDATE users SET password=SHA1('$password') WHERE user_id={$_SESSION['user_id']} LIMIT 1";
-
-		$result = mysqli_query($dbconn, $query);
-
-		if(mysqli_affected_rows($dbconn) == 1) {
-			echo '
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Your Password Has Been Changed
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>';
-		}
-	}
 
 
-}
 ?>
 
 </head>
@@ -62,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="form-group">
-					<form class="account-form-set" id="signInForm" action="password.php" method="POST">
+					<form class="account-form-set" id="signInForm" action="assets/change_password.php" method="POST">
 						<h3 class="text-center">Change Password</h3>
 
 						<label>Current Email</label>
@@ -78,25 +37,44 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 						<input type="password" name="confirm_password" class="form-control" id="confirmPassword">
 
 						<hr>
-						<input type="submit" name="submit" class="btn btn-primary" id="submit" value="Change Password" data-toggle="modal" data-target="#exampleModal">
+						<!-- <input type="button" name="submit" class="btn btn-primary" id="changePassword" value="Change Password" data-toggle="modal" data-target="#changePassword"> -->
+
+						<button type="button" class="btn btn-primary full-width" data-toggle="modal" data-target="#cp" id="changePassword">
+							Change Password
+						</button>
 						<hr>
-					
+
+						<!-- Modal -->
+						<div class="modal fade" id="cp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLongTitle">CHange Password</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										Are you sure you want to change your password
+									</div>
+									<div class="modal-footer">
+										<button type="submit" class="btn btn-secondary">Yes</button>
+										<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+									</div>
+								</div>
+							</div>
+
+
 					</form>
 				</div>	<!-- ./form-group -->
 			</div>	<!-- ./col-lg-12 -->
 		</div>	<!-- ./row -->
 	</div>	<!-- ./container -->
 
-	<?php 
 
 
-	?>
+<?php
 
-	<script>
-		$('#myModal').on('shown.bs.modal', function () {
-			$('#myInput').focus()
-		});
-	</script>
+include 'partials/foot.php';
 
-</body>
-</html>
+?>

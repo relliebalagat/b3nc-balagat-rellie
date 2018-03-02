@@ -5,7 +5,7 @@
 DEFINE('DB_HOST', 'localhost');
 DEFINE('DB_USER', 'root');
 DEFINE('DB_PASSWORD', '');
-DEFINE('DB_NAME', 'capstone2_ecommerce');
+DEFINE('DB_NAME', 'bookstore_capstone2');
 
 $dbconn = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
