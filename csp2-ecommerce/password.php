@@ -49,17 +49,17 @@ include 'partials/header.php';
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLongTitle">CHange Password</h5>
+										<span class="modal-title" id="exampleModalLongTitle">Change Password</span>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
 									<div class="modal-body">
-										Are you sure you want to change your password
+										Are you sure you want to change your password?
 									</div>
 									<div class="modal-footer">
-										<button type="submit" class="btn btn-secondary">Yes</button>
-										<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+										<button type="submit" class="btn btn-primary">Yes</button>
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 									</div>
 								</div>
 							</div>

@@ -318,7 +318,7 @@ select.form-control {
 	color: #ff7675;
 	font-size: 1.3em;
 	text-align: center;
-	margin-bottom: 0;
+	margin-bottom: 5px;
 }
 
 .book-title {
@@ -407,6 +407,50 @@ select.form-control {
 	padding: 20px;
 }
 
+/* MODAL */
+
 .modal-content {
 	border-radius: 0;
+}
+
+/* ITEM CONTAINER */
+
+.item-container .panel {
+	margin-top: 70px;
+	margin-bottom: 50px;
+	padding: 20px;
+	box-shadow: 10px 10px 30px -5px rgba(189,195,199,1);
+}
+
+.item-container .panel .img-container img{
+	width: 250px;
+	height: 400px;
+	box-shadow: 0px 0px 1px 1px rgba(189,195,199,1);
+}
+
+.item-container .panel .img-container {
+	display: inline-block;
+	width: 35%;
+}
+
+.item-container .panel .content {
+	float: right;
+	width: 65%;
+}
+
+.item-container .btn {
+	width: 49.5%;
+}
+
+.item-description {
+	text-align: justify;
+	height: 10rem;
+}
+
+.item-container .content .price {
+	font-size: 2em;
+}
+
+.item-container .content .fas {
+	padding: 5px 10px 10px 5px;
 }

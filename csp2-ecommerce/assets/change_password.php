@@ -3,10 +3,13 @@
 session_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    echo "success";
+    
     require '../mysqli_connect.php';
 
     $password = false;
+
+    echo $_POST['new_password'];
+    echo $_POST['confirm_password'];
 
     if($_POST['new_password'] == $_POST['confirm_password']) {
         $password = mysqli_real_escape_string($dbconn, $_POST['new_password']);

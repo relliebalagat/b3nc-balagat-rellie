@@ -15,3 +15,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet"> 
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet"> 
+
+	<!-- Font Awesome CDN -->
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
