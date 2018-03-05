@@ -106,8 +106,8 @@ a.thumbnail:hover,
 	border: 0;
 }
 
-.thumbnail img {
-	height: 340px;
+.thumbnail > a img {
+	height: 300px;
 }
 
 .thumbnail h4 {
@@ -453,4 +453,9 @@ select.form-control {
 
 .item-container .content .fas {
 	padding: 5px 10px 10px 5px;
+}
+
+/* Collections Page */
+.collections h2 {
+	margin-top: 60px;
 }

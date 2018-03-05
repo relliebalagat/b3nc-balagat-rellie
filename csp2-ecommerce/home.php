@@ -1,7 +1,5 @@
 <?php
 
-
-
 if(!isset($_SESSION)){
 	session_start();	
 }
@@ -9,32 +7,8 @@ if(!isset($_SESSION)){
 $page_title = 'Home';
 
 include 'partials/header.php';
-
 require 'mysqli_connect.php';
-
-// Query to view the fiction books
-$fiction_query = "SELECT b.id, b.title, b.price, b.image, b.description FROM books b JOIN genres g ON b.genre_id = g.id WHERE g.description = 'fiction' LIMIT 4";
-// result of query for fiction books
-$fq_result = mysqli_query($dbconn, $fiction_query) or die(mysqli_error($dbconn));
-
-
-// Query to view the non fiction books
-$nonfiction_query = "SELECT b.id, b.title, b.price, b.image, b.description FROM books b JOIN genres g ON b.genre_id = g.id WHERE g.description = 'non fiction' LIMIT 4";
-// result of query for non fiction books
-$nfq_result = mysqli_query($dbconn, $nonfiction_query) or die(mysqli_error($dbconn));
-
-
-// Query to view the childrens books
-$cb_query = "SELECT b.id, b.title, b.price, b.image, b.description FROM books b JOIN genres g ON b.genre_id = g.id WHERE g.description = 'children\'s book' LIMIT 4";
-// result of query for non fiction books
-$cb_result = mysqli_query($dbconn, $cb_query) or die(mysqli_error($dbconn));
-
-
-// Query to view the textbooks
-$textbook_query = "SELECT b.id, b.title, b.price, b.image, b.description FROM books b JOIN genres g ON b.genre_id = g.id WHERE g.description = 'textbook' LIMIT 4";
-// result of query for non fiction books
-$textbook_result = mysqli_query($dbconn, $textbook_query) or die(mysqli_error($dbconn));
-
+include 'assets/functions.php';
 
 ?>
 </head>
@@ -46,7 +20,6 @@ $textbook_result = mysqli_query($dbconn, $textbook_query) or die(mysqli_error($d
 	include 'partials/searchbox.php';
 	
 	?>
-
 
 	<div class="container">
 		<div class="row">
@@ -72,8 +45,9 @@ $textbook_result = mysqli_query($dbconn, $textbook_query) or die(mysqli_error($d
 				<div class="panel-body">
 					<div class="row">
 						
-
+						
 				<?php
+				$fq_result = collections_query('fiction');
 
 				if($fq_result) {
 					if(mysqli_num_rows($fq_result) > 0) {
@@ -81,9 +55,9 @@ $textbook_result = mysqli_query($dbconn, $textbook_query) or die(mysqli_error($d
 							echo '
 							<div class="col-lg-3 col-md-6">
 								<div class="thumbnail">
-									<img src="'.$item['image'].'" alt="'. $item['description'].'" class="book-img">
+									<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'].'" class="book-img"></a>
 								</div>
-									<p class="book-title"><a href="#">'.$item['title'].'</a></p>
+									<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
 									<p class="price">PHP '.$item["price"].'</p>
 									<button class="btn btn-primary basket-btn">Add to Basket</button>
 							</div>
@@ -109,15 +83,17 @@ $textbook_result = mysqli_query($dbconn, $textbook_query) or die(mysqli_error($d
 						
 					<?php
 
+					$nfq_result = collections_query('non fiction');
+
 					if($nfq_result) {
 						if(mysqli_num_rows($nfq_result) > 0) {
 							while ($item = mysqli_fetch_assoc($nfq_result)) {
 								echo '
 								<div class="col-lg-3 col-md-6">
 									<div class="thumbnail">
-										<img src="'.$item['image'].'" alt="'. $item['description'].'" class="book-img">
+										<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'].'" class="book-img"></a>
 									</div>
-										<p class="book-title"><a href="#">'.$item['title'].'</a></p>
+										<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
 										<p class="price">PHP '.$item["price"].'</p>
 										<button class="btn btn-primary basket-btn">Add to Basket</button>
 								</div>
@@ -138,7 +114,7 @@ $textbook_result = mysqli_query($dbconn, $textbook_query) or die(mysqli_error($d
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h4><a href="#">Fiction</a></h4>
+					<h4><a href="#">Children's Book</a></h4>
 					<small><a href="#" class="set-right">View More</a></small>
 				</div>
 				<div class="panel-body">
@@ -146,6 +122,7 @@ $textbook_result = mysqli_query($dbconn, $textbook_query) or die(mysqli_error($d
 						
 
 				<?php
+				$cb_result = collections_query('children book');
 
 				if($cb_result) {
 					if(mysqli_num_rows($cb_result) > 0) {
@@ -153,9 +130,9 @@ $textbook_result = mysqli_query($dbconn, $textbook_query) or die(mysqli_error($d
 							echo '
 							<div class="col-lg-3 col-md-6">
 								<div class="thumbnail">
-									<img src="'.$item['image'].'" alt="'. $item['description'].'" class="book-img">
+									<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'].'" class="book-img"></a>
 								</div>
-									<p class="book-title"><a href="#">'.$item['title'].'</a></p>
+									<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
 									<p class="price">PHP '.$item["price"].'</p>
 									<button class="btn btn-primary basket-btn">Add to Basket</button>
 							</div>
@@ -174,7 +151,7 @@ $textbook_result = mysqli_query($dbconn, $textbook_query) or die(mysqli_error($d
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h4><a href="#">Fiction</a></h4>
+					<h4><a href="#">Textbooks</a></h4>
 					<small><a href="#" class="set-right">View More</a></small>
 				</div>
 				<div class="panel-body">
@@ -182,7 +159,7 @@ $textbook_result = mysqli_query($dbconn, $textbook_query) or die(mysqli_error($d
 						
 
 				<?php
-
+				$textbook_result = collections_query('textbook');
 
 				if($textbook_result) {
 					if(mysqli_num_rows($textbook_result) > 0) {
@@ -190,9 +167,9 @@ $textbook_result = mysqli_query($dbconn, $textbook_query) or die(mysqli_error($d
 							echo '
 							<div class="col-lg-3 col-md-6">
 								<div class="thumbnail">
-									<img src="'.$item['image'].'" alt="'. $item['description'] .'" class="book-img">
+									<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'] .'" class="book-img"></a>
 								</div>
-									<p class="book-title"><a href="#">'. $item['title'] .'</a></p>
+									<p class="book-title"><a href="items.php?id='.$item['id'].'">'. $item['title'] .'</a></p>
 									<p class="price">PHP '. $item["price"] .'</p>
 									<button class="btn btn-primary basket-btn">Add to Basket</button>
 							</div>

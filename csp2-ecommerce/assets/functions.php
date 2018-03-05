@@ -1,0 +1,11 @@
+<?php
+
+function collections_query($type) {
+	$dbconn = db_connect();
+	// Query to view the fiction books
+	$query = "SELECT b.id, b.title, b.price, b.image, b.description FROM books b JOIN genres g ON b.genre_id = g.id WHERE g.description = '$type' LIMIT 4";
+
+	// result of query for fiction books
+	$result = mysqli_query($dbconn, $query) or die(mysqli_error($dbconn));
+	return $result;
+}
