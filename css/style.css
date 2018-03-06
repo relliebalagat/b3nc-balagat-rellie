@@ -20,6 +20,24 @@ h2 {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	color: tomato;
+	font-size: 2.3em;
+}
+
+h3 {
+	color: tomato;
+	font-size: 2em;
+}
+
+h4 {
+	font-size: 1.7em;
+}
+
+h5 {
+	font-size: 1.4em;
+}
+
+hr {
+	border-color: crimson;
 }
 
 #me {
@@ -38,7 +56,51 @@ h2 {
 }
 
 .container {
-	width: 500px;
+	width: 960px;
 	margin: 0 auto;
+	text-align: center;
+}
+
+.technology ul > li {
+	list-style-type: none;
+	display: inline;
+}
+
+.fa-html5, .fa-css3-alt, .fa-js, .fa-php, .fa-linux {
+	font-size: 5em;
+	padding: 1%;
+	padding-right: 30px;
+}
+
+.project {
+	width: 560px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px;
+}
+
+
+.message {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+textarea {
+	width: 500px;
+	height: 150px;
+}
+
+input {
+	width: 500px;
+	margin-bottom: 20px;
+}
+
+button, label {
+	display: block;
+}
+
+button {
+	padding: 8px;
 	text-align: center;
 }
