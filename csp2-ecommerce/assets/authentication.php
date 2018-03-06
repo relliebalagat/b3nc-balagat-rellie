@@ -6,6 +6,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	require '../mysqli_connect.php';
 
+	$dbconn = db_connect();
+
 	if(!empty($_POST['email'])) {
 		$email = mysqli_real_escape_string($dbconn, $_POST['email']);
 	}

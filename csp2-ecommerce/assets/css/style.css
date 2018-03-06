@@ -101,12 +101,16 @@ a.thumbnail:hover,
 	width: 100%;
 }
 
+.collections .panel-body button {
+	margin-bottom: 40px;
+}
+
 .thumbnail {
 	border-radius: 0;
 	border: 0;
 }
 
-.thumbnail > a img {
+div.thumbnail img.book-img {
 	height: 300px;
 }
 
@@ -158,8 +162,20 @@ a.thumbnail:hover,
 	border-radius: 0;
 }
 
-.basket-btn {
+.basket-btn, .remove-btn {
 	width: 100%;
+}
+
+.remove-btn {
+	border-color: #00b894;
+	color: #00b894;
+	background-color: white;
+}
+
+.remove-btn:hover {
+	background-color: #00b894;
+	border-color: #00b894;
+	color: #fff;
 }
 
 .form-group .btn-primary,
@@ -342,7 +358,7 @@ select.form-control {
 
 /* HOME PAGE */
 
-.message-board {
+.message-board, .basket-details {
 	width: 85%;
 	border: 1px #55efc4 solid;
 	height: 8rem;
@@ -355,7 +371,7 @@ select.form-control {
 	background-color: rgba(85, 239, 196, .3);
 }
 
-.message-board h2 {
+.message-board h2, {
 	margin-top: 23px;
 }
 
@@ -433,9 +449,10 @@ select.form-control {
 	width: 35%;
 }
 
-.item-container .panel .content {
+.item-container .panel .content,
+.item-container .panel .content .basket-item .content {
 	float: right;
-	width: 65%;
+	width: 60%;
 }
 
 .item-container .btn {
@@ -456,6 +473,103 @@ select.form-control {
 }
 
 /* Collections Page */
+
 .collections h2 {
 	margin-top: 60px;
 }
+
+.collections ul {
+	margin-bottom: 20px;
+}
+
+/* Basket Details */
+
+.basket h2 {
+	margin-top: 70px;
+}
+
+.basket-details {
+	margin-top: 20px;
+}
+
+.basket-details p,
+.basket-details .fa-shopping-basket {
+	font-size: 1.5em;
+	margin-top: 10px;
+}
+
+.basket-collections h4 {
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+.basket-collections .basket-item img {
+	height: 300px;
+	margin-left: 20px;
+	box-shadow: 0px 0px 1px 1px rgba(189,195,199,1);
+}
+
+.basket-item {
+	padding-bottom: 10px;
+}
+
+.basket-item .img-container {
+	display: inline-block;
+	width: 25%;
+}
+
+.basket-item .content {
+	display: inline-block;
+	width: 60%;
+	transform: translate(0, 25%);
+}
+
+.basket-item .product-input {
+	display: inline-block;
+	width: 10%;
+	height: 100%;
+}
+
+.basket-item .content p.price {
+	text-align: left;
+}
+
+.product-input select {
+	width: 100%;
+	padding: 5px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.product-input button {
+	margin-top: 30px;
+}
+
+.basket-total {
+	width: 400px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+	height: 180px;
+	display: block;
+	text-align: justify;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.basket-total {
+	font-size: 1.5em;
+}
+
+.basket-total button {
+	display: block;
+	width: 70%;
+	margin: 10px auto 10px auto;
+}
+
+.panel span	{
+	margin-left: 100px;
+}
+
+
+
+

@@ -47,7 +47,7 @@ include 'assets/functions.php';
 						
 						
 				<?php
-				$fq_result = collections_query('fiction');
+				$fq_result = collections_query('fiction', 4);
 
 				if($fq_result) {
 					if(mysqli_num_rows($fq_result) > 0) {
@@ -83,7 +83,7 @@ include 'assets/functions.php';
 						
 					<?php
 
-					$nfq_result = collections_query('non fiction');
+					$nfq_result = collections_query('non fiction', 4);
 
 					if($nfq_result) {
 						if(mysqli_num_rows($nfq_result) > 0) {
@@ -122,7 +122,7 @@ include 'assets/functions.php';
 						
 
 				<?php
-				$cb_result = collections_query('children book');
+				$cb_result = collections_query('children book', 4);
 
 				if($cb_result) {
 					if(mysqli_num_rows($cb_result) > 0) {
@@ -156,10 +156,9 @@ include 'assets/functions.php';
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						
 
 				<?php
-				$textbook_result = collections_query('textbook');
+				$textbook_result = collections_query('textbook', 4);
 
 				if($textbook_result) {
 					if(mysqli_num_rows($textbook_result) > 0) {
@@ -179,6 +178,7 @@ include 'assets/functions.php';
 					}
 				}
 
+				mysqli_close(db_connect());
 				?>
 
 					</div> <!-- ./row -->

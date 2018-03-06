@@ -26,7 +26,7 @@
 					}  else {
 						echo '<li><a href="login.php">Sign In</a></li>';
 						echo '<li><a href="registration.php">Register</a></li>';
-						echo '<li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>';
+						echo '<li id="cart"><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>';
 					}
 
 					?>

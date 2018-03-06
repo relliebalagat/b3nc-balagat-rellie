@@ -65,9 +65,8 @@ require 'mysqli_connect.php';
 
 				for($i = 1; $i <= 4; $i++) {
 					
-					$random = rand(1, 20);	
-					shuffle($random_id);
-					array_slice($numbers, 0, 1);
+					$random_id = rand(1, 20);	
+					
 					
 					$random_query = "SELECT b.id, b.title, b.price, b.image FROM books b WHERE b.id = {$random_id}";
 					$result = @mysqli_query(db_connect(), $random_query);
@@ -88,6 +87,8 @@ require 'mysqli_connect.php';
 				
 
 				}			
+		
+				mysqli_close(db_connect());
 		
 				?>
 
