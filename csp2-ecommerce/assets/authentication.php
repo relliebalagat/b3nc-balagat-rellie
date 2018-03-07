@@ -31,16 +31,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$_SESSION['first_name'] = $data['first_name'];
 			$_SESSION['email'] = $data['email'];			
 
-			// echo $_SESSION['user_id'];
+			if($_SESSION['roles'] == "1") {
+				header('location: ../admin.php');
+			} else {
+				header('location: ../home.php');	
+			}
 
-
-			// if($_SESSION['roles'] == "1") {
-			// 	header('location: ../admin.php');
-			// } else {
-			// 	header('location: ../home.php');	
-			// }
-
-			header('location: ../home.php');
+			
 		} else {
 			echo 'wrong username or password';
 		}

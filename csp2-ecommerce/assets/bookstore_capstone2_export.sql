@@ -294,7 +294,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `email` (`email`),
   KEY `users_fk0` (`role_id`),
   CONSTRAINT `users_fk0` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -303,7 +303,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,1,'Rellie','Balagat','relliebalagat@gmail.com','1f8ac10f23c5b5bc1167bda84b833e5c057a77d2','2018-03-03 12:07:40'),(2,2,'Elon','Musk','elonmusk@gmail.com','07db55ed85fa513f658dff200a102b24870b36eb','2018-03-06 17:56:34');
+INSERT INTO `users` VALUES (1,1,'Rellie','Balagat','relliebalagat@gmail.com','1f8ac10f23c5b5bc1167bda84b833e5c057a77d2','2018-03-03 12:07:40');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -342,4 +342,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-06 21:26:28
+-- Dump completed on 2018-03-05 21:27:23

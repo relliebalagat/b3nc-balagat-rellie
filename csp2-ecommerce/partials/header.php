@@ -8,9 +8,9 @@
 
 	<!-- CSS stylesheets -->
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap/css/bootstrap.css">
+	
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<!-- <link rel="stylesheet" type="text/css" href="assets/css/sidebar.css"> -->
-
+	
 	<!-- Google Fonts stylesheet -->
 	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet"> 
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">

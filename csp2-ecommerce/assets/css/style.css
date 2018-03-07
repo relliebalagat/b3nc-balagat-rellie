@@ -25,6 +25,7 @@ footer {
 
 footer, .navbar{
 	background-color: #218c74;
+	opacity: .8;
 }
 
 .navbar	{

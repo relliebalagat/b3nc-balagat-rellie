@@ -5,6 +5,7 @@ $page_title = 'Admin Page';
 include 'partials/header.php';
 
 ?>
+    <link rel="stylesheet" type="text/css" href="assets/css/sidebar.css">
 
 </head>
 <body>
@@ -19,56 +20,59 @@ include 'partials/header.php';
                 </div>
 
                 <ul class="list-unstyled components">
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                    <li>
+                        <a href="#">
                             <i class="glyphicon glyphicon-home"></i>
                             Home
                         </a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li><a href="#">Home 1</a></li>
-                            <li><a href="#">Home 2</a></li>
-                            <li><a href="#">Home 3</a></li>
-                        </ul>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="glyphicon glyphicon-briefcase"></i>
-                            About
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                            Orders
                         </a>
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
                             <i class="glyphicon glyphicon-duplicate"></i>
-                            Pages
+                            Items
                         </a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li><a href="#">Page 1</a></li>
-                            <li><a href="#">Page 2</a></li>
-                            <li><a href="#">Page 3</a></li>
+                            <li><a href="#" onclick="loadItems()">All</a></li>
+                            <li><a href="#">Fiction</a></li>
+                            <li><a href="#">Non Fiction</a></li>
+                            <li><a href="#">Children's Book</a></li>
+                            <li><a href="#">Textbook</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="glyphicon glyphicon-link"></i>
-                            Portfolio
+                        <a href="#" onclick="loadUser()">
+                            <i class="glyphicon glyphicon-user"></i>
+                            Users
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="glyphicon glyphicon-paperclip"></i>
-                            FAQ
+                            <i class="glyphicon glyphicon-signal"></i>
+                            Data
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="glyphicon glyphicon-send"></i>
-                            Contact
+                            <i class="glyphicon glyphicon-ok"></i>
+                            Wishlist
                         </a>
                     </li>
+                   <!--  <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-knight"></i>
+                            Kickass
+                        </a>
+                    </li> -->
                 </ul>
 
-                <ul class="list-unstyled CTAs">
+               <!--  <ul class="list-unstyled CTAs">
                     <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
                     <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
-                </ul>
+                </ul> -->
             </nav>
 
             <!-- Page Content Holder -->
@@ -96,27 +100,43 @@ include 'partials/header.php';
                 </nav>
 
                 <h2>Collapsible Sidebar Using Bootstrap 3</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div id="document"></div>
 
-                <div class="line"></div>
-
-                <h2>Lorem Ipsum Dolor</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                <div class="line"></div>
-
-                <h2>Lorem Ipsum Dolor</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                <div class="line"></div>
-
-                <h3>Lorem Ipsum Dolor</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
+                
+            </div> <!-- ./content -->
         </div>
 
+        <script type="text/javascript">
+        
+            function loadUser() {
+                var xhttp = new XMLHttpRequest()
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("document").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET", "assets/view_users.php", true);
+                xhttp.send();
+            }
 
+            function loadItems() {
+                var xhttp = new XMLHttpRequest()
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("document").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET", "assets/view_items.php", true);
+                xhttp.send();
+            }
+
+        </script>
 
          <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
          <!-- Bootstrap Js CDN -->
@@ -129,7 +149,6 @@ include 'partials/header.php';
                  });
              });
          </script>
-
 
 </body>
 </html>

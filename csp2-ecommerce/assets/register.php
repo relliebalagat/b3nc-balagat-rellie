@@ -39,8 +39,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$errors[] = 'You forgot to enter your password.';
 	}
 
-	
-
 	if(empty($errors)) {
 
 		// sql query
