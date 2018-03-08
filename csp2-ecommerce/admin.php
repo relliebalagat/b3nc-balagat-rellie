@@ -37,10 +37,10 @@ include 'partials/header.php';
                         </a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li><a href="#" onclick="loadItems()">All</a></li>
-                            <li><a href="#">Fiction</a></li>
-                            <li><a href="#">Non Fiction</a></li>
-                            <li><a href="#">Children's Book</a></li>
-                            <li><a href="#">Textbook</a></li>
+                            <li><a href="#" onclick="loadItems('fiction')">Fiction</a></li>
+                            <li><a href="#" onclick="loadItems('nonfiction')">Non Fiction</a></li>
+                            <li><a href="#" onclick="loadItems('childrensbook')">Children's Book</a></li>
+                            <li><a href="#" onclick="loadItems('textbook')">Textbook</a></li>
                         </ul>
                     </li>
                     <li>
@@ -125,14 +125,22 @@ include 'partials/header.php';
                 xhttp.send();
             }
 
-            function loadItems() {
+            function loadItems(genre) {
                 var xhttp = new XMLHttpRequest()
+                var url = "";
+                
+                if(genre === undefined) {
+                    url = "assets/view_all_items.php";
+                } else {
+                    url = "assets/view_genre.php?genre=" + genre;
+                }
+
                 xhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
                         document.getElementById("document").innerHTML = this.responseText;
                     }
                 };
-                xhttp.open("GET", "assets/view_items.php", true);
+                xhttp.open("GET", url, true);
                 xhttp.send();
             }
 
