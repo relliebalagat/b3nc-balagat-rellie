@@ -1,11 +1,14 @@
 <?php
 
+session_start();
+
 $page_title = 'Admin Page';
 
 include 'partials/header.php';
 
 ?>
     <link rel="stylesheet" type="text/css" href="assets/css/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/admin.css">
 
 </head>
 <body>
@@ -84,31 +87,47 @@ include 'partials/header.php';
                         <div class="navbar-header">
                             <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
                                 <i class="glyphicon glyphicon-align-left"></i>
-                                <span>Toggle Sidebar</span>
+                                <span></span>
                             </button>
                         </div>
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">Page</a></li>
-                                <li><a href="#">Page</a></li>
-                                <li><a href="#">Page</a></li>
-                                <li><a href="#">Page</a></li>
+                                <li><a href="home.php">Home</a></li>
+                                <li><a href="registration.php">Register User</a></li>
+                                <li><a href="#">Add Item</a></li>
+                                <li><a href="assets/logout.php">Log Out</a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
 
                 <h2>Collapsible Sidebar Using Bootstrap 3</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+               
+                <!-- items are viewed on this document -->
                 <div id="document"></div>
 
-                
+                <!-- Modal -->
+                <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <form method="POST" action="assets/update_item.php">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Edit Item</h4>
+                                </div>
+                                <div class="modal-body" id="editItemModalBody">
+                                
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             </div> <!-- ./content -->
         </div>
 
@@ -130,7 +149,7 @@ include 'partials/header.php';
                 var url = "";
                 
                 if(genre === undefined) {
-                    url = "assets/view_all_items.php";
+                    url = "assets/view_items.php";
                 } else {
                     url = "assets/view_genre.php?genre=" + genre;
                 }
@@ -138,6 +157,20 @@ include 'partials/header.php';
                 xhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
                         document.getElementById("document").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET", url, true);
+                xhttp.send();
+            }
+
+            function editItem(number) {
+                var xhttp = new XMLHttpRequest()
+
+                url = "assets/edit_item.php?id=" + number;
+
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("editItemModalBody").innerHTML = this.responseText;
                     }
                 };
                 xhttp.open("GET", url, true);

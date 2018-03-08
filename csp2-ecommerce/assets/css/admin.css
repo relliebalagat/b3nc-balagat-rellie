@@ -1,0 +1,46 @@
+#sidebar {
+	background-color: #218c74;
+}
+
+#sidebar .sidebar-header {
+ 	background-color: #218c74;
+}
+
+#content {
+	width: 100%;
+}
+
+#content thead td {
+	text-align: center;
+}
+
+#content td {
+	padding: 15px 20px;
+	font-size: 1em;
+}
+
+#content tr a {
+	color: blue;
+	text-decoration: underline;
+}
+
+#content thead {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.title {
+	width: 25%;
+}
+
+.price-width {
+	width: 12%;
+}
+
+.right {
+	float: right;
+}
+
+textarea {
+	width: 100%;
+}

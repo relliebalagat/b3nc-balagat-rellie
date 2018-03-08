@@ -28,7 +28,7 @@ include 'partials/header.php';
 						<input type="password" name="password1" class="form-control" id="inputPassword" placeholder="At least 6 characters">
 
 						<label>Verify Password</label>
-						<input type="password" name="password2" class="form-control" id="inputPassword">
+						<input type="password" name="password2" class="form-control" id="inputPassword2">
 
 						<input type="submit" name="submit" class="btn btn-primary" id="submit" value="Create your Account">
 
