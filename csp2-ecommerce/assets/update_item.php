@@ -2,7 +2,7 @@
 
 require '../mysqli_connect.php';
 
-$id = $_POST['book_id'];
+$db_connect = db_connect();
 
 // if((isset($_POST['id'])) && (is_numeric($_POST['id']))) {
 // 	$id = $_POST['book_id'];
@@ -11,45 +11,49 @@ $id = $_POST['book_id'];
 // } else {
 // 	echo "NO id";
 // }
-
+echo $_POST['genre'];
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+	$id = $_POST['book_id'];
+	$db_connect = db_connect();
+
 	if(isset($_POST['booktitle'])) {
-		$book_title = $_POST['booktitle'];
+		$book_title = mysqli_real_escape_string($db_connect, trim($_POST['booktitle']));
 	}
 
 	if(isset($_POST['description'])) {
-		$book_description = $_POST['description'];
+		$book_description = mysqli_real_escape_string($db_connect, trim($_POST['description']));
 	}
 
 	if(isset($_POST['quantity'])) {
-		$quantity = $_POST['quantity'];
+		$quantity = mysqli_real_escape_string($db_connect, trim($_POST['quantity']));
 	}
 
-	if(isset($_POST['firstname'])) {
-		$first_name = $_POST['firstname'];
-	}
-
-	if(isset($_POST['lastname'])) {
-		$last_name = $_POST['lastname'];
+	// update author
+	if(isset($_POST['firstname']) && isset($_POST['lastname'])) {
+		$first_name = mysqli_real_escape_string($db_connect, trim($_POST['firstname']));
+		$last_name = mysqli_real_escape_string($db_connect, trim($_POST['lastname']));
 	}
 
 	if(isset($_POST['genre'])) {
-		$genre = $_POST['genre'];
+		$genre_id = $_POST['genre'];
 	}
 
 	if(isset($_POST['price'])) {
-		$price = $_POST['price'];
+		$price = mysqli_real_escape_string($db_connect, trim($_POST['price']));
 	}
 
 	
+	// $query = "UPDATE books, authors SET books.title='$book_title', books.description='$book_description', books.quantity=$quantity, authors.first_name='$first_name', authors.last_name='$last_name', books.genre_id=$genre_id, books.price=$price WHERE books.id=$id AND books.author_id=authors.id";
+	
+	$query = "UPDATE books INNER JOIN authors ON books.id=authors.id SET books.title='$book_title', books.description='$book_description', books.quantity=$quantity, authors.first_name='$first_name', authors.last_name='$last_name', books.genre_id=$genre_id, books.price=$price WHERE books.id=$id;";
 
-	$query = "UPDATE books b, genres g, authors a SET b.title='{$book_title}', b.description='{$book_description}', b.quantity={$quantity}, a.first_name='{$first_name}', a.last_name='{$last_name}', g.type='{$genre}', b.price={$price} WHERE b.id={$id} LIMIT 1";
-	$result = @mysqli_query(db_connect(), $result) or die(mysqli_error());
-	echo $query;
+	$result = @mysqli_query(db_connect(), $query);
 
-	if(mysqli_num_rows($result) == 1) {
-		echo '<p>Item successfully edited.</p>';
+	if(mysqli_affected_rows($db_connect)) {
+		echo "Update was successful";
+	} else {
+		echo "Update NOT successful";
 	}
 }
 

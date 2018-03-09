@@ -41,6 +41,12 @@
 	float: right;
 }
 
-textarea {
+textarea,
+#editItemModalBody select.form-control {
 	width: 100%;
 }
+
+textarea {
+	height: 70px;
+}
+

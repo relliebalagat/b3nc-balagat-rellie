@@ -31,7 +31,13 @@ if(mysqli_num_rows($result) == 1) {
 			<input type="number" name="quantity" class="form-control" value="' . $item['quantity'] . '">
 
 			<label>Genre</label>
-			<input type="text" name="genre" class="form-control" value="' . $item['description'] . '">
+			<select name="genre" class="form-control">
+				<option value="1">Fiction</option>
+				<option value="2">Non Fiction</option>
+				<option value="3">Children Book</option>
+				<option value="4">Textbook</option>
+			</select>
+
 
 			<label>Price</label>
 			<input type="number" name="price" class="form-control" value="' . $item['price'] . '">

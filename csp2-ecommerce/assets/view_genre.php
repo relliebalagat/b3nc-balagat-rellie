@@ -21,7 +21,7 @@ switch ($genre) {
 
 if(isset($_GET['genre'])) {
 
-	$query = "SELECT b.id, b.title, b.price, b.quantity, a.first_name, a.last_name, g.description FROM books b JOIN genres g ON b.genre_id = g.id JOIN authors a ON b.author_id = a.id WHERE g.type = \"{$query_parameter}\" ORDER BY b.id";
+	$query = "SELECT b.id, b.title, b.price, b.quantity, a.first_name, a.last_name, g.type FROM books b JOIN genres g ON b.genre_id = g.id JOIN authors a ON b.author_id = a.id WHERE g.type = \"{$query_parameter}\" ORDER BY b.id";
 
 	$result = @mysqli_query(db_connect(), $query);
 
@@ -47,7 +47,7 @@ if(isset($_GET['genre'])) {
 					<td>' . $item['id'] .'</td>
 					<td>' . $item['title'] .'</td>
 					<td>' . $item['first_name'] . " " . $item['last_name'] . '</td>
-					<td>' . $item['description'] . '</td>
+					<td>' . $item['type'] . '</td>
 					<td>P ' . $item['price'] .'</td>
 					<td>' . $item['quantity'] .'</td>
 					<td><a href="#">Edit</td>
