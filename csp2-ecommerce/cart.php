@@ -1,8 +1,50 @@
 <?php
 
+session_start();
+
 $page_title = 'My Cart';
 
 include 'partials/header.php';
+require 'mysqli_connect.php';
+
+
+// remove an item from the cart
+if(!empty($_SESSION['cart'])) {
+	if(isset($_GET['action']) && isset($_GET['id'])) {
+		if($_GET['action'] == 'remove') {
+			foreach ($_SESSION['cart'] as $key => $value) {
+				if($key == $_GET['id']) {
+					unset($_SESSION['cart'][$key]);
+				}
+				if(empty($_SESSION['cart'])) {
+					unset($_SESSION['cart']);
+				}
+			}
+		}
+	}
+}
+
+
+// no of items in cart
+$cart_total_item = count($_SESSION['cart']);
+$total = 0;
+$total_per_item = 0;
+$total_quantity = 0;
+
+if(!empty($_SESSION['cart'])) {
+
+	foreach ($_SESSION['cart'] as $key => $value) {
+		
+		$qty = (int)$_SESSION['cart'][$key]['quantity'];
+		$total_quantity += $qty;
+		
+		$price = floatval($_SESSION['cart'][$key]['price']);
+		$totalperitem = $qty * $price;
+		$total += $totalperitem;
+	}
+
+}
+
 
 ?>
 </head>
@@ -23,86 +65,48 @@ include 'partials/header.php';
 
 				<!-- Basket Details -->
 				<div class="basket-details">
-					<p class="text-center"><i class="fas fa-shopping-basket"></i> You have 0 item for a total of PHP 0.00 amount in your basket</p>
+					<?php
+
+					echo '<p class="text-center"><i class="fas fa-shopping-basket"></i> You have ' . $total_quantity . ' item for a total of PHP ' . number_format($total, 2) . ' amount in your basket</p>';
+					// echo print_r($_SESSION['cart']);
+					?>
+
 				</div>
 				<div class="panel">
 					<div class="basket-collections">
 						<h4>Shopping basket details</h4>
-						<hr>
-						<div class="basket-item">
-							<div class="img-container">
-								<img src="assets/img/product-images/1984.jpg">
-							</div> <!-- ./basket-item -->
-							<div class="content">
-								<h5>Title</h5>
-								<p class="price">Total Price</p>
-								<p>Author</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.</p>
-							</div> <!-- ./content -->
-							<div class="product-input">
-								<label>Quantity</label>
-								<select class="pull-right">
-									<option class="text-center">1</option>
-									<option>2</option>
-									<option>3</option>
-								</select>
-								<p class="price">Total Price</p>
-								<button class="pull-right btn remove-btn">Remove</button>
-							</div> <!-- ./product-input -->
-						</div> <!-- ./basket-item -->
-						<hr>
-						<div class="basket-item">
-							<div class="img-container">
-								<img src="assets/img/product-images/1984.jpg">
-							</div> <!-- ./basket-item -->
-							<div class="content">
-								<h5>Title</h5>
-								<p class="price">Total Price</p>
-								<p>Author</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.</p>
-							</div> <!-- ./content -->
-							<div class="product-input">
-								<label>Quantity</label>
-								<select class="pull-right">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-								</select>
-								<p class="price">Total Price</p>
-								<button class="pull-right btn remove-btn">Remove</button>
-							</div> <!-- ./product-input -->
-						</div> <!-- ./basket-item -->
-						<hr>
-						<div class="basket-item">
-							<div class="img-container">
-								<img src="assets/img/product-images/1984.jpg">
-							</div> <!-- ./basket-item -->
-							<div class="content">
-								<h5>Title</h5>
-								<p class="price">Total Price</p>
-								<p>Author</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.</p>
-							</div> <!-- ./content -->
-							<div class="product-input">
-								<label>Quantity</label>
-								<select class="pull-right">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-								</select>
-								<p class="price">Total Price</p>
-								<button class="pull-right btn remove-btn">Remove</button>
-							</div> <!-- ./product-input -->
-						</div> <!-- ./basket-item -->
+
+						<?php
+
+						foreach ($_SESSION['cart'] as $key => $value) {
+							
+							$subquantity = (int)$_SESSION['cart'][$key]['quantity'];
+							$totalperitem = floatval($_SESSION['cart'][$key]['price']) * $subquantity;
+							$id = (int)$_SESSION['cart'][$key]['id'];
+
+							echo '
+								<hr>
+								<div class="basket-item">
+									<div class="img-container">
+										<img src="' . $_SESSION['cart'][$key]['image'] . '">
+									</div> <!-- ./basket-item -->
+									<div class="content">
+										<h5>' . $_SESSION['cart'][$key]['title'] . '</h5>
+										<p class="price">PHP ' . $_SESSION['cart'][$key]['price'] . '</p>
+										<p>'.$_SESSION['cart'][$key]['first_name'] ." " . $_SESSION['cart'][$key]['last_name'] . '</p>
+									</div> <!-- ./content -->
+									<div class="product-input">
+										
+											<label>Quantity</label>
+											<input type="number" name="quantity" value="' . $_SESSION['cart'][$key]['quantity'] . '">
+											<p class="price">PHP ' . number_format($totalperitem, 2) . '</p>
+											<button class="pull-right btn remove-btn"><a href="cart.php?action=remove&id='.$id.'">Remove</a></button>
+									</div> 
+								</div> 
+							';
+						}				
+
+						?>
 
 					</div> <!-- ./basket-collections -->
 				</div> <!-- ./panel -->
@@ -111,7 +115,7 @@ include 'partials/header.php';
 				<div class="panel">
 					<div class="basket-total">
 						<p class="text-center">Delivery Cost <span>FREE</span></p>
-						<p class="price">Total <span>PHP 0.00</span></p>
+						<p class="price">Total <span>PHP <?php echo number_format($total, 2); ?></span></p>
 						
 						<button class="btn btn-primary basket-btn">Checkout</button>
 						<button class="btn btn-primary text-center">Checkout with Paypal</button>	
@@ -121,6 +125,34 @@ include 'partials/header.php';
 			</div> <!-- ./col-lg-12 -->
 		</div> <!-- ./row -->
 	</div> <!-- ./container -->
+
+	<script type="text/javascript">
+		
+		// function addToCart() {
+		// 	var xhttp = new XMLHttpRequest();
+		// 	var url = "add_to_cart.php";
+		// 	var params = "lorem=ipsum&name=binny";
+		// 	http.open("POST", url, true);
+
+		// 	//Send the proper header information along with the request
+		// 	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+		// 	http.onreadystatechange = function() {//Call a function when the state changes.
+		// 	    if(http.readyState == 4 && http.status == 200) {
+		// 	        alert(http.responseText);
+		// 	    }
+		// 	}
+		// 	http.send(params);
+		// }
+
+
+		
+		
+
+
+
+	</script>
+
 
 
 <?php

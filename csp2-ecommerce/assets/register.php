@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // Check for the form submission
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -47,6 +49,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$result = mysqli_query($dbconnect, $query);
 		
 		if($result) {
+			
+			$_SESSION['user_id'] = $data['id'];
+			$_SESSION['roles'] = $data['role_id'];
+			$_SESSION['first_name'] = $data['first_name'];
+			$_SESSION['email'] = $data['email'];		
+			
 			header('location: ../home.php');
 		} else {
 			

@@ -25,7 +25,7 @@ footer {
 
 footer, .navbar{
 	background-color: #218c74;
-	opacity: .8;
+	opacity: .3;
 }
 
 .navbar	{
@@ -167,16 +167,18 @@ div.thumbnail img.book-img {
 	width: 100%;
 }
 
-.remove-btn {
+.remove-btn, 
+.collections .collections-btn {
 	border-color: #00b894;
 	color: #00b894;
 	background-color: white;
 }
 
-.remove-btn:hover {
-	background-color: #00b894;
+.remove-btn:hover, 
+.collections .collections-btn:hover {
 	border-color: #00b894;
 	color: #fff;
+	background-color: #00b894;
 }
 
 .form-group .btn-primary,
@@ -248,8 +250,6 @@ input {
 	padding: 20px;
 	margin: 0 auto;
 }
-
-
 
 .form-control {
 	border-radius: 0;
@@ -362,7 +362,7 @@ select.form-control {
 
 /* HOME PAGE */
 
-.message-board, .basket-details {
+.message-board, .basket-details, .collections-message {
 	width: 85%;
 	border: 1px #55efc4 solid;
 	height: 8rem;
@@ -483,8 +483,26 @@ select.form-control {
 }
 
 .collections ul {
-	margin-bottom: 20px;
+	margin: 20px auto;
 }
+
+.collections-btn {
+	width: 200px;
+}
+
+.collections li {
+	text-align: center;
+}
+
+.collections-message {
+	margin-bottom: 70px;
+}
+
+.collections-message h3 {
+	margin-bottom: 70px;
+	margin-top: 30px;
+}
+
 
 /* Basket Details */
 
@@ -538,10 +556,10 @@ select.form-control {
 	text-align: left;
 }
 
-.product-input select {
+.product-input input[type="number"] {
 	width: 100%;
 	padding: 5px;
-	margin-left: 20px;
+	margin-left: 0px;
 	margin-bottom: 20px;
 }
 
@@ -573,6 +591,40 @@ select.form-control {
 .panel span	{
 	margin-left: 100px;
 }
+
+/* order contents */
+
+.order-content {
+	width: 45%;
+	margin-top: 70px;
+	margin-right: 5%;
+	float: left;
+}
+
+td.right {
+	text-align: right;
+}
+
+td.left {
+	text-align: left;
+}
+
+.order-content table thead {
+	text-align: center;
+}
+
+.order-details {
+	width: 45%;
+	margin: 70px auto 30px auto;
+	float: left;
+} 
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 
 
 

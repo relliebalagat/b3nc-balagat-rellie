@@ -1,15 +1,12 @@
 <?php
 
+// session_start();
+
 $page_title = 'Collections';
 
 include 'partials/header.php';
 
 require 'mysqli_connect.php';
-
-// Query to view the fiction books
-$query = "SELECT b.id, b.title, b.price, b.image, b.description FROM books b";
-// result of query for fiction books
-$result = mysqli_query(db_connect(), $query) or die(mysqli_error(db_connect()));
 
 ?>
 </head>
@@ -29,43 +26,25 @@ $result = mysqli_query(db_connect(), $query) or die(mysqli_error(db_connect()));
 			<div class="row">
 				<div class="col-lg-12">
 					<ul class="nav nav-tabs nav-justified">
-						<li><a href="#">Fiction</a></li>
-						<li><a href="#">Non fiction</a></li>
-						<li><a href="#">Children's Book</a></li>
-						<li><a href="#">Textbook</a></li>
+						<li><button class="collections-btn btn" onclick="viewGenre('0')">All</button></li>
+						<li><button class="collections-btn btn" onclick="viewGenre('1')">Fiction</button></li>
+						<li><button class="collections-btn btn" onclick="viewGenre('2')">Non Fiction</button></li>
+						<li><button class="collections-btn btn" onclick="viewGenre('3')">Children Book</button></li>
+						<li><button class="collections-btn btn" onclick="viewGenre('4')">Textbook</button></li>
 					</ul>
 
 				</div>
 			</div>
 
-			<div class="panel panel-default">
-				
-				<div class="panel-body">
-					<?php
+			<div class="panel panel-default" >
 
-					if($result) {
-						if(mysqli_num_rows($result) > 0) {
-							echo '<div class="row">';
-							while ($item = mysqli_fetch_assoc($result)) {
-								echo '
-									<div class="col-lg-3 col-md-6">
-										<div class="thumbnail">
-											<img src="' . $item['image'] . '" alt="The Lord of the rings book cover" class="book-img">
-										</div>
-											<p class="book-title"><a href="item.php?id='. $item['id'] .'">'.$item['title'].'</a></p>
-											<p class="price">PHP '.$item['price'].'</p>
-											<button class="btn btn-primary basket-btn" onclick="addToCart(' . $item['id'] . ')">Add to Basket</button>
-									</div>
-								';
-							}
-							echo '</div>';
 
-						}
-					}
-
-					mysqli_close(db_connect());
-
-					?>
+				<div class="panel-body" id="viewCollections">
+					
+					<div class="collections-message">
+						<h3 class="text-center">CHECK OUR BOOKS NOW</h3>
+					</div>
+	
 				</div> <!-- ./panel-body -->
 			</div> <!-- ./panel -->
 	
@@ -73,56 +52,95 @@ $result = mysqli_query(db_connect(), $query) or die(mysqli_error(db_connect()));
 		</div> <!-- ./collections -->
 	</div> <!-- ./container -->
 
-	
+	<!-- <div class="modal fade" id="addToCartMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				</div>
+				<div class="modal-body">
+				<?php
+
+				// echo $_SESSION;
+
+				?>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+ -->
+
+
+
+
+
 	<script type="text/javascript">
-	
-		// onload and onerror
 
+		
+		function viewGenre(number) {
+            var xhttp = new XMLHttpRequest()
+            var url = "assets/view_collections.php?id=" + number;
+            
 
-		var xhttp = false;
-
-		if(window.XMLHttpRequest) {
-			xhttp = new XMLHttpRequest();
-		} else if (window.ActiveXObject) {
-			xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            xhttp.open("GET", url, true);
+            xhttp.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                    document.getElementById("viewCollections").innerHTML = this.responseText;                    
+                }
+            };
+            
+            xhttp.send();
 		}
 
-		function addToCart(itemID) {
-			if(xhttp) {
-				// var obj = document.getElementById('cart');
-				xhttp.open("GET", 'assets/add_to_cart.php?id=' + itemID, true);
-			}
+		function addToCart() {
+			var xhttp = new XMLHttpRequest();
+			var url = "asset/add_to_cart.php";
+			var quantity = 1;
+			var display = document.getElementById("noItemCart");
 
-			xhttp.onreadystatechange = function () {
-				if(xhttp.readyState == 4 && xhttp == 200) {
-					// obj.innerHTML = xhttp.responseText;
-				} else {
-					alert("Cannot process request");
+			xhttp.open("POST", url, true);
+			http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+			xhttp.onreadystatechange = function() {
+				if(xhttp.readyState == 4 && xhttp.status == 200) {
+					display = xhttp.responseText;
 				}
 			}
-
-			xhttp.send(null);
+			
+			xhttp.send(quantity);
 		}
 
+		//noItemCart
+			
+		// function addToCart() {
+		// 	var xhttp = new XMLHttpRequest();
+		// 	var url = "add_to_cart.php";
+		// 	var params = "lorem=ipsum&name=binny";
+		// 	http.open("POST", url, true);
+
+		// 	//Send the proper header information along with the request
+		// 	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+		// 	http.onreadystatechange = function() {//Call a function when the state changes.
+		// 	    if(http.readyState == 4 && http.status == 200) {
+		// 	        alert(http.responseText);
+		// 	    }
+		// 	}
+		// 	http.send(params);
+		// }
 
 
+		
+		
+		
 
-		//-----------------------
-		function handleSuccess(data) {
-		}
-		function handleError() {
-		}
-		var req = new XMLHttpRequest();
-		method = 'GET'; // POST
-		url = ''; // PHP end point
-		req.open(method, url, true);
-		req.onload = handleSuccess;
-		req.onerror = handleError;
-		req.send();
-		//-----------------------
 	</script>
-
-
 
 
 <?php

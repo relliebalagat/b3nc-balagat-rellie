@@ -42,7 +42,8 @@
 }
 
 textarea,
-#editItemModalBody select.form-control {
+#editItemModalBody select.form-control,
+#addItemModalBody select.form-control {
 	width: 100%;
 }
 

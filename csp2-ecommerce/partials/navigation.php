@@ -21,12 +21,12 @@
 
 					if(isset($_SESSION['first_name'])) {
 						echo '<li><a href="account.php"><span class="glyphicon glyphicon-user"></span>My Account</a></li>';
-						echo '<li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>';
+						echo '<li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart" id="noItemCart"></span>Cart</a></li>';
 						echo '<li><a href="assets/logout.php">Log out</a></li>';
 					}  else {
 						echo '<li><a href="login.php">Sign In</a></li>';
 						echo '<li><a href="registration.php">Register</a></li>';
-						echo '<li id="cart"><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>';
+						echo '<li id="cart"><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart" id="noItemCart"></span>Cart</a></li>';
 					}
 
 					?>

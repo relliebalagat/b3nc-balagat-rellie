@@ -6,6 +6,10 @@ $page_title = 'Admin Page';
 
 include 'partials/header.php';
 
+// if($_SESSION['roles'] != "1") {
+//     header('index.php');
+// }
+
 ?>
     <link rel="stylesheet" type="text/css" href="assets/css/sidebar.css">
     <link rel="stylesheet" type="text/css" href="assets/css/admin.css">
@@ -94,8 +98,8 @@ include 'partials/header.php';
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="home.php">Home</a></li>
-                                <li><a href="registration.php">Register User</a></li>
-                                <li><a href="#">Add Item</a></li>
+                                <li><a href="registration.php">Register a User</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#addItemModal">Add Item</a></li>
                                 <li><a href="assets/logout.php">Log Out</a></li>
                             </ul>
                         </div>
@@ -107,7 +111,7 @@ include 'partials/header.php';
                 <!-- items are viewed on this document -->
                 <div id="document"></div>
 
-                <!-- Modal -->
+                <!-- EDIT BOOK Modal -->
                 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                         <form method="POST" action="assets/update_item.php">
@@ -127,6 +131,84 @@ include 'partials/header.php';
                         </form>
                     </div>
                 </div>
+
+
+                <!-- Delete BOOK Modal -->
+                <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <form method="POST" action="assets/delete_item.php">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Delete Item</h4>
+                                </div>
+                                <div class="modal-body" id="deleteItemModalBody">
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Yes</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                 <!-- ADD ITEM BOOK Modal -->
+                <div class="modal fade" id="addItemModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                       
+                        <form method="POST" action="assets/add_item.php">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Add an Item</h4>
+                                </div>
+                                <div class="modal-body" id="addItemModalBody">
+                                    
+                                    <div class="form-group">
+                                        
+                                        <label>Book Title</label>
+                                        <input type="text" name="booktitle" class="form-control">
+
+                                        <label>Author First Name</label>
+                                        <input type="text" name="autfirstname" class="form-control">
+
+                                        <label>Author Last Name</label>
+                                        <input type="text" name="autlastname" class="form-control">
+
+                                        <label>Book Description</label>
+                                        <textarea name="description"></textarea>
+
+                                        <label>Quantity</label>
+                                        <input type="number" name="quantity" class="form-control">
+
+                                        <label>Genre</label>
+                                        <select name="genre" class="form-control">
+                                            <option value="1">Fiction</option>
+                                            <option value="2">Non Fiction</option>
+                                            <option value="3">Children Book</option>
+                                            <option value="4">Textbook</option>
+                                        </select>
+
+                                        <label>Price</label>
+                                        <input type="text" name="price" class="form-control" step="0.01" placeholder="0.00">
+
+                                        <label>Image</label>
+                                        <input type="file" id="file" name="imagefile" multiple>
+                                    </div>      
+                                        
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Add Item</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
 
             </div> <!-- ./content -->
         </div>
@@ -167,13 +249,28 @@ include 'partials/header.php';
                 var xhttp = new XMLHttpRequest()
 
                 url = "assets/edit_item.php?id=" + number;
-
+                xhttp.open("GET", url, true);
                 xhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
                         document.getElementById("editItemModalBody").innerHTML = this.responseText;
                     }
                 };
+                
+                xhttp.send();
+            }
+
+
+            function deleteItem(number) {
+                var xhttp = new XMLHttpRequest()
+
+                var url = "assets/view_delete_item_modal.php?id=" + number;
                 xhttp.open("GET", url, true);
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("deleteItemModalBody").innerHTML = this.responseText;
+                    }
+                };
+                
                 xhttp.send();
             }
 
