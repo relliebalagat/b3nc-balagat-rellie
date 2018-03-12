@@ -25,7 +25,6 @@ footer {
 
 footer, .navbar{
 	background-color: #218c74;
-	opacity: .3;
 }
 
 .navbar	{
@@ -182,13 +181,15 @@ div.thumbnail img.book-img {
 }
 
 .form-group .btn-primary,
-.basket-btn {
+.basket-btn,
+.order-btn {
 	background-color: #00b894;
 	border-color: #00b894;
 }
 
 .basket-btn:hover,
-.form-group .btn-primary:hover {
+.form-group .btn-primary:hover,
+.order-btn:hover {
 	background-color: #55efc4;
 	border-color: #55efc4;
 }
@@ -595,7 +596,7 @@ select.form-control {
 /* order contents */
 
 .order-content {
-	width: 45%;
+	width: 50%;
 	margin-top: 70px;
 	margin-right: 5%;
 	float: left;
@@ -614,7 +615,7 @@ td.left {
 }
 
 .order-details {
-	width: 45%;
+	width: 40%;
 	margin: 70px auto 30px auto;
 	float: left;
 } 

@@ -16,7 +16,7 @@ if(isset($_SESSION['cart'][$id])) {
 	$item = mysqli_fetch_assoc($result);
 
 	if((int)$item['quantity'] == 0) {
-		
+		//  add an error message
 	} else {
 		
 		$_SESSION['cart'][$id] = array (

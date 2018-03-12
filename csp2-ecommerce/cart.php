@@ -118,7 +118,7 @@ if(!empty($_SESSION['cart'])) {
 						<p class="price">Total <span>PHP <?php echo number_format($total, 2); ?></span></p>
 						
 						<button class="btn btn-primary basket-btn">Checkout</button>
-						<button class="btn btn-primary text-center">Checkout with Paypal</button>	
+						<button class="btn text-center">Checkout with Paypal</button>	
 					</div>
 				</div>
 

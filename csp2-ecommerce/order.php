@@ -6,6 +6,11 @@ $page_title = 'Order';
 
 include 'partials/header.php';
 
+if(isset($_SESSION['email'])) {
+	$email = $_SESSION['email'];
+}
+
+
 ?>
 </head>
 <body>
@@ -23,7 +28,7 @@ include 'partials/header.php';
 			<div class="col-lg-12">
 				<div class="clearfix">
 					<div class="order-content">
-						<h2 class="text-center">Order</h2>
+						<h2 class="text-center">Orders</h2>
 						<div class="table-responsive">
 							<table class="table">
 								<thead>
@@ -37,9 +42,11 @@ include 'partials/header.php';
 
 								<?php
 								$total_order_price = 0;
+								$total_quantity = 0;
 								foreach ($_SESSION['cart'] as $key => $value) {
 							
 									$subquantity = (int)$_SESSION['cart'][$key]['quantity'];
+									$total_quantity += $subquantity;
 									$totalperitem = floatval($_SESSION['cart'][$key]['price']) * $subquantity;
 									$id = (int)$_SESSION['cart'][$key]['id'];
 									$total_order_price += $totalperitem;
@@ -55,6 +62,13 @@ include 'partials/header.php';
 								}
 
 								?>
+
+									<tr class="price">
+										<td class="left">Total</td>
+										<td><?php echo $total_quantity; ?></td>
+										<td></td>
+										<td class="right"><?php echo number_format($total_order_price, 2); ?></td>
+									</tr>
 							</table>
 						</div> <!-- ./table-respons -->
 					</div> 	<!-- ./order-content -->
@@ -64,23 +78,22 @@ include 'partials/header.php';
 						
 							<form id="registrationForm" action="assets/checkout.php" method="POST">
 								
-								<label>Total Order Price</label>
-								<input type="number" name="totalorderprice" class="form-control" id="" value="<?php echo $totalperitem; ?>">
+								<input type="hidden" name="totalorderprice" class="form-control" id="" value="<?php echo $total_order_price; ?>">
 
 								<label>Email</label>
-								<input type="number" name="tel_number" class="form-control" id="">
+								<input type="email" name="tel_number" class="form-control" id="" value="<?php echo $email; ?>" disabled>
 
 								<label>Delivery Address 1</label>
 								<input type="text" name="deliveryadd1" class="form-control" id="">
 
 								<label>Delivery Address 2</label>
-								<input type="text" name="deliveryadd1" class="form-control" id="">
+								<input type="text" name="deliveryadd2" class="form-control" id="">
 
 								<label>Country</label>
 								<input type="text" name="country" class="form-control" id="">
 
 								<label>ZIP Code</label>
-								<input type="text" name="zipcode" class="form-control" id="">
+								<input type="number" name="zip_code" class="form-control" id="">
 
 								<label>Mobile Number</label>
 								<input type="number" name="mobile_number" class="form-control" id="">
@@ -88,11 +101,7 @@ include 'partials/header.php';
 								<label>Telephone Number</label>
 								<input type="number" name="tel_number" class="form-control" id="">
 
-
-
-								<input type="submit" name="submit" class="btn btn-primary" id="submit" value="Checkout">
-
-								
+								<input type="submit" name="submit" class="btn order-btn" id="submit" value="Checkout">								
 							</form>
 						
 					</div> <!-- ./order-details -->

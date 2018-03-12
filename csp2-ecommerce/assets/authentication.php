@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$_SESSION['user_id'] = $data['id'];
 			$_SESSION['roles'] = $data['role_id'];
 			$_SESSION['first_name'] = $data['first_name'];
-			$_SESSION['email'] = $data['email'];			
+			$_SESSION['email'] = $data['email'];		
 
 			if($_SESSION['roles'] == "1") {
 				header('location: ../admin.php');
