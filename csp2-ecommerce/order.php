@@ -81,7 +81,7 @@ if(isset($_SESSION['email'])) {
 								<input type="hidden" name="totalorderprice" class="form-control" id="" value="<?php echo $total_order_price; ?>">
 
 								<label>Email</label>
-								<input type="email" name="tel_number" class="form-control" id="" value="<?php echo $email; ?>" disabled>
+								<input type="email" name="email_add" class="form-control" id="" value="<?php echo $email; ?>" disabled>
 
 								<label>Delivery Address 1</label>
 								<input type="text" name="deliveryadd1" class="form-control" id="">

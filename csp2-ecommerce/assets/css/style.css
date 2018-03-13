@@ -626,7 +626,47 @@ td.left {
     display: table;
 }
 
+/* ORDER SUCCESS */
 
+.order-success {
+	width: 80%;
+	margin-top: 80px;
+	margin: 80px auto 50px auto;
+	outline: 1px solid #218c74;
+}
 
+.order-success h2 {
+	padding: 50px 0 20px 0;
+	color: #218c74;
+}
 
+.order-success i.far {
+	margin-right: 20px;
+}
 
+.order-message  {
+	width: 75%;
+	margin: 0 auto;
+}
+
+.order-message h4,
+.order-message p,
+.order-message li,
+.order-message table.table {
+	margin-top: 20px;
+}
+
+.order-message button {
+	margin-bottom: 20px;
+}
+
+.order-message ul {
+	list-style-type: none;
+	display: table;
+}
+
+.order-message ul span {
+	padding-left: 50px;
+	text-align: left;
+	vertical-align: middle;
+}

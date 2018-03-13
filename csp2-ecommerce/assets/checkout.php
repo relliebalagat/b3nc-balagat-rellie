@@ -17,22 +17,19 @@ function generateReferenceNumber() {
 	}
 	return $ref_number;
 }
-$zip_code = 0;
 
+$zip_code = 0;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-	if((isset($_SESSION['user_id'])) && (isset($_SESSION['roles']))) {
+	if((isset($_SESSION['user_id'])) && (isset($_SESSION['roles'])) && (isset($_SESSION['email']))) {
 
 		$user_id = $_SESSION['user_id'];
+		$email = $_SESSION['email'];
 		$reference_number = generateReferenceNumber();
-
+		
 		if(isset($_POST['totalorderprice'])) {
 			$total_order_price = mysqli_real_escape_string($dbconnect, trim($_POST['totalorderprice']));
-		}
-
-		if(isset($_POST['email'])) {
-			$email = mysqli_real_escape_string($dbconnect, trim($_POST['email']));
 		}
 
 		if(isset($_POST['deliveryadd1'])) {
@@ -47,7 +44,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$country = mysqli_real_escape_string($dbconnect, trim($_POST['country']));
 		}
 
-		if(isset($_POST['zip_code']) && is_int($_POST['zip_code'])) {
+		if(isset($_POST['zip_code'])) {
 			$zip_code = mysqli_real_escape_string($dbconnect, trim($_POST['zip_code']));
 		}
 
@@ -59,12 +56,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$tel_number = mysqli_real_escape_string($dbconnect, trim($_POST['tel_number']));
 		}
 
-
-		$order_query = "INSERT INTO orders(customer_id, reference_no, order_date, total_price, shipping_date, delivery_address1, delivery_address2, country, zip_code, mobile_no, telephone_no) VALUES ($user_id, $reference_number, NOW(), $total_order_price, DATE_ADD(NOW, INTERVAL 1 DAY), '$delivery_address_1', '$delivery_address_2', '$country', $zip_code, $mobile_number, $tel_number)";
+		$order_query = "INSERT INTO orders(customer_id, reference_no, order_date, total_price, shipping_date, delivery_address1, delivery_address2, country, zip_code, mobile_no, telephone_no, email) VALUES ($user_id, '$reference_number', NOW(), $total_order_price, DATE_ADD(NOW(), INTERVAL 2 DAY), '$delivery_address_1', '$delivery_address_2', '$country', $zip_code, $mobile_number, $tel_number, '$email')";
 		$result = mysqli_query($dbconnect, $order_query);
-
+		
 		if($result) {
-
+			
 			if(isset($_SESSION['cart'])) {
 
 				// Get the id of previous query
@@ -75,7 +71,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 					$book_id = $_SESSION['cart'][$key]['id'];
 					$quantity = (int)$_SESSION['cart'][$key]['quantity'];
 					$price = floatval($_SESSION['cart'][$key]['price']);
-					$total_price_per_item = $quantity * $total_price_per_item;
+					$total_price_per_item = $quantity * $price;
 
 					$order_items_query = "INSERT INTO order_items(order_id, book_id, price_per_item, quantity, total_price_per_item) VALUES ($last_id, $book_id, $price, $quantity, $total_price_per_item)";
 					$order_items_result = mysqli_query($dbconnect, $order_items_query)	;
@@ -85,27 +81,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 					}
 				}
 
+				unset($_SESSION['cart']);
 				header("../order_success.php");
 			}
-
 		}
-
-
-
-
-
-
 	}
-
-	
-
-
-
-
-	
-
-
-
 }
 
 
