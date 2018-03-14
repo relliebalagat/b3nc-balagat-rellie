@@ -32,12 +32,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$total_order_price = mysqli_real_escape_string($dbconnect, trim($_POST['totalorderprice']));
 		}
 
-		if(isset($_POST['deliveryadd1'])) {
-			$delivery_address_1 = mysqli_real_escape_string($dbconnect, trim($_POST['deliveryadd1']));
+		if(isset($_POST['contactperson'])) {
+			$contactperson = mysqli_real_escape_string($dbconnect, trim($_POST['contactperson']));
 		}
 
-		if(isset($_POST['deliveryadd2'])) {
-			$delivery_address_2 = mysqli_real_escape_string($dbconnect, trim($_POST['deliveryadd2']));
+		if(isset($_POST['deliveryadd'])) {
+			$delivery_address_2 = mysqli_real_escape_string($dbconnect, trim($_POST['deliveryadd']));
 		}
 
 		if(isset($_POST['country'])) {
@@ -56,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$tel_number = mysqli_real_escape_string($dbconnect, trim($_POST['tel_number']));
 		}
 
-		$order_query = "INSERT INTO orders(customer_id, reference_no, order_date, total_price, shipping_date, delivery_address1, delivery_address2, country, zip_code, mobile_no, telephone_no, email) VALUES ($user_id, '$reference_number', NOW(), $total_order_price, DATE_ADD(NOW(), INTERVAL 2 DAY), '$delivery_address_1', '$delivery_address_2', '$country', $zip_code, $mobile_number, $tel_number, '$email')";
+		$order_query = "INSERT INTO orders(customer_id, reference_no, order_date, total_price, shipping_date, contact_person, delivery_address, country, zip_code, mobile_no, telephone_no, email) VALUES ($user_id, '$reference_number', NOW(), $total_order_price, DATE_ADD(NOW(), INTERVAL 2 DAY), '$contactperson', '$delivery_address', '$country', $zip_code, $mobile_number, $tel_number, '$email')";
 		$result = mysqli_query($dbconnect, $order_query);
 		
 		if($result) {
@@ -81,7 +81,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 					}
 				}
 
-				unset($_SESSION['cart']);
+				// unset($_SESSION['cart']);
 				header("../order_success.php");
 			}
 		}

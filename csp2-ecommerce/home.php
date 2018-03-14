@@ -2,6 +2,10 @@
 
 if(!isset($_SESSION)){
 	session_start();	
+} 
+
+if(!isset($_SESSION['id'])) {
+	header('Location: index.php');
 }
 
 $page_title = 'Home';
@@ -27,9 +31,13 @@ include 'assets/functions.php';
 				<div class="message-board">
 					
 					<?php
-				
+					
 					if(isset($_SESSION['first_name'])) {
-						echo '<h2 class="text-center">Welcome, ' . $_SESSION['first_name'] . '</h2>';	
+						echo '
+						
+							<h2 class="text-center">Welcome, ' . $_SESSION['first_name'] . '</h2>
+
+						';	
 					}
 
 					?>

@@ -4,6 +4,9 @@ $page_title = 'My Account';
 
 include 'partials/header.php';
 
+if(!isset($_SESSION['user_id'])) {
+	header('Location: registration.php');
+}
 ?>
 </head>
 <body>

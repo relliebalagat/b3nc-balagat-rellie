@@ -146,7 +146,7 @@ CREATE TABLE `order_items` (
   KEY `order_items_fk1` (`book_id`),
   CONSTRAINT `order_items_fk0` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
   CONSTRAINT `order_items_fk1` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -155,7 +155,6 @@ CREATE TABLE `order_items` (
 
 LOCK TABLES `order_items` WRITE;
 /*!40000 ALTER TABLE `order_items` DISABLE KEYS */;
-INSERT INTO `order_items` VALUES (1,2,10,467.45,1,0.00),(2,2,16,406.90,1,0.00),(3,2,15,346.17,1,0.00),(4,3,10,467.45,1,467.45),(5,3,16,406.90,1,406.90),(6,3,15,346.17,1,346.17);
 /*!40000 ALTER TABLE `order_items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -200,8 +199,8 @@ CREATE TABLE `orders` (
   `order_date` datetime NOT NULL,
   `total_price` decimal(10,2) NOT NULL,
   `shipping_date` datetime NOT NULL,
-  `delivery_address1` varchar(255) NOT NULL,
-  `delivery_address2` varchar(255) NOT NULL,
+  `delivery_address` varchar(255) NOT NULL,
+  `contact_person` varchar(255) NOT NULL,
   `country` varchar(30) NOT NULL,
   `zip_code` int(10) NOT NULL,
   `mobile_no` varchar(30) NOT NULL,
@@ -216,7 +215,7 @@ CREATE TABLE `orders` (
   CONSTRAINT `orders_fk0` FOREIGN KEY (`customer_id`) REFERENCES `users` (`id`),
   CONSTRAINT `orders_fk1` FOREIGN KEY (`order_status_id`) REFERENCES `order_statuses` (`id`),
   CONSTRAINT `orders_fk2` FOREIGN KEY (`payment_options_id`) REFERENCES `payment_options` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -225,7 +224,6 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (2,2,1,1,'BS-7A33DED','2018-03-13 19:10:46',1220.52,'2018-03-15 19:10:46','abc123','asdsad','phil',1116,'213132','12312312','elonmusk@gmail.com'),(3,2,1,1,'BS-79A6B01','2018-03-13 19:11:59',1220.52,'2018-03-15 19:11:59','abc123','asdsad','phil',1116,'213132','12312312','elonmusk@gmail.com');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -344,4 +342,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-13 21:31:50
+-- Dump completed on 2018-03-14 21:29:23

@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 session_start();
 
@@ -25,14 +25,13 @@ if(!empty($_SESSION['cart'])) {
 }
 
 
-// no of items in cart
-$cart_total_item = count($_SESSION['cart']);
-$total = 0;
-$total_per_item = 0;
-$total_quantity = 0;
-
 if(!empty($_SESSION['cart'])) {
+	$total = 0;
+	$total_per_item = 0;
+	$total_quantity = 0;
 
+	$cart_total_item = count($_SESSION['cart']);
+							
 	foreach ($_SESSION['cart'] as $key => $value) {
 		
 		$qty = (int)$_SESSION['cart'][$key]['quantity'];
@@ -44,7 +43,6 @@ if(!empty($_SESSION['cart'])) {
 	}
 
 }
-
 
 ?>
 </head>
@@ -64,47 +62,66 @@ if(!empty($_SESSION['cart'])) {
 				<h2 class="text-center">Your Basket</h2>
 
 				<!-- Basket Details -->
-				<div class="basket-details">
+				
 					<?php
 
-					echo '<p class="text-center"><i class="fas fa-shopping-basket"></i> You have ' . $total_quantity . ' item for a total of PHP ' . number_format($total, 2) . ' amount in your basket</p>';
-					// echo print_r($_SESSION['cart']);
+					if(!empty($_SESSION['cart'])) {
+						echo '
+						<div class="basket-details">
+							<p class="text-center"><i class="fas fa-shopping-basket"></i> You have ' . $total_quantity . ' item for a total of PHP ' . number_format($total, 2) . ' amount in your basket</p>
+						</div>
+							';
+					}
+					
 					?>
 
-				</div>
+				
 				<div class="panel">
 					<div class="basket-collections">
 						<h4>Shopping basket details</h4>
 
 						<?php
 
-						foreach ($_SESSION['cart'] as $key => $value) {
-							
-							$subquantity = (int)$_SESSION['cart'][$key]['quantity'];
-							$totalperitem = floatval($_SESSION['cart'][$key]['price']) * $subquantity;
-							$id = (int)$_SESSION['cart'][$key]['id'];
 
-							echo '
-								<hr>
-								<div class="basket-item">
-									<div class="img-container">
-										<img src="' . $_SESSION['cart'][$key]['image'] . '">
-									</div> <!-- ./basket-item -->
-									<div class="content">
-										<h5>' . $_SESSION['cart'][$key]['title'] . '</h5>
-										<p class="price">PHP ' . $_SESSION['cart'][$key]['price'] . '</p>
-										<p>'.$_SESSION['cart'][$key]['first_name'] ." " . $_SESSION['cart'][$key]['last_name'] . '</p>
-									</div> <!-- ./content -->
-									<div class="product-input">
-										
-											<label>Quantity</label>
-											<input type="number" name="quantity" value="' . $_SESSION['cart'][$key]['quantity'] . '">
-											<p class="price">PHP ' . number_format($totalperitem, 2) . '</p>
-											<button class="pull-right btn remove-btn"><a href="cart.php?action=remove&id='.$id.'">Remove</a></button>
+						if (!empty($_SESSION['cart'])) {
+						
+							// no of items in cart
+							
+						
+
+							foreach ($_SESSION['cart'] as $key => $value) {
+								
+								$subquantity = (int)$_SESSION['cart'][$key]['quantity'];
+								$totalperitem = floatval($_SESSION['cart'][$key]['price']) * $subquantity;
+								$id = (int)$_SESSION['cart'][$key]['id'];
+
+								echo '
+									<hr>
+									<div class="basket-item">
+										<div class="img-container">
+											<img src="' . $_SESSION['cart'][$key]['image'] . '">
+										</div> <!-- ./basket-item -->
+										<div class="content">
+											<h5>' . $_SESSION['cart'][$key]['title'] . '</h5>
+											<p class="price">PHP ' . $_SESSION['cart'][$key]['price'] . '</p>
+											<p>'.$_SESSION['cart'][$key]['first_name'] ." " . $_SESSION['cart'][$key]['last_name'] . '</p>
+										</div> <!-- ./content -->
+										<div class="product-input">
+											
+												<label>Quantity</label>
+												<input type="number" name="quantity" value="' . $_SESSION['cart'][$key]['quantity'] . '">
+												<p class="price">PHP ' . number_format($totalperitem, 2) . '</p>
+												<button class="pull-right btn remove-btn"><a href="cart.php?action=remove&id='.$id.'">Remove</a></button>
+										</div> 
 									</div> 
-								</div> 
-							';
-						}				
+								';
+							}
+
+						} else {
+							echo '<p class="message-empty-basket">Your shopping basket is empty.</p>';
+
+						}
+										
 
 						?>
 
@@ -112,15 +129,21 @@ if(!empty($_SESSION['cart'])) {
 				</div> <!-- ./panel -->
 				
 				<!-- basket total -->
-				<div class="panel">
-					<div class="basket-total">
-						<p class="text-center">Delivery Cost <span>FREE</span></p>
-						<p class="price">Total <span>PHP <?php echo number_format($total, 2); ?></span></p>
-						
-						<button class="btn btn-primary basket-btn">Checkout</button>
-						<button class="btn text-center">Checkout with Paypal</button>	
-					</div>
-				</div>
+
+				<?php
+
+				if(!empty($_SESSION['cart'])) {
+					echo '
+						<div class="panel">
+							<div class="basket-total">
+								<p class="price">Total <span>PHP ' . number_format($total, 2) . '</span></p>
+								<button class="btn btn-primary basket-btn">Checkout</button>
+							</div>
+						</div>
+					';
+				}
+				?>
+				
 
 			</div> <!-- ./col-lg-12 -->
 		</div> <!-- ./row -->

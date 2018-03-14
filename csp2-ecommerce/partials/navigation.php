@@ -9,12 +9,20 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Project name</a>
+				<?php
+
+				if(isset($_SESSION['id'])) {
+					echo '<a class="navbar-brand" href="home.php">Project name</a>';
+				} else {
+					echo '<a class="navbar-brand" href="index.php">Project name</a>';
+				}
+
+				?>
+				
 			</div>
 
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="home.php">Home</a></li>
 					<li><a href="about.php">About</a></li>
 					<li><a href="collections.php">Collections</a></li>
 					<?php

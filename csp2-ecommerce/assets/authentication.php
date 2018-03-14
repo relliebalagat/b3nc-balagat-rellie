@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	if($email && $password) {
 
-		$query = "SELECT users.id, users.email, users.password, users.first_name, users.role_id FROM users WHERE email='$email' AND password=SHA1('$password')";
+		$query = "SELECT users.id, users.email, users.password, users.first_name, users.last_name, users.role_id FROM users WHERE email='$email' AND password=SHA1('$password')";
 
 		$result = mysqli_query($dbconn, $query);
 
@@ -29,6 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$_SESSION['user_id'] = $data['id'];
 			$_SESSION['roles'] = $data['role_id'];
 			$_SESSION['first_name'] = $data['first_name'];
+			$_SESSION['last_name'] = $data['last_name'];
 			$_SESSION['email'] = $data['email'];		
 
 			if($_SESSION['roles'] == "1") {
