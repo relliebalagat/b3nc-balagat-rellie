@@ -137,14 +137,14 @@ if(!empty($_SESSION['cart'])) {
 						<div class="panel">
 							<div class="basket-total">
 								<p class="price">Total <span>PHP ' . number_format($total, 2) . '</span></p>
-								<button class="btn btn-primary basket-btn">Checkout</button>
+								<button class="btn btn-primary basket-btn"><a href="order.php">Place Order</a></button>
 							</div>
 						</div>
 					';
+				
 				}
 				?>
 				
-
 			</div> <!-- ./col-lg-12 -->
 		</div> <!-- ./row -->
 	</div> <!-- ./container -->

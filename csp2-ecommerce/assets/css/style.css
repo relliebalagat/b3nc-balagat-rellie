@@ -684,3 +684,13 @@ td.left {
 	text-align: left;
 	vertical-align: middle;
 }
+
+
+/*  ORDER HISTORY  */
+
+.order-history {
+	width: 90%;
+	margin-top: 80px;
+	margin-left: auto;
+	margin-right: auto;
+}

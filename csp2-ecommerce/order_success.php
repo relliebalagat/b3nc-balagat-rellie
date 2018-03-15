@@ -36,30 +36,52 @@ if(!isset($_SESSION['user_id'])) {
 					<div class="order-message">
 						<?php
 
-						$order_pullup_query = "SELECT o.id, o.reference_no, o.order_date, o.shipping_date, o.delivery_address1, o.country, po.type  FROM orders o INNER JOIN payment_options po ON o.payment_options_id = po.id ORDER BY o.id DESC LIMIT 1";
+						$order_pullup_query = "SELECT o.id, o.contact_person, o.reference_no, o.order_date, o.shipping_date, o.delivery_address, o.country, o.total_price, po.type  FROM orders o INNER JOIN payment_options po ON o.payment_options_id = po.id ORDER BY o.id DESC LIMIT 1";
 
 						$order_pullup_result = mysqli_query(db_connect(), $order_pullup_query);
 
 						if(mysqli_num_rows($order_pullup_result) == 1) {
 							$order = mysqli_fetch_assoc($order_pullup_result);
 							$order_id = $order['id'];
+							$order_total_price = $order['total_price'];
+
 							echo '
 								<h4>HELLO ' . $_SESSION['first_name'] . '! YOUR ORDER HAS BEEN PLACED.</h4>
-								<p>Your order number is <strong>' . $order['reference_no'] . '</strong>.</p>
+								<p>Your order number is <strong>' . $order['reference_no'] . '</strong></p>
 								<p>You will receive an order confirmation to your email with details of your order. Your expected delivery date is on <strong>' . $order['shipping_date'] . '</strong></p>
 								
 								<h4>ORDER SUMMARY</h4>
-								<ul>
-									<li>Order Date:<span>' . $order['order_date'] . '</span></li>
-									<li>Contact Person: <span>CONTACT PERSON</span></li>
-									<li>Delivery Address: <span>' . $order['delivery_address1'] . '</span></li>
-									<li>Purchase Method: <span>' . $order['type'] . '</span></li>
-									<li>Country: <span>' . $order['country'] . '</span></li>
-								</ul>
+					
+								<table class="table table-bordered">
+									<tr>
+										<td>Order Date</td>
+										<td>' . $order['order_date'] . '</td>
+									</tr>
+									<tr>
+										<td>Contact Person</td>
+										<td>' . $order['contact_person'] . '</td>
+									</tr>
+									<tr>
+										<td>Delivery Address</td>
+										<td>' . $order['delivery_address'] . '</td>
+									</tr>
+									<tr>
+										<td>Purchase Method</td>
+										<td>' . $order['type'] . '</td>
+									</tr>
+									<tr>
+										<td>Country</td>
+										<td>' . $order['country'] . '</td>
+									</tr>
+								</table>
+
+
 							';
 						}
 						?>
 						
+
+
 						<h4>ITEMS ORDERED</h4>
 						<table class="table table-bordered">
 							<thead>
@@ -73,16 +95,17 @@ if(!isset($_SESSION['user_id'])) {
 							<tbody>
 
 							<?php 
-
-							$order_item_query = "SELECT b.title, oi.price_per_item, oi.quantity, oi.total_price_per_item, o.total_price FROM order_items oi INNER JOIN books b ON oi.book_id=b.id WHERE oi.order_id=$order_id";
+							$total_price = 0;
+							$total_quantity = 0;
+							$order_item_query = "SELECT b.title, oi.price_per_item, oi.quantity, oi.total_price_per_item FROM order_items oi INNER JOIN books b ON oi.book_id=b.id WHERE oi.order_id=$order_id";
 
 							$order_item_result = mysqli_query($db_connect, $order_item_query);
 
 							if(mysqli_num_rows($order_item_result) > 0) {
 								while($order_item = mysqli_fetch_assoc($order_item_result)) {
-									$subtotal = ($order_item[''])
-									$total_price 
-
+									$subtotal = ($order_item['quantity'] * $order_item['price_per_item']);
+									$total_price += $subtotal;
+									$total_quantity += $order_item['quantity'];
 									echo '
 										<tr>		
 											<td>'.$order_item['title'].'</td>
@@ -95,19 +118,25 @@ if(!isset($_SESSION['user_id'])) {
 
 
 								echo '</tbody>';
+
+								echo '
+										<tfoot>
+											<tr>
+												<td>TOTAL</td>
+												<td></td>
+												<td>'.$total_quantity.'</td>
+												<td class="price">'.$total_price.'</td>
+											</tr>
+										</tfoot>
+
+
+								';
 							}
 
 							?>
 
 							
-							<tfoot>
-								<tr>
-									<td>TOTAL</td>
-									<td></td>
-									<td></td>
-									<td class="price">PHP 456.45</td>
-								</tr>
-							</tfoot>
+							
 						</table>
 
 						<button class="btn btn-primary">CONTINUE SHOPPING</button>

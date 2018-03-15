@@ -37,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		}
 
 		if(isset($_POST['deliveryadd'])) {
-			$delivery_address_2 = mysqli_real_escape_string($dbconnect, trim($_POST['deliveryadd']));
+			$delivery_address = mysqli_real_escape_string($dbconnect, trim($_POST['deliveryadd']));
 		}
 
 		if(isset($_POST['country'])) {
@@ -56,10 +56,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$tel_number = mysqli_real_escape_string($dbconnect, trim($_POST['tel_number']));
 		}
 
+		// echo $total_order_price.$contactperson.$delivery_address.$country.$zip_code.$mobile_number.$tel_number;
+
+
 		$order_query = "INSERT INTO orders(customer_id, reference_no, order_date, total_price, shipping_date, contact_person, delivery_address, country, zip_code, mobile_no, telephone_no, email) VALUES ($user_id, '$reference_number', NOW(), $total_order_price, DATE_ADD(NOW(), INTERVAL 2 DAY), '$contactperson', '$delivery_address', '$country', $zip_code, $mobile_number, $tel_number, '$email')";
-		$result = mysqli_query($dbconnect, $order_query);
+		$order_result = mysqli_query($dbconnect, $order_query);
 		
-		if($result) {
+		if($order_result) {
 			
 			if(isset($_SESSION['cart'])) {
 
@@ -67,7 +70,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 				$last_id = mysqli_insert_id($dbconnect);
 
 				foreach ($_SESSION['cart'] as $key => $value) {
-				
+					
 					$book_id = $_SESSION['cart'][$key]['id'];
 					$quantity = (int)$_SESSION['cart'][$key]['quantity'];
 					$price = floatval($_SESSION['cart'][$key]['price']);
@@ -76,13 +79,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 					$order_items_query = "INSERT INTO order_items(order_id, book_id, price_per_item, quantity, total_price_per_item) VALUES ($last_id, $book_id, $price, $quantity, $total_price_per_item)";
 					$order_items_result = mysqli_query($dbconnect, $order_items_query)	;
 
-					if(!$order_items_result) {
-						die('Invalid query: ' . mysqli_error());
-					}
 				}
 
-				// unset($_SESSION['cart']);
-				header("../order_success.php");
+				unset($_SESSION['cart']);
+				header("Location: ../order_success.php");
 			}
 		}
 	}

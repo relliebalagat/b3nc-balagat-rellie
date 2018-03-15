@@ -86,7 +86,6 @@ require 'mysqli_connect.php';
 		function viewGenre(number) {
             var xhttp = new XMLHttpRequest()
             var url = "assets/view_collections.php?id=" + number;
-            
 
             xhttp.open("GET", url, true);
             xhttp.onreadystatechange = function() {

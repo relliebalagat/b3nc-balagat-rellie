@@ -4,12 +4,8 @@ session_start();
 
 require 'mysqli_connect.php';
 
-// $db_connect = db_connect();
+$order_pullup_query = "SELECT o.id, o.reference_no, o.order_date, o.shipping_date, o.delivery_address, o.country, po.type  FROM orders o INNER JOIN payment_options po ON o.payment_options_id = po.id ORDER BY o.id DESC LIMIT 1";
 
-// $order_id = 4;
+$order_pullup_result = mysqli_query(db_connect(), $order_pullup_query);
 
-// $order_item_query = "SELECT b.title, oi.price_per_item, oi.quantity, oi.total_price_per_item FROM order_items oi INNER JOIN books b ON oi.book_id=b.id WHERE oi.order_id=$order_id";
-
-// $order_item_result = mysqli_query($db_connect, $order_item_query);
-
-// var_dump($order_item_result);
+echo mysqli_num_rows($order_pullup_result);

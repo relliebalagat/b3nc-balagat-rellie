@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.1.21-MariaDB, for Win32 (AMD64)
+-- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
 --
--- Host: localhost    Database: localhost
+-- Host: 127.0.0.1    Database: bookstore_capstone2
 -- ------------------------------------------------------
--- Server version	10.1.21-MariaDB
+-- Server version	5.5.5-10.1.30-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -146,7 +146,7 @@ CREATE TABLE `order_items` (
   KEY `order_items_fk1` (`book_id`),
   CONSTRAINT `order_items_fk0` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
   CONSTRAINT `order_items_fk1` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -155,6 +155,7 @@ CREATE TABLE `order_items` (
 
 LOCK TABLES `order_items` WRITE;
 /*!40000 ALTER TABLE `order_items` DISABLE KEYS */;
+INSERT INTO `order_items` VALUES (38,16,7,689.75,1,689.75),(39,16,12,518.48,1,518.48);
 /*!40000 ALTER TABLE `order_items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,7 +216,7 @@ CREATE TABLE `orders` (
   CONSTRAINT `orders_fk0` FOREIGN KEY (`customer_id`) REFERENCES `users` (`id`),
   CONSTRAINT `orders_fk1` FOREIGN KEY (`order_status_id`) REFERENCES `order_statuses` (`id`),
   CONSTRAINT `orders_fk2` FOREIGN KEY (`payment_options_id`) REFERENCES `payment_options` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -224,6 +225,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (16,2,1,1,'BS-ECA9278','2018-03-15 15:08:03',1208.23,'2018-03-17 15:08:03','86-A Tandang Sora Avenue Quezon City','Elon Musk','Philippines',1115,'4533417','9069121383','elonmusk@gmail.com');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -342,4 +344,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-14 21:29:23
+-- Dump completed on 2018-03-15 15:44:19

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $page_title = 'My Account';
 
 include 'partials/header.php';

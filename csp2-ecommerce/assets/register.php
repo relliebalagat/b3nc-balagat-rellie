@@ -11,37 +11,35 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 	$dbconnect = db_connect();
 
-	$errors = array();
-
-	if(empty($_POST['firstname'])) {
-		$errors[] = 'You forgot to enter your FIRST Name.';
-	} else {
+	if (preg_match('/^[A-Z \'.-]{2,20}$/i', $_POST['firstname'])) {
 		$first_name = mysqli_real_escape_string($dbconnect, trim($_POST['firstname']));
+	} else {
+		echo '<span>Please enter your first name!</span>';
 	}
 
-	if(empty($_POST['lastname'])) {
-		$errors[] = 'You forgot to enter your LAST Name.';
-	} else {
+	if (preg_match('/^[A-Z \'.-]{2,40}$/i', $_POST['lastname'])) {
 		$last_name = mysqli_real_escape_string($dbconnect, trim($_POST['lastname']));
+	} else {
+		echo '<span>Please enter your last name!</span>';
 	}
 
-	if(empty($_POST['email'])) {
-		$errors[] = 'You forgot to enter your Email Address.';
-	} else {
+	if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 		$email = mysqli_real_escape_string($dbconnect, trim($_POST['email']));
+	} else {
+		echo '<span>Please enter your last name!</span>';
 	}
 
 	if(!empty($_POST['password1'])) {
 		if($_POST['password1'] != $_POST['password2']){
-			$errors[] = 'Your password did not match the confirmed password';
+			echo '<span>Your password did not match the confirmed password</span>';	
 		} else {
 			$password = mysqli_real_escape_string($dbconnect, trim($_POST['password1']));
 		}
 	} else {
-		$errors[] = 'You forgot to enter your password.';
+		echo '<span>You forgot to enter your password</span>';
 	}
 
-	if(empty($errors)) {
+	if($first_name && $last_name && $password && $email) {
 
 		// sql query
 		$query = "INSERT INTO users (first_name, last_name, email, password, registration_date) VALUES ('$first_name', '$last_name', '$email', SHA1('$password'), NOW())";
