@@ -3,6 +3,8 @@
 $page_title = 'Null Website';
 
 include 'partials/header.php';
+require 'mysqli_connect.php';
+include 'assets/functions.php';
 
 ?>
 </head>
@@ -15,7 +17,6 @@ include 'partials/header.php';
 
 	?>
 
-	
 	<div class="jumbotron">
 		<img src="assets/img/search-for-books.jpg" alt="A man searching for books to buy.">
 		<div class="over text-center">
@@ -26,16 +27,15 @@ include 'partials/header.php';
 		</div>
 	</div>
 
-
 	<div class="container">
 
 		<!-- sale headline -->
-		<div class="row">
+	<!-- 	<div class="row">
 			<div class="offer text-center">
 				<h3 class="offer-text">Get a 20% Discount on our Selected Items</h3>
 				<button class="btn btn-primary">Shop Now!</button>
 			</div>
-		</div>
+		</div> -->
 		
 		
 		<div class="row">
@@ -48,43 +48,28 @@ include 'partials/header.php';
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/the-lord-of-the-rings.gif" alt="The Lord of the rings book cover" class="book-img">
+					<?php
+				$fq_result = collections_query('fiction', 4);
+
+				if($fq_result) {
+					if(mysqli_num_rows($fq_result) > 0) {
+						while ($item = mysqli_fetch_assoc($fq_result)) {
+							echo '
+							<div class="col-lg-3 col-md-6">
+								<div class="thumbnail">
+									<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'].'" class="book-img"></a>
+								</div>
+									<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
+									<p class="price">PHP '.$item["price"].'</p>
+									<button class="btn btn-primary basket-btn">Add to Basket</button>
 							</div>
-								<p class="book-title"><a href="#">The Lord of the Rings Trilogy</a></p>
-								<p class="price">PHP 1,100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/outliers.png" alt="Outliers book cover" class="book-img">
-							</div>
-								<p class="book-title">Outliers</p>
-								<p class="price">PHP 1100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/java-complete-reference.png" alt="Java Reference Guide book cover" class="book-img">
-							</div>
-								<p class="book-title">Java The Complete Reference</p>
-								<p class="price">PHP 1100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/narnia.jpg" alt="Narnia book cover" class="book-img">
-							</div>
-								<p class="book-title">The Chronicles of Narnia</p>
-								<p class="price">PHP 1100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-							
-						</div> 
+
+							';
+						}
+					}
+				}
+
+				?>
 
 					</div> <!-- ./row -->
 				</div> <!-- ./panel-body -->
@@ -97,57 +82,44 @@ include 'partials/header.php';
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/the-lord-of-the-rings.gif" alt="The Lord of the rings book cover" class="book-img">
-							</div>
-								<p class="book-title"><a href="#">The Lord of the Rings Trilogy</a></p>
-								<p class="price">PHP 1,100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/outliers.png" alt="Outliers book cover" class="book-img">
-							</div>
-								<p class="book-title">Outliers</p>
-								<p class="price">PHP 1100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/java-complete-reference.png" alt="Java Reference Guide book cover" class="book-img">
-							</div>
-								<p class="book-title">Java The Complete Reference</p>
-								<p class="price">PHP 1100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/narnia.jpg" alt="Narnia book cover" class="book-img">
-							</div>
-								<p class="book-title">The Chronicles of Narnia</p>
-								<p class="price">PHP 1100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
 							
-						</div> 
+					<?php
+
+					$nfq_result = collections_query('non fiction', 4);
+
+					if($nfq_result) {
+						if(mysqli_num_rows($nfq_result) > 0) {
+							while ($item = mysqli_fetch_assoc($nfq_result)) {
+								echo '
+								<div class="col-lg-3 col-md-6">
+									<div class="thumbnail">
+										<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'].'" class="book-img"></a>
+									</div>
+										<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
+										<p class="price">PHP '.$item["price"].'</p>
+										<button class="btn btn-primary basket-btn">Add to Basket</button>
+								</div>
+
+								';
+							}
+						}
+					}
+
+					?>
 
 					</div> <!-- ./row -->
 				</div> <!-- ./panel-body -->
 			</div> <!-- ./panel -->
 
 			<!-- free shipping promo -->
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-lg-12"> 
 					<div class="offer text-center">
 						<h3 class="offer-text">FREE SHIPPING FOR P 1,000 OF MINUMUM PURCHASE</h3>
 						<button class="btn btn-primary">LEARN MORE</button>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -156,43 +128,31 @@ include 'partials/header.php';
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/the-lord-of-the-rings.gif" alt="The Lord of the rings book cover" class="book-img">
+						
+
+				<?php
+				$textbook_result = collections_query('textbook', 4);
+
+				if($textbook_result) {
+					if(mysqli_num_rows($textbook_result) > 0) {
+						while ($item = mysqli_fetch_assoc($textbook_result)) {
+							echo '
+							<div class="col-lg-3 col-md-6">
+								<div class="thumbnail">
+									<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'] .'" class="book-img"></a>
+								</div>
+									<p class="book-title"><a href="items.php?id='.$item['id'].'">'. $item['title'] .'</a></p>
+									<p class="price">PHP '. $item["price"] .'</p>
+									<button class="btn btn-primary basket-btn">Add to Basket</button>
 							</div>
-								<p class="book-title"><a href="#">The Lord of the Rings Trilogy</a></p>
-								<p class="price">PHP 1,100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/outliers.png" alt="Outliers book cover" class="book-img">
-							</div>
-								<p class="book-title">Outliers</p>
-								<p class="price">PHP 1100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/java-complete-reference.png" alt="Java Reference Guide book cover" class="book-img">
-							</div>
-								<p class="book-title">Java The Complete Reference</p>
-								<p class="price">PHP 1100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/narnia.jpg" alt="Narnia book cover" class="book-img">
-							</div>
-								<p class="book-title">The Chronicles of Narnia</p>
-								<p class="price">PHP 1100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-							
-						</div> 
+
+							';
+						}
+					}
+				}
+
+				
+				?>
 
 					</div> <!-- ./row -->
 				</div> <!-- ./panel-body -->
@@ -205,53 +165,38 @@ include 'partials/header.php';
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/the-lord-of-the-rings.gif" alt="The Lord of the rings book cover" class="book-img">
+				
+
+				<?php
+				$cb_result = collections_query('children book', 4);
+
+				if($cb_result) {
+					if(mysqli_num_rows($cb_result) > 0) {
+						while ($item = mysqli_fetch_assoc($cb_result)) {
+							echo '
+							<div class="col-lg-3 col-md-6">
+								<div class="thumbnail">
+									<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'].'" class="book-img"></a>
+								</div>
+									<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
+									<p class="price">PHP '.$item["price"].'</p>
+									<button class="btn btn-primary basket-btn">Add to Basket</button>
 							</div>
-								<p class="book-title"><a href="#">The Lord of the Rings Trilogy</a></p>
-								<p class="price">PHP 1,100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/outliers.png" alt="Outliers book cover" class="book-img">
-							</div>
-								<p class="book-title">Outliers</p>
-								<p class="price">PHP 1100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/java-complete-reference.png" alt="Java Reference Guide book cover" class="book-img">
-							</div>
-								<p class="book-title">Java The Complete Reference</p>
-								<p class="price">PHP 1100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="thumbnail">
-								<img src="assets/img/narnia.jpg" alt="Narnia book cover" class="book-img">
-							</div>
-								<p class="book-title">The Chronicles of Narnia</p>
-								<p class="price">PHP 1100.00 <small>PHP 1200</small></p>
-								<p class="save-price">Save PHP 100.00</p>
-								<button class="btn btn-primary basket-btn">Add to Basket</button>
-							
-						</div> 
+
+							';
+						}
+					}
+				}
+
+				mysqli_close(db_connect());
+				?>
+
 
 					</div> <!-- ./row -->
 				</div> <!-- ./panel-body -->
 			</div> <!-- ./panel -->
 
-
-			
-
 		</div> <!-- ./row -->
-
 
 		<hr>
 

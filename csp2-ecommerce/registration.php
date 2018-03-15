@@ -44,7 +44,6 @@ include 'partials/header.php';
 	<script type="text/javascript">
 		
 		function validateEmail(value) {
-			
 			var data = document.getElementById("inputEmail").value;
 			var xhttp = new XMLHttpRequest();
 
@@ -58,8 +57,6 @@ include 'partials/header.php';
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send("email=" + data);
 		}
-
-
 
 	</script>
 

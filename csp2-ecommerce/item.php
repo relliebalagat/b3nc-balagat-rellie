@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $page_title = 'About Us';
 
@@ -25,7 +26,7 @@ require 'mysqli_connect.php';
 						<?php
 
 						$id = $_GET['id'];
-						$query = "SELECT  b.id, b.title, b.price, b.image, b.description FROM books b WHERE b.id = {$id}";
+						$query = "SELECT  b.id, b.title, b.price, b.image, b.description, a.first_name, a.last_name FROM books b INNER JOIN authors a ON b.author_id=a.id  WHERE b.id = {$id}";
 						$result = @mysqli_query(db_connect(), $query);
 						if(mysqli_num_rows($result) == 1) {
 
@@ -36,7 +37,7 @@ require 'mysqli_connect.php';
 								</div>
 								<div class="content">
 									<h3 class="text-center">' . $item['title'] . '</h3>
-									<p class="text-center">Author</p>
+									<p class="text-center">' . $item['first_name'] . " " . $item['last_name'] . '</p>
 									<p class="item-description">'. $item['description'] .'</p>
 									<p class="price">PHP '. $item['price'] .'</p>
 									<p><i class="fas fa-rocket"></i>FREE DELIVERY WORLDWIDE</p>
@@ -63,15 +64,12 @@ require 'mysqli_connect.php';
 				
 				<?php 
 
-				for($i = 1; $i <= 4; $i++) {
-					
-					$random_id = rand(1, 20);	
-					
-					
-					$random_query = "SELECT b.id, b.title, b.price, b.image FROM books b WHERE b.id = {$random_id}";
-					$result = @mysqli_query(db_connect(), $random_query);
-					
-					if(mysqli_num_rows($result) == 1) {
+				
+				$random_query = "SELECT b.id, b.title, b.price, b.image FROM books b ORDER BY RAND() LIMIT 4";
+				$result = @mysqli_query(db_connect(), $random_query);
+				
+				if(mysqli_num_rows($result) > 0) {
+					for ($i=0; $i < 4; $i++) { 
 						$collection = mysqli_fetch_assoc($result); 
 						echo '
 							<div class="col-lg-3 col-md-6">
@@ -84,10 +82,11 @@ require 'mysqli_connect.php';
 							</div>
 						';
 					}
-				
+				}
+			
 
-				}			
-		
+
+	
 				mysqli_close(db_connect());
 		
 				?>

@@ -1,8 +1,5 @@
 <?php
 
-// if(!isset($_SESSION)){
-// 	session_start();	
-// } 
 session_start();
 
 if(!isset($_SESSION['user_id'])) {
@@ -53,8 +50,7 @@ include 'assets/functions.php';
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						
-						
+								
 				<?php
 				$fq_result = collections_query('fiction', 4);
 
@@ -113,9 +109,7 @@ include 'assets/functions.php';
 					}
 
 					?>
-
-
-
+					
 					</div> <!-- ./row -->
 				</div> <!-- ./panel-body -->
 			</div> <!-- ./panel -->
@@ -127,8 +121,7 @@ include 'assets/functions.php';
 					<small><a href="#" class="set-right">View More</a></small>
 				</div>
 				<div class="panel-body">
-					<div class="row">
-						
+					<div class="row">		
 
 				<?php
 				$cb_result = collections_query('children book', 4);

@@ -690,7 +690,49 @@ td.left {
 
 .order-history {
 	width: 90%;
-	margin-top: 80px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 75px auto 0 auto;
+	height: auto;
+}
+
+.order-history h2 {
+	margin-bottom: 30px;
+}
+
+.order-history-item img {
+	width: 10vw;
+	height: 15vw;
+	display: block;
+	float: left;
+}
+
+.order-info-title p {
+	font-size: 1.2em;
+}
+
+.order-info-title {
+	transform: translate(0, 120%);
+}
+
+.order-info-numbers {
+	transform: translate(0, 40%);	
+}
+
+.order-history thead td:nth-child(1) {
+	width: 55%;
+}
+
+.order-history thead td:nth-child(2) {
+	width: 12%;
+}
+
+.order-history thead td:nth-child(3) {
+	width: 12%;
+}
+
+.order-history thead td:nth-child(4) {
+	width: 12%;
+}
+
+.order-history .panel span {
+	margin-left: 0;
 }

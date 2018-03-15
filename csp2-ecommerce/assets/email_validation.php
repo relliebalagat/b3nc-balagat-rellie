@@ -6,7 +6,7 @@ $email_input = $_POST['email'];
 
 if(isset($_POST['email'])) {
 
-	$email_query = "SELECT email FROM users";
+	$email_query = "SELECT email FROM users ";
 	$email_result = mysqli_query(db_connect(), $email_query);
 
 	if (mysqli_num_rows($email_result) > 0) { 
