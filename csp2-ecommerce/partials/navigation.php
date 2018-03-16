@@ -23,7 +23,7 @@
 
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="about.php">About</a></li>
+					<li><a href="about.php">About<span id="countCart"><?php echo $_SESSION['item_count']; ?></span></a></li>
 					<li><a href="collections.php">Collections</a></li>
 					<?php
 

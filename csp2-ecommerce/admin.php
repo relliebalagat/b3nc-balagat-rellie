@@ -43,7 +43,7 @@ include 'partials/header.php';
                             Items
                         </a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li><a href="#" onclick="loadItems()">All</a></li>
+                            <li><a href="#" onclick="loadItems('all')">All</a></li>
                             <li><a href="#" onclick="loadItems('fiction')">Fiction</a></li>
                             <li><a href="#" onclick="loadItems('nonfiction')">Non Fiction</a></li>
                             <li><a href="#" onclick="loadItems('childrensbook')">Children's Book</a></li>
@@ -109,7 +109,10 @@ include 'partials/header.php';
                 <h2>Collapsible Sidebar Using Bootstrap 3</h2>
                
                 <!-- items are viewed on this document -->
-                <div id="document"></div>
+                <div id="document">
+                    
+                    
+                </div>
 
                 <!-- EDIT BOOK Modal -->
                 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -209,6 +212,37 @@ include 'partials/header.php';
                     </div>
                 </div>
                 
+                <!-- EDIT USER Modal -->
+                <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <form method="POST" action="assets/update_item.php">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Edit Item</h4>
+                                </div>
+                                <div class="modal-body" id="editUserModalBody">
+                                
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
 
             </div> <!-- ./content -->
         </div>
@@ -230,7 +264,7 @@ include 'partials/header.php';
                 var xhttp = new XMLHttpRequest()
                 var url = "";
                 
-                if(genre === undefined) {
+                if(genre == "all") {
                     url = "assets/view_items.php";
                 } else {
                     url = "assets/view_genre.php?genre=" + genre;
@@ -273,6 +307,22 @@ include 'partials/header.php';
                 
                 xhttp.send();
             }
+
+            function editUser(number) {
+                var xhttp = new XMLHttpRequest()
+
+                url = "assets/edit_item.php?id=" + number;
+                xhttp.open("GET", url, true);
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("editUserModalBody").innerHTML = this.responseText;
+                    }
+                };
+                
+                xhttp.send();
+            }
+
+
 
         </script>
 

@@ -1,6 +1,6 @@
 <?php
 
-// session_start();
+session_start();
 
 $page_title = 'Collections';
 
@@ -97,47 +97,21 @@ require 'mysqli_connect.php';
             xhttp.send();
 		}
 
-		function addToCart() {
+		function addToCart(itemId) {
 			var xhttp = new XMLHttpRequest();
 			var url = "asset/add_to_cart.php";
 			var quantity = 1;
-			var display = document.getElementById("noItemCart");
-
-			xhttp.open("POST", url, true);
-			http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			var display = document.getElementById("countCart");
 
 			xhttp.onreadystatechange = function() {
 				if(xhttp.readyState == 4 && xhttp.status == 200) {
-					display = xhttp.responseText;
+					display.innerHTML = this.responseText;
 				}
 			}
-			
-			xhttp.send(quantity);
+			xhttp.open("POST", url, true);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send("item_id=" + itemId);
 		}
-
-		//noItemCart
-			
-		// function addToCart() {
-		// 	var xhttp = new XMLHttpRequest();
-		// 	var url = "add_to_cart.php";
-		// 	var params = "lorem=ipsum&name=binny";
-		// 	http.open("POST", url, true);
-
-		// 	//Send the proper header information along with the request
-		// 	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-		// 	http.onreadystatechange = function() {//Call a function when the state changes.
-		// 	    if(http.readyState == 4 && http.status == 200) {
-		// 	        alert(http.responseText);
-		// 	    }
-		// 	}
-		// 	http.send(params);
-		// }
-
-
-		
-		
-		
 
 	</script>
 

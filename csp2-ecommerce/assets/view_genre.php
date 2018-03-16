@@ -33,7 +33,6 @@ if(isset($_GET['genre'])) {
 						<td>#</td>
 						<td>Title</td>
 						<td>Author</td>
-						<td>Genre</td>
 						<td>Price</td>
 						<td>Quantity</td>
 						<td>Edit</td>
@@ -47,11 +46,10 @@ if(isset($_GET['genre'])) {
 					<td>' . $item['id'] .'</td>
 					<td>' . $item['title'] .'</td>
 					<td>' . $item['first_name'] . " " . $item['last_name'] . '</td>
-					<td>' . $item['type'] . '</td>
 					<td>P ' . $item['price'] .'</td>
 					<td>' . $item['quantity'] .'</td>
-					<td><a href="#">Edit</td>
-					<td><a href="#">Delete</td>
+					<td class="text-center"><a data-toggle="modal" data-target="#editModal" onclick="editItem(' . $item['id'] . ')">Edit</a></td>
+					<td class="text-center"><a data-toggle="modal" data-target="#deleteModal" onclick="deleteItem(' . $item['id'] . ')">Delete</a></td>
 				</tr>
 			';
 		}

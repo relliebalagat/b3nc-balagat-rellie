@@ -15,7 +15,7 @@ if(mysqli_num_rows($result) > 0) {
 				<td>Last Name</td>
 				<td>Email</td>
 				<td>Role</td>
-				<td>Registraion Date</td>
+				<td>Registration Date</td>
 				<td>Edit</td>
 				<td>Delete</td>
 			</tr>
@@ -28,10 +28,19 @@ if(mysqli_num_rows($result) > 0) {
 				<td>' . $item['first_name'] .'</td>
 				<td>' . $item['last_name'] .'</td>
 				<td>' . $item['email'] .'</td>
-				<td>' . $item['role_id'] .'</td>
+				
+		';
+		
+		if($item['role_id'] == 1) {
+			echo "<td>Administrator</td>";
+		} else {
+			echo "<td>User</td>";
+		}
+
+		echo '
 				<td>' . $item['registration_date'] .'</td>
-				<td><a href="#">Edit</td>
-				<td><a href="#">Delete</td>
+				<td class="text-center"><a data-toggle="modal" data-target="#editUserModal" onclick="editItem(' . $item['id'] . ')">Edit</a></td>
+				<td class="text-center"><a data-toggle="modal" data-target="#deleteUserModal" onclick="deleteItem(' . $item['id'] . ')">Delete</a></td>
 			</tr>
 		';
 	}

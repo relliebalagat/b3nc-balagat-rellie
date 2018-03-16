@@ -17,13 +17,11 @@ if($id != 0) {
 					<div class="col-lg-3 col-md-6">
 						<div class="thumbnail">
 								<img src="' . $item['image'] . '" alt="The Lord of the rings book cover" class="book-img">
-						</div>
-							<form method="POST" action="assets/add_to_cart.php"> 
-								<input type="hidden" name="item_id" value="'. $item['id'] .'">
-								<p class="book-title"><a href="item.php?id='. $item['id'] .'">'.$item['title'].'</a></p>
-								<p class="price" name="price">PHP '.$item['price'].'</p>
-								<button type="submit" class="btn btn-primary basket-btn">Add to Basket</button>
-							</form>
+						</div>	
+							<input type="hidden" name="item_id" value="'. $item['id'] .'">
+							<p class="book-title"><a href="item.php?id='. $item['id'] .'">'.$item['title'].'</a></p>
+							<p class="price" name="price">PHP '.$item['price'].'</p>
+							<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart(' . $item['id'] . ')">Add to Basket</button>
 					</div>
 				';
 			}

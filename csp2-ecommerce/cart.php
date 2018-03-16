@@ -87,7 +87,9 @@ if(!empty($_SESSION['cart'])) {
 						
 							// no of items in cart
 							
-						
+							foreach ($variable as $key) {
+								# code...
+							}
 
 							foreach ($_SESSION['cart'] as $key => $value) {
 								
