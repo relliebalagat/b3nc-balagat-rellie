@@ -8,12 +8,18 @@ include 'partials/header.php';
 require 'mysqli_connect.php';
 
 
+// if(!isset($_SESSION['user_id'])) {
+// 	header('location: login.php');
+// }
+
+
 // remove an item from the cart
 if(!empty($_SESSION['cart'])) {
 	if(isset($_GET['action']) && isset($_GET['id'])) {
 		if($_GET['action'] == 'remove') {
 			foreach ($_SESSION['cart'] as $key => $value) {
 				if($key == $_GET['id']) {
+					$_SESSION['item_count'] -= $_SESSION['cart'][$key]['quantity'];
 					unset($_SESSION['cart'][$key]);
 				}
 				if(empty($_SESSION['cart'])) {
@@ -87,9 +93,7 @@ if(!empty($_SESSION['cart'])) {
 						
 							// no of items in cart
 							
-							foreach ($variable as $key) {
-								# code...
-							}
+						
 
 							foreach ($_SESSION['cart'] as $key => $value) {
 								

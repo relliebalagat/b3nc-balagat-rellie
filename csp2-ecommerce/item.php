@@ -42,8 +42,7 @@ require 'mysqli_connect.php';
 									<p class="price">PHP '. $item['price'] .'</p>
 									<p><i class="fas fa-rocket"></i>FREE DELIVERY WORLDWIDE</p>
 									<p><a href="#"><i class="fas fa-clock"></i>Check Order Arrival</a></p>
-									<button class="btn btn-primary basket-btn">Add to Basket</button>
-									<button class="btn btn-default">Add to Wishlist</button>
+									<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
 								</div> <!-- ./content -->
 							';
 						}
@@ -74,18 +73,15 @@ require 'mysqli_connect.php';
 						echo '
 							<div class="col-lg-3 col-md-6">
 								<div class="thumbnail">
-									<a href="item.php?id='. $collection['id'] .'"><img src="'. $collection['image'] .'" alt="The Lord of the rings book cover" class="book-img"></a>
+									<a href="item.php?id='. $collection['id'] .'"><img src="'. $collection['image'] .'" alt="'.$collection['title'].'cover" class="book-img"></a>
 								</div>
 									<p class="book-title"><a href="#">'. $collection['title'] .'</a></p>
 									<p class="price">'. $collection['price'] .'</p>
-									<button class="btn btn-primary basket-btn">Add to Basket</button>
+									<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
 							</div>
 						';
 					}
 				}
-			
-
-
 	
 				mysqli_close(db_connect());
 		
@@ -94,11 +90,25 @@ require 'mysqli_connect.php';
 				</div> <!-- ./row -->
 			</div> <!-- ./panel-body -->
 		</div> <!-- ./panel -->
-	
-
 	</div> <!-- ./container -->
 
+	<script type="text/javascript">
+		
+		function addToCart(value) {
+			
+			var xhttp = new XMLHttpRequest();
+			
+			xhttp.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                    document.getElementById("noItemCart").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("POST", "assets/add_to_cart.php", true);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send("itemid=" + value);
+		}
 
+	</script>
 
 
 

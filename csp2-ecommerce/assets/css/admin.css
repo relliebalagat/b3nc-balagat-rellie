@@ -43,7 +43,8 @@
 
 textarea,
 #editItemModalBody select.form-control,
-#addItemModalBody select.form-control {
+#addItemModalBody select.form-control,
+#editOrderModalBody td select.form-control {
 	width: 100%;
 }
 
@@ -51,3 +52,22 @@ textarea {
 	height: 70px;
 }
 
+div.order-column-one {
+	width: 40%;
+	float: left;
+	display: block;
+}
+
+.order-column-one table td:nth-child(1) {
+	font-weight: bold;	
+}
+
+div.order-column-two {
+	width: 55%;
+	float: right;
+	margin-left: 2%;
+}
+
+#viewOrderModal div.modal-footer {
+	clear: both;
+}

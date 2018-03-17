@@ -8,6 +8,7 @@ include 'partials/header.php';
 
 require 'mysqli_connect.php';
 
+
 ?>
 </head>
 <body>
@@ -35,10 +36,8 @@ require 'mysqli_connect.php';
 
 				</div>
 			</div>
-
+			
 			<div class="panel panel-default" >
-
-
 				<div class="panel-body" id="viewCollections">
 					
 					<div class="collections-message">
@@ -76,10 +75,6 @@ require 'mysqli_connect.php';
 
  -->
 
-
-
-
-
 	<script type="text/javascript">
 
 		
@@ -97,22 +92,23 @@ require 'mysqli_connect.php';
             xhttp.send();
 		}
 
-		function addToCart(itemId) {
-			var xhttp = new XMLHttpRequest();
-			var url = "asset/add_to_cart.php";
-			var quantity = 1;
-			var display = document.getElementById("countCart");
 
+		function addToCart(value) {
+			
+			var xhttp = new XMLHttpRequest();
+			
 			xhttp.onreadystatechange = function() {
-				if(xhttp.readyState == 4 && xhttp.status == 200) {
-					display.innerHTML = this.responseText;
-				}
-			}
-			xhttp.open("POST", url, true);
+                if(this.readyState == 4 && this.status == 200) {
+                    document.getElementById("noItemCart").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("POST", "assets/add_to_cart.php", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("item_id=" + itemId);
+			xhttp.send("itemid=" + value);
+			alert("An item has been added to your basket.");
 		}
 
+		
 	</script>
 
 

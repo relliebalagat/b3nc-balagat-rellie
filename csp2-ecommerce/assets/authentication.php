@@ -38,9 +38,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 				header('location: ../home.php');	
 			}
 
-			
 		} else {
-			echo 'wrong username or password';
+			header('location: ../login_failed.php');
 		}
+	} else {
+		header('location: ../login_failed.php');
 	}
 }

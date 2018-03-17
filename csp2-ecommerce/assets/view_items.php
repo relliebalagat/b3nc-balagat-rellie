@@ -27,10 +27,10 @@ if(mysqli_num_rows($result) > 0) {
 				<td class="title">' . $item['title'] .'</td>
 				<td>' . $item['first_name'] . " " . $item['last_name'] . '</td>
 				<td>' . $item['type'] . '</td>
-				<td class="price-width">P <span class="right">' . $item['price'] .'</span></td>
+				<td class="price-width">P <span class="right">' . number_format($item['price'], 2) .'</span></td>
 				<td class="text-center">' . $item['quantity'] .'</td>
-				<td class="text-center"><a data-toggle="modal" data-target="#editModal" onclick="editItem(' . $item['id'] . ')">Edit</a></td>
-				<td class="text-center"><a data-toggle="modal" data-target="#deleteModal" onclick="deleteItem(' . $item['id'] . ')">Delete</a></td>
+				<td class="text-center"><a data-toggle="modal" data-target="#editModal" onclick="editItem(' . $item['id'] . ')">Edit</td>
+				<td class="text-center"><a data-toggle="modal" data-target="#deleteModal" onclick="deleteItem(' . $item['id'] . ')">Delete</td>
 			</tr>
 		';
 	}

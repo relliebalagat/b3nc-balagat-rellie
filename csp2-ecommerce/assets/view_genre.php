@@ -30,7 +30,6 @@ if(isset($_GET['genre'])) {
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<td>#</td>
 						<td>Title</td>
 						<td>Author</td>
 						<td>Price</td>
@@ -43,13 +42,12 @@ if(isset($_GET['genre'])) {
 		while ($item = mysqli_fetch_assoc($result)) {
 			echo '
 				<tr class="table-striped">
-					<td>' . $item['id'] .'</td>
 					<td>' . $item['title'] .'</td>
 					<td>' . $item['first_name'] . " " . $item['last_name'] . '</td>
-					<td>P ' . $item['price'] .'</td>
-					<td>' . $item['quantity'] .'</td>
-					<td class="text-center"><a data-toggle="modal" data-target="#editModal" onclick="editItem(' . $item['id'] . ')">Edit</a></td>
-					<td class="text-center"><a data-toggle="modal" data-target="#deleteModal" onclick="deleteItem(' . $item['id'] . ')">Delete</a></td>
+					<td>P ' . number_format($item['price'], 2) .'</td>
+					<td class="text-center">' . $item['quantity'] .'</td>
+					<td class="text-center"><a data-toggle="modal" data-target="#editModal" onclick="editItem(' . $item['id'] . ')">Edit</td>
+					<td class="text-center"><a data-toggle="modal" data-target="#deleteModal" onclick="deleteItem(' . $item['id'] . ')">Delete</td>
 				</tr>
 			';
 		}

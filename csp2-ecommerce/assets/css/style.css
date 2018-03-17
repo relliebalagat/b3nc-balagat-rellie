@@ -59,6 +59,7 @@ footer a:hover {
 
 .navbar #navbar a:hover,
 .navbar a.navbar-brand:hover,
+.navbar a.navbar-brand strong.cart-counter:hover,
 .footer-list li > a:hover,
 .footer-last-list li > a:hover {
 	color: #b8e994;
@@ -127,7 +128,7 @@ div.thumbnail img.book-img {
 	position: absolute;
 	background-color: rgba(52,31,151,.4);
 	color: #1dd1a1;
-	top: 25%;
+	top: 40%;
 	left: 50%;
 	width: 40%;
 	padding: 20px;
@@ -197,6 +198,18 @@ div.thumbnail img.book-img {
 .order-btn:hover {
 	background-color: #55efc4;
 	border-color: #55efc4;
+}
+
+.remove-btn a {
+	color: #00b894;
+}
+
+.remove-btn a:hover {
+	color: #fff;
+}
+
+.basket-total button.basket-btn a {
+	color: #fff;
 }
 
 .social-media{
@@ -282,6 +295,20 @@ select:focus,
 .form-group .btn-primary:focus {
 	border-color: #27ae60;
 }
+
+
+#content fieldset p { 
+	text-align: center; 
+	color: crimson; 
+	font-size: 11px;
+}
+
+.login-failed {
+	text-align: center;
+	color: crimson;
+	font-size: 1.2em;
+}
+
 
 .search-area {
 	width: 100%;
@@ -608,13 +635,6 @@ select.form-control {
 
 /* order contents */
 
-/*.order-content {
-	width: 50%;
-	margin-top: 70px;
-	margin-right: 5%;
-	float: left;
-}*/
-
 td.right {
 	text-align: right;
 }
@@ -623,22 +643,12 @@ td.left {
 	text-align: left;
 }
 
-/*.order-content table thead {
-	text-align: center;
-}*/
-
 .order-details {
 	width: 45%;
 	margin: 70px auto 30px auto;
 	border: 1px solid #dfe6e9;
 	padding: 20px;
 } 
-
-/*.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}*/
 
 /* ORDER SUCCESS */
 
@@ -735,4 +745,13 @@ td.left {
 
 .order-history .panel span {
 	margin-left: 0;
+}
+
+.cart-counter {
+	border-radius: 50%;
+	background-color: white;
+	color: #218c74;
+	letter-spacing: .5em;
+	text-align: center;
+	padding-left: .5em;
 }

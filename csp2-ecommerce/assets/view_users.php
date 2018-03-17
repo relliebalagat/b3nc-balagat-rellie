@@ -22,25 +22,26 @@ if(mysqli_num_rows($result) > 0) {
 		</thead>
 	';
 	while ($item = mysqli_fetch_assoc($result)) {
+		
 		echo '
 			<tr>
 				<td>' . $item['id'] .'</td>
 				<td>' . $item['first_name'] .'</td>
 				<td>' . $item['last_name'] .'</td>
-				<td>' . $item['email'] .'</td>
-				
+
 		';
-		
+
 		if($item['role_id'] == 1) {
-			echo "<td>Administrator</td>";
+			echo '<td>Administrator</td>';
 		} else {
-			echo "<td>User</td>";
+			echo '<td>Users</td>';
 		}
 
 		echo '
+				<td>' . $item['email'] .'</td>
 				<td>' . $item['registration_date'] .'</td>
-				<td class="text-center"><a data-toggle="modal" data-target="#editUserModal" onclick="editItem(' . $item['id'] . ')">Edit</a></td>
-				<td class="text-center"><a data-toggle="modal" data-target="#deleteUserModal" onclick="deleteItem(' . $item['id'] . ')">Delete</a></td>
+				<td class="text-center"><a data-toggle="modal" data-target="#editUserModal" onclick="editUser(' . $item['id'] . ')">Edit</td>
+				<td class="text-center"><a data-toggle="modal" data-target="#deleteUserModal" onclick="deleteUser(' . $item['id'] . ')">Delete</td>
 			</tr>
 		';
 	}

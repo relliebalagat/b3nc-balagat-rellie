@@ -4,11 +4,9 @@ require '../mysqli_connect.php';
 
 $db_connect = db_connect();
 
-echo $_POST['genre'];
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$id = $_POST['book_id'];
-	$db_connect = db_connect();
 
 	if(isset($_POST['booktitle'])) {
 		$book_title = mysqli_real_escape_string($db_connect, trim($_POST['booktitle']));
@@ -40,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$result = @mysqli_query(db_connect(), $query);
 
 	if(mysqli_affected_rows($db_connect)) {
-		echo "Update was successful";
+		header('Location: ../admin.php');
 	} else {
 		echo "Update NOT successful";
 	}

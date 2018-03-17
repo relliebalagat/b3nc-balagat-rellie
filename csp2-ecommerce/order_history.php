@@ -32,16 +32,17 @@ $id = $_SESSION['user_id'];
 					$order_history_result = mysqli_query(db_connect(), $order_history_query);
 					?>
 
-					<div class="panel panel-default">
+					
 
 					<?php
+
 						if(mysqli_num_rows($order_history_result) > 0) {
 							while($order_history = mysqli_fetch_assoc($order_history_result)) {
 								$order_id = $order_history['id'];
 								echo '
+								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h4 class="right">Order ' . $order_history['reference_no']. '</h4>
-										<small><a href="#" class="set-right">View Complete Order Details</a></small>
 									</div>
 									<div class="panel-body">
 										<div class="row">
@@ -65,74 +66,85 @@ $id = $_SESSION['user_id'];
 
 											';
 
-									
-							} // while
-						} // if
+								$subtotal = 0;
+								$overall_total = 0;
+								$total_quantity = 0;
 
-						$subtotal = 0;
-						$overall_total = 0;
-						$total_quantity = 0;
+								$order_item_query = "SELECT b.title, b.image, a.first_name, a.last_name, oi.price_per_item, oi.quantity, oi.total_price_per_item FROM order_items oi INNER JOIN books b ON oi.book_id=b.id INNER JOIN authors a ON b.author_id=a.id WHERE oi.order_id=$order_id";
 
-						$order_item_query = "SELECT b.title, b.image, a.first_name, a.last_name, oi.price_per_item, oi.quantity, oi.total_price_per_item FROM order_items oi INNER JOIN books b ON oi.book_id=b.id INNER JOIN authors a ON b.author_id=a.id WHERE oi.order_id=$order_id";
+								$order_item_result = mysqli_query(db_connect(), $order_item_query);
 
-						$order_item_result = mysqli_query(db_connect(), $order_item_query);
+								if(mysqli_num_rows($order_item_result) > 0) {
+									echo '
+										<table class="table text-center">
+											<thead>
+												<tr>
+													<td>Item</td>
+													<td>Price</td>
+													<td>Quantity</td>
+													<td>Total</td>
+												</tr>
+											</thead>
+									';
 
-						if(mysqli_num_rows($order_item_result) > 0) {
-							echo '
-								<table class="table table-bordered text-center">
-									<thead>
-										<tr>
-											<td>Item</td>
-											<td>Price</td>
-											<td>Quantity</td>
-											<td>Total</td>
-										</tr>
-									</thead>
-							';
+									while($order_item = mysqli_fetch_assoc($order_item_result)) {
+										$subtotal = $order_item['quantity'] * $order_item['price_per_item'];
+										$overall_total += $subtotal;
+										$total_quantity += $order_item['quantity'];
 
-							while($order_item = mysqli_fetch_assoc($order_item_result)) {
-								$subtotal = $order_item['quantity'] * $order_item['price_per_item'];
-								$overall_total += $subtotal;
-								$total_quantity += $order_item['quantity'];
+										echo '
+												<tr>
+													<td>
+														<div class="order-history-item">
+															<img src="' . $order_item['image'] . '" class="text-center">
+														</div>
+														<div class="order-info-title">
+															<p class="text-center">' . $order_item['title'] . '</p>
+															<p class="text-center">' . $order_item['first_name'] . " " . $order_item['last_name'] . '</p>
+														</div>
+													</td>
+													
+														<td class="order-info-numbers"><span>' . $order_item['price_per_item'] . '</span></td>
+														<td class="order-info-numbers"><span>' . $order_item['quantity'] . '</span></td>
+														<td class="order-info-numbers"><span>' . $subtotal . '</span></td>
+												</tr>
+										';
+									}
+									echo '
+										<tfoot>
+											<tr>
+												<td scope="row" colspan="2" class="price">TOTAL</td>
+												<td colspan="1" class="price">' . $total_quantity . '</td>
+												<td colspan="1" class="price">' . $overall_total . '</td>
+											</tr>
+										</tfoot>
+
+									';
+
+									echo '</table>';
 
 								echo '
-										<tr>
-											<td>
-												<div class="order-history-item">
-													<img src="' . $order_item['image'] . '" class="text-center">
-												</div>
-												<div class="order-info-title">
-													<p class="text-center">' . $order_item['title'] . '</p>
-													<p class="text-center">' . $order_item['first_name'] . " " . $order_item['last_name'] . '</p>
-												</div>
-											</td>
-											
-												<td class="order-info-numbers"><span>' . $order_item['price_per_item'] . '</span></td>
-												<td class="order-info-numbers"><span>' . $order_item['quantity'] . '</span></td>
-												<td class="order-info-numbers"><span>' . $subtotal . '</span></td>
-										</tr>
-								';
-							}
-							echo '
-								<tfoot>
-									<tr>
-										<td scope="row" colspan="2">TOTAL</td>
-										<td colspan="1">' . $total_quantity . '</td>
-										<td colspan="1">' . $overall_total . '</td>
-									</tr>
-								</tfoot>
-
-							';
-
-							echo '</table>';
-						}
-
-				echo '
+									
+											</div> 
+										</div> 
 									</div>
-								</div> 
-							</div> 
-						</div>
-							';
+								</div>
+								';
+
+									
+							} // while
+						
+
+						
+
+
+
+						} // if
+
+						
+					}
+
+						
 					?>
 
 								

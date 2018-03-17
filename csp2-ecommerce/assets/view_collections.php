@@ -16,20 +16,19 @@ if($id != 0) {
 				echo '
 					<div class="col-lg-3 col-md-6">
 						<div class="thumbnail">
-								<img src="' . $item['image'] . '" alt="The Lord of the rings book cover" class="book-img">
-						</div>	
-							<input type="hidden" name="item_id" value="'. $item['id'] .'">
-							<p class="book-title"><a href="item.php?id='. $item['id'] .'">'.$item['title'].'</a></p>
-							<p class="price" name="price">PHP '.$item['price'].'</p>
-							<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart(' . $item['id'] . ')">Add to Basket</button>
+								<a href="item.php?id='.$item['id'].'"><img src="' . $item['image'] . '" alt="'.$item['title'].'cover" class="book-img"></a>
+						</div>
+						<input type="hidden" name="item_id" value="'. $item['id'] .'">
+						<p class="book-title"><a href="item.php?id='. $item['id'] .'">'.$item['title'].'</a></p>
+						<p class="price" name="price">PHP '.$item['price'].'</p>
+						<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
 					</div>
 				';
 			}
 			echo '</div>';
 		}
 	}
-	mysqli_close(db_connect());
-
+	
 } else {
 
 	// Query to view the fiction books
@@ -44,14 +43,12 @@ if($id != 0) {
 				echo '
 					<div class="col-lg-3 col-md-6">
 						<div class="thumbnail">
-								<img src="' . $item['image'] . '" alt="The Lord of the rings book cover" class="book-img">
-						</div>
-							<form method="POST" action="assets/add_to_cart.php"> 
-								<input type="hidden" name="item_id" value="'. $item['id'] .'">
-								<p class="book-title"><a href="item.php?id='. $item['id'] .'">'.$item['title'].'</a></p>
-								<p class="price" name="price">PHP '.$item['price'].'</p>
-								<button type="submit" class="btn btn-primary basket-btn">Add to Basket</button>
-							</form>
+								<a href="item.php?id='.$item['id'].'"><img src="' . $item['image'] . '" alt="'.$item['title'].'cover" class="book-img"></a>
+						</div>		
+						<input type="hidden" name="item_id" value="'. $item['id'] .'">
+						<p class="book-title"><a href="item.php?id='. $item['id'] .'">'.$item['title'].'</a></p>
+						<p class="price" name="price">PHP '.$item['price'].'</p>
+						<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
 					</div>
 				';
 			}
@@ -59,6 +56,6 @@ if($id != 0) {
 
 		}
 	}
-	mysqli_close(db_connect());
 }
 
+mysqli_close(db_connect());

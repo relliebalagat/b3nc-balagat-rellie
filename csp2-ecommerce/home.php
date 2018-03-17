@@ -64,7 +64,7 @@ include 'assets/functions.php';
 								</div>
 									<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
 									<p class="price">PHP '.$item["price"].'</p>
-									<button class="btn btn-primary basket-btn">Add to Basket</button>
+									<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
 							</div>
 
 							';
@@ -100,7 +100,7 @@ include 'assets/functions.php';
 									</div>
 										<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
 										<p class="price">PHP '.$item["price"].'</p>
-										<button class="btn btn-primary basket-btn">Add to Basket</button>
+										<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
 								</div>
 
 								';
@@ -136,7 +136,7 @@ include 'assets/functions.php';
 								</div>
 									<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
 									<p class="price">PHP '.$item["price"].'</p>
-									<button class="btn btn-primary basket-btn">Add to Basket</button>
+									<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
 							</div>
 
 							';
@@ -172,7 +172,7 @@ include 'assets/functions.php';
 								</div>
 									<p class="book-title"><a href="items.php?id='.$item['id'].'">'. $item['title'] .'</a></p>
 									<p class="price">PHP '. $item["price"] .'</p>
-									<button class="btn btn-primary basket-btn">Add to Basket</button>
+									<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
 							</div>
 
 							';
@@ -188,6 +188,28 @@ include 'assets/functions.php';
 			</div> <!-- ./panel -->
 
 	</div>
+
+	<script type="text/javascript">
+		
+		function addToCart(value) {
+			
+			var xhttp = new XMLHttpRequest();
+			
+			xhttp.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                    document.getElementById("noItemCart").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("POST", "assets/add_to_cart.php", true);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send("itemid=" + value);
+			alert("An item has been added to your basket.");
+		}
+
+
+		
+	</script>
+
 
 <?php
 

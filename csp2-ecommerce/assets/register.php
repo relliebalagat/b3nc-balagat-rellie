@@ -47,20 +47,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$result = mysqli_query($dbconnect, $query);
 		
 		if($result) {
-			
-			$_SESSION['user_id'] = $data['id'];
-			$_SESSION['roles'] = $data['role_id'];
-			$_SESSION['first_name'] = $data['first_name'];
-			$_SESSION['email'] = $data['email'];		
+			$id = mysqli_insert_id($dbconnect);
+
+			$_SESSION['user_id'] = $id;
+			$_SESSION['roles'] = 2;
+			$_SESSION['first_name'] = $first_name;
+			$_SESSION['email'] = $email;		
 			
 			header('location: ../home.php');
-		} else {
-			
-			// display error
-			echo '<h2>SYSTEM ERROR</h2>';
-			echo '<p>You could not be registered because of the system error. We apologize for the inconvenience.</p>';
-			echo '<p>' . mysqli_error($dbconnect) . '<br /><br />Query: ' . $query . '</p>';
-		} // end of if($result)
+		}
 
 		mysqli_close($dbconnect); // close the database
 		exit();

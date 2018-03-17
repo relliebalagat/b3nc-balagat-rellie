@@ -56,9 +56,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$tel_number = mysqli_real_escape_string($dbconnect, trim($_POST['tel_number']));
 		}
 
-		// echo $total_order_price.$contactperson.$delivery_address.$country.$zip_code.$mobile_number.$tel_number;
-
-
+		
 		$order_query = "INSERT INTO orders(customer_id, reference_no, order_date, total_price, shipping_date, contact_person, delivery_address, country, zip_code, mobile_no, telephone_no, email) VALUES ($user_id, '$reference_number', NOW(), $total_order_price, DATE_ADD(NOW(), INTERVAL 2 DAY), '$contactperson', '$delivery_address', '$country', $zip_code, $mobile_number, $tel_number, '$email')";
 		$order_result = mysqli_query($dbconnect, $order_query);
 		
@@ -82,6 +80,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 				}
 
 				unset($_SESSION['cart']);
+				unset($_SESSION['item_count']);
 				header("Location: ../order_success.php");
 			}
 		}

@@ -1,10 +1,11 @@
 <?php
 
-$page_title = 'Null Website';
+$page_title = 'Book Repository';
 
 include 'partials/header.php';
 require 'mysqli_connect.php';
 include 'assets/functions.php';
+
 
 ?>
 </head>
@@ -21,9 +22,7 @@ include 'assets/functions.php';
 		<img src="assets/img/search-for-books.jpg" alt="A man searching for books to buy.">
 		<div class="over text-center">
 			<h1>Shop for your books today</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			</p>
+			
 		</div>
 	</div>
 
@@ -44,7 +43,7 @@ include 'assets/functions.php';
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4><a href="#">Fiction</a></h4>
-					<small><a href="#" class="set-right">View More</a></small>
+					<small><a href="collections.php" class="set-right">View More</a></small>
 				</div>
 				<div class="panel-body">
 					<div class="row">
@@ -61,7 +60,7 @@ include 'assets/functions.php';
 								</div>
 									<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
 									<p class="price">PHP '.$item["price"].'</p>
-									<button class="btn btn-primary basket-btn">Add to Basket</button>
+									
 							</div>
 
 							';
@@ -78,7 +77,7 @@ include 'assets/functions.php';
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4><a href="#">Non Fiction</a></h4>
-					<small><a href="#" class="set-right">View More</a></small>
+					<small><a href="collections.php" class="set-right">View More</a></small>
 				</div>
 				<div class="panel-body">
 					<div class="row">
@@ -97,7 +96,7 @@ include 'assets/functions.php';
 									</div>
 										<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
 										<p class="price">PHP '.$item["price"].'</p>
-										<button class="btn btn-primary basket-btn">Add to Basket</button>
+										
 								</div>
 
 								';
@@ -111,20 +110,10 @@ include 'assets/functions.php';
 				</div> <!-- ./panel-body -->
 			</div> <!-- ./panel -->
 
-			<!-- free shipping promo -->
-			<!-- <div class="row">
-				<div class="col-lg-12"> 
-					<div class="offer text-center">
-						<h3 class="offer-text">FREE SHIPPING FOR P 1,000 OF MINUMUM PURCHASE</h3>
-						<button class="btn btn-primary">LEARN MORE</button>
-					</div>
-				</div>
-			</div> -->
-
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4><a href="#">Textbooks</a></h4>
-					<small><a href="#" class="set-right">View More</a></small>
+					<small><a href="collections.php" class="set-right">View More</a></small>
 				</div>
 				<div class="panel-body">
 					<div class="row">
@@ -143,7 +132,6 @@ include 'assets/functions.php';
 								</div>
 									<p class="book-title"><a href="items.php?id='.$item['id'].'">'. $item['title'] .'</a></p>
 									<p class="price">PHP '. $item["price"] .'</p>
-									<button class="btn btn-primary basket-btn">Add to Basket</button>
 							</div>
 
 							';
@@ -161,7 +149,7 @@ include 'assets/functions.php';
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4><a href="#">Children's Book</a></h4>
-					<small><a href="#" class="set-right">View More</a></small>
+					<small><a href="collections.php" class="set-right">View More</a></small>
 				</div>
 				<div class="panel-body">
 					<div class="row">
@@ -180,7 +168,6 @@ include 'assets/functions.php';
 								</div>
 									<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
 									<p class="price">PHP '.$item["price"].'</p>
-									<button class="btn btn-primary basket-btn">Add to Basket</button>
 							</div>
 
 							';

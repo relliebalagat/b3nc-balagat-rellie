@@ -34,7 +34,7 @@ include 'partials/header.php';
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" onclick="loadOrders()">
                             <i class="glyphicon glyphicon-list-alt"></i>
                             Orders
                         </a>
@@ -43,7 +43,7 @@ include 'partials/header.php';
                             Items
                         </a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li><a href="#" onclick="loadItems('all')">All</a></li>
+                            <li><a href="#" onclick="loadItems()">All</a></li>
                             <li><a href="#" onclick="loadItems('fiction')">Fiction</a></li>
                             <li><a href="#" onclick="loadItems('nonfiction')">Non Fiction</a></li>
                             <li><a href="#" onclick="loadItems('childrensbook')">Children's Book</a></li>
@@ -75,11 +75,6 @@ include 'partials/header.php';
                         </a>
                     </li> -->
                 </ul>
-
-               <!--  <ul class="list-unstyled CTAs">
-                    <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
-                    <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
-                </ul> -->
             </nav>
 
             <!-- Page Content Holder -->
@@ -105,14 +100,9 @@ include 'partials/header.php';
                         </div>
                     </div>
                 </nav>
-
-                <h2>Collapsible Sidebar Using Bootstrap 3</h2>
                
                 <!-- items are viewed on this document -->
-                <div id="document">
-                    
-                    
-                </div>
+                <div id="document"></div>
 
                 <!-- EDIT BOOK Modal -->
                 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -212,10 +202,11 @@ include 'partials/header.php';
                     </div>
                 </div>
                 
-                <!-- EDIT USER Modal -->
+
+                <!-- Edit User Modal -->
                 <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
-                        <form method="POST" action="assets/update_item.php">
+                        <form method="POST" action="assets/update_user.php">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -233,15 +224,69 @@ include 'partials/header.php';
                     </div>
                 </div>
 
+                 <!-- Delete User Modal -->
+                <div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <form method="POST" action="assets/delete_user.php">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Delete Item</h4>
+                                </div>
+                                <div class="modal-body" id="deleteUserModalBody">
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Yes</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
 
+                <!-- Edit Order Modal -->
+                <div class="modal fade" id="editOrderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <form method="POST" action="assets/update_order.php">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Edit Order</h4>
+                                </div>
+                                <div class="modal-body" id="editOrderModalBody">
+                                
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- View Order Details Modal -->
+                <div class="modal fade" id="viewOrderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Order Complete Details</h4>
+                            </div>
+                            <div class="modal-body" id="orderItemModalBody">
+                            
+                            </div>
+                            <div class="modal-footer">
+            
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
-
-
-
-
-
+            
 
 
             </div> <!-- ./content -->
@@ -264,7 +309,7 @@ include 'partials/header.php';
                 var xhttp = new XMLHttpRequest()
                 var url = "";
                 
-                if(genre == "all") {
+                if(genre === undefined) {
                     url = "assets/view_items.php";
                 } else {
                     url = "assets/view_genre.php?genre=" + genre;
@@ -308,10 +353,11 @@ include 'partials/header.php';
                 xhttp.send();
             }
 
+
             function editUser(number) {
                 var xhttp = new XMLHttpRequest()
 
-                url = "assets/edit_item.php?id=" + number;
+                url = "assets/edit_user.php?userid=" + number;
                 xhttp.open("GET", url, true);
                 xhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
@@ -319,6 +365,60 @@ include 'partials/header.php';
                     }
                 };
                 
+                xhttp.send();
+            }
+
+
+            function deleteUser(number) {
+                var xhttp = new XMLHttpRequest()
+
+                var url = "assets/view_delete_user_modal.php?userid=" + number;
+                xhttp.open("GET", url, true);
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("deleteUserModalBody").innerHTML = this.responseText;
+                    }
+                };
+                
+                xhttp.send();
+            }
+
+
+            function loadOrders() {
+                var xhttp = new XMLHttpRequest()
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("document").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET", "assets/view_orders.php", true);
+                xhttp.send();
+            }
+
+
+             function editOrder(number) {
+                var xhttp = new XMLHttpRequest()
+
+                url = "assets/edit_order.php?orderid=" + number;
+                xhttp.open("GET", url, true);
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("editOrderModalBody").innerHTML = this.responseText;
+                    }
+                };
+                
+                xhttp.send();
+            }
+
+
+            function loadOrderDetails(number) {
+                var xhttp = new XMLHttpRequest()
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("orderItemModalBody").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET", "assets/view_orders_items.php?order=" + number, true);
                 xhttp.send();
             }
 
@@ -340,3 +440,5 @@ include 'partials/header.php';
 
 </body>
 </html>
+
+
