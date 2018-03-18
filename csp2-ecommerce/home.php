@@ -60,14 +60,15 @@ include 'assets/functions.php';
 							echo '
 							<div class="col-lg-3 col-md-6">
 								<div class="thumbnail">
-									<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'].'" class="book-img"></a>
+									<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'] .'" class="book-img"></a>
 								</div>
-									<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
-									<p class="price">PHP '.$item["price"].'</p>
-									<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
-							</div>
-
-							';
+									<p class="book-title"><a href="items.php?id='.$item['id'].'">'. $item['title'] .'</a></p>
+									<p class="price">P '. $item["price"] .'</p>
+									<div class="item-process"> 
+										<input type="number" class="form-control" id="itemCount'. $item['id'] .'" min="0" value="1">
+										<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
+								</div>		
+							</div>';
 						}
 					}
 				}
@@ -96,14 +97,15 @@ include 'assets/functions.php';
 								echo '
 								<div class="col-lg-3 col-md-6">
 									<div class="thumbnail">
-										<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'].'" class="book-img"></a>
+										<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'] .'" class="book-img"></a>
 									</div>
-										<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
-										<p class="price">PHP '.$item["price"].'</p>
-										<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
-								</div>
-
-								';
+										<p class="book-title"><a href="items.php?id='.$item['id'].'">'. $item['title'] .'</a></p>
+										<p class="price">P '. $item["price"] .'</p>
+										<div class="item-process"> 
+											<input type="number" class="form-control" id="itemCount'. $item['id'] .'" min="0" value="1">
+											<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
+									</div>		
+								</div>';
 							}
 						}
 					}
@@ -132,14 +134,15 @@ include 'assets/functions.php';
 							echo '
 							<div class="col-lg-3 col-md-6">
 								<div class="thumbnail">
-									<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'].'" class="book-img"></a>
+									<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'] .'" class="book-img"></a>
 								</div>
-									<p class="book-title"><a href="items.php?id='.$item['id'].'">'.$item['title'].'</a></p>
-									<p class="price">PHP '.$item["price"].'</p>
-									<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
-							</div>
-
-							';
+									<p class="book-title"><a href="items.php?id='.$item['id'].'">'. $item['title'] .'</a></p>
+									<p class="price">P '. $item["price"] .'</p>
+									<div class="item-process"> 
+										<input type="number" class="form-control" id="itemCount'. $item['id'] .'" min="0" value="1">
+										<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
+								</div>		
+							</div>';
 						}
 					}
 				}
@@ -171,11 +174,13 @@ include 'assets/functions.php';
 									<a href="item.php?id='.$item['id'].'"><img src="'.$item['image'].'" alt="'. $item['description'] .'" class="book-img"></a>
 								</div>
 									<p class="book-title"><a href="items.php?id='.$item['id'].'">'. $item['title'] .'</a></p>
-									<p class="price">PHP '. $item["price"] .'</p>
-									<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
-							</div>
-
-							';
+									<p class="price">P '. $item["price"] .'</p>
+									<div class="item-process"> 
+										<input type="number" class="form-control" id="itemCount'. $item['id'] .'" min="0" value="1">
+										<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
+								</div>		
+							</div>';
+				
 						}
 					}
 				}
@@ -191,8 +196,9 @@ include 'assets/functions.php';
 
 	<script type="text/javascript">
 		
-		function addToCart(value) {
-			
+		function addToCart(number) {
+
+			var quantity = document.getElementById("itemCount" + number).value;
 			var xhttp = new XMLHttpRequest();
 			
 			xhttp.onreadystatechange = function() {
@@ -202,8 +208,12 @@ include 'assets/functions.php';
             };
             xhttp.open("POST", "assets/add_to_cart.php", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("itemid=" + value);
+			xhttp.send("itemid=" + number + "&itemquantity=" + quantity);
 			alert("An item has been added to your basket.");
+		}
+
+		function register() {
+			alert("You must log in first");
 		}
 
 

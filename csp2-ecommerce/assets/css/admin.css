@@ -71,3 +71,7 @@ div.order-column-two {
 #viewOrderModal div.modal-footer {
 	clear: both;
 }
+
+.btn-info .navbar-btn {
+	background-color: #218c74;
+}

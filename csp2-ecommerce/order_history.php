@@ -51,11 +51,11 @@ $id = $_SESSION['user_id'];
 											echo '
 												<table class="table table-bordered table-striped text-center">				
 													<tr>
-														<td>Date Ordered</td>
-														<td>Delivery Address</td>
-														<td>Order Status</td>
-														<td>Payment Options</td>
-													</tr>
+														<td><strong>Date Ordered</strong></td>
+														<td><strong>Delivery Address</strong></td>
+														<td><strong>Order Status</strong></td>
+														<td><strong>Payment Options</strong></td>
+													</tr> 
 													<tr>
 														<td>' . $order_history['order_date'] . '</td>
 														<td>' . $order_history['delivery_address'] . '</td>							
@@ -79,10 +79,10 @@ $id = $_SESSION['user_id'];
 										<table class="table text-center">
 											<thead>
 												<tr>
-													<td>Item</td>
-													<td>Price</td>
-													<td>Quantity</td>
-													<td>Total</td>
+													<td><strong>Item</strong></td>
+													<td><strong>Price</strong></td>
+													<td><strong>Quantity</strong></td>
+													<td><strong>Total</strong></td>
 												</tr>
 											</thead>
 									';

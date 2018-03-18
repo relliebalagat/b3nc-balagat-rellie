@@ -10,7 +10,6 @@ if(mysqli_num_rows($result) > 0) {
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<td>#</td>
 				<td>First Name</td>
 				<td>Last Name</td>
 				<td>Email</td>
@@ -25,7 +24,6 @@ if(mysqli_num_rows($result) > 0) {
 		
 		echo '
 			<tr>
-				<td>' . $item['id'] .'</td>
 				<td>' . $item['first_name'] .'</td>
 				<td>' . $item['last_name'] .'</td>
 

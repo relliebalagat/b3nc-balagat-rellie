@@ -32,7 +32,6 @@
 						echo '<strong class="cart-counter">' . $_SESSION['item_count'] . '</strong>';
 					
 
-
 					?>
 
 					Cart</a></span></li>

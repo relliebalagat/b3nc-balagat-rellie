@@ -33,7 +33,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$price = mysqli_real_escape_string($db_connect, trim($_POST['price']));
 	}
 	
+	echo $book_title;
+	echo $book_description;
+	echo $quantity;
+	echo $first_name;
+	echo $last_name;
+	echo $genre_id;
+	echo $price;
+
+
 	$query = "UPDATE books INNER JOIN authors ON books.id=authors.id SET books.title='$book_title', books.description='$book_description', books.quantity=$quantity, authors.first_name='$first_name', authors.last_name='$last_name', books.genre_id=$genre_id, books.price=$price WHERE books.id=$id;";
+	echo $query;
 
 	$result = @mysqli_query(db_connect(), $query);
 

@@ -2,91 +2,126 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<title>Developer Portfolio - Rellie Balagat</title>
+	<title>Rellie Balagat</title>
+
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat" rel="stylesheet"> 
-	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+
+
 </head>
 <body>
-	<div class="container">	
+	<div class="wrapper">
+		
 
-		<img id="me" src="img/me.jfif">
+		<!-- Navigation -->
+		<nav>
+			<!-- Navigation list -->
+			<ul class="nav-list">
+				<li class="parallelogram"><a href="#aboutMe">About Me</a></li>
+				<li class="parallelogram"><a href="#portfolio">Portfolios</a></li>
+				<li class="parallelogram"><a href="#skills">Skills</a></li>
+				<li class="parallelogram"><a href="#training">Trainings</a></li>
+				<li class="parallelogram"><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
 
-		<h1>RELLIE BALAGAT</h1>
+		<!-- Message, Picture -->
+		<div class="front">
+			<div class="picture">
+				<img src="img/rellie-balagat.jfif" class="center-block">
+			</div>
+				<h2>RELLIE R. BALAGAT</h2>
+				<h3>FULL-STACK WEB DEVELOPER</h3>
+		</div>
 
-		<h2>Full Stack Web Developer</h2>
 
-		<p class="about">I'am a graduate of Business Administration major in Management and currently taking Bachelor of Science in Information Technology. I'am pursuing a shift career in field of technology particularly web development</p>
+		<!-- About -->
+		<div class="about" id="aboutMe">
+			<h2>About Me</h2>
+			<p>Hi! I'm Rellie.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
 
-		<hr>
+		<!-- Portfolio -->
+		<div class="portfolio" id="portfolio">
+			<h2>Portfolio</h2>
+			<div>
+				<h4><a href="https://relliebalagat.github.io/b3nc-balagat-rellie/csp/csp1/index.html">Computer School</a></h4>
+				<img src="img/csp1-desktop.png" class="desktop center-block">
+				<div>
+					<p class="portfolio-paragraph">A static responsive educational website for anyone who wants to learn the basics of computer. The topic range from History of Computing, Basics of Programming, and Command line Interface. It was developed using Materialize, a CSS framework from Google.</p>
+				</div>
+			</div>
+			<div>
+				<h4><a href="#">Book Repository</a></h4>
+				<img src="img/book-repository.jpg" class="capstone2-image center-block">
+				<div>
+					<p class="portfolio-paragraph">An online bookstore. The website was built using PHP and MariaDB as back-end programming language.</p>
+				</div>
+			</div>
+		</div>
 
-		<div class="technology">
-			<h3>TECHNOLOGIES</h3>
+		<!-- Skills -->
+		<div class="skill center-block" id="skills">
+			<h2>Skills</h2>
 
-			<ul>
-				<li><i class="fab fa-html5"></i></li>
-				<li><i class="fab fa-css3-alt"></i></li>
-				<li><i class="fab fa-js"></i></li>
-				<li><i class="fab fa-php"></i></li>
-				<li><i class="fab fa-linux"></i></li>
+			<ul class="skill-list">
+				<li><img src="img/html5.png"></li>
+				<li><img src="img/css3.png"></li>
+				<li><img src="img/js.png"></li>
+				<li><img src="img/php.png"></li>
+				<li><img src="img/mysql.png"></li>
+				<li><img src="img/linux.png"></li>
 			</ul>
 		</div>
 
-		<hr>
+		<!-- Educational Attainment and Trainings -->
+		<div class="educ-and-train" id="training">
+			<h2>Education and Training</h2>
 
-		<div>
-			<h3>PROJECTS</h3>
-			
-			<div class="project">
-				<h4>Capstone 1</h4>
-				<h5><a href="https://relliebalagat.github.io/b3nc-balagat-rellie/csp/csp1/">Computer School</a></h5>
-				<p>A static and responsive tutorial website for those who wants to learn the computing history, basics of programming and command line</p>
-			</div>
-
-			<div class="project">
-				<h4>Capstone 2</h4>
-				<h5><a href="#">On the process...</a></h5>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-
-			<div class="project">
-				<h4>Capstone 3</h4>
-				<h5><a href="#">Soon...</a></h5>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-
+			<dl class="training-list  center-block">
+				<dt>Tuitt Training Bootcamp (October 2017 - May 2018)</dt>
+				<dd>3rd Floor Caswynn Building, No. 134 Timog Avenue, Sacred Heart, Quezon City</dd>
+				<dt>Bachelor of Science in Information Technology (November 2016 - Present)</dt>
+				<dd>University of the East - Manila, Claro M. Recto</dd>
+				<dt>Bachelor of Science in Business Management (June 2010 - April 2014)</dt>
+				<dd>University of the East - Manila, Claro M. Recto</dd>
+			</dl>
 		</div>
 
-		<hr>
+		<!-- Contact -->
+		<div class="contact center-block" id="contact">
+			<h2>Contact</h2>
 
-		<!-- email -->
-		<div class="message">
-			<h3>Contact me here</h3>
-			<label>Subject</label>
-			<input type="text" name="" placeholder="">
-			<label>Message</label>
-			<textarea placeholder="..."></textarea>
-			<button>Submit</button>
+			<form class="contact-form">
+				<label>Email</label>
+				<input type="text" name="">
+
+				<label>Subject</label>
+				<input type="email" name="">
+
+				<label>Message</label>
+				<textarea></textarea>
+			</form>
 		</div>
 
-		<hr>
-
+		<!-- Footer -->
 		<footer>
-			<p>Copyright 2018 &copy; Rellie Balagat</p>
+			<p>Copyright &copy; 2018 Rellie Balagat</p>
 		</footer>
 
-	</div>
+
+		</div>
+
 </body>
 </html>

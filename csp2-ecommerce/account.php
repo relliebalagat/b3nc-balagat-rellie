@@ -23,7 +23,6 @@ if(!isset($_SESSION['user_id'])) {
 			<div class="col-lg-12">
 				<div class="my-account">
 					<h2 class="text-center">My Account</h2>
-					<img src="assets/img/profile_picture.png">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title text-center">Personal and Orders Details</h3>
@@ -32,7 +31,6 @@ if(!isset($_SESSION['user_id'])) {
 							<li class="list-group-item"><a href="password.php">Change Password</a></li>
 							<li class="list-group-item"><a href="#">My Wishlist</a></li>
 							<li class="list-group-item"><a href="order_history.php">Order History, Status, &amp; Returns</a></li>
-							
 						</ul>
 					</div>	<!-- ./panel panel-default -->
 				</div> 	<!-- ./my-account -->

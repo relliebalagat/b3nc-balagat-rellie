@@ -15,3 +15,4 @@ require 'mysqli_connect.php';
 // var_dump($_SESSION['cart']);
 // var_dump($_SESSION['item_count']);
 
+var_dump($_SESSION['user_id']);

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require '../mysqli_connect.php';
 
 $id = $_GET['id'];
@@ -20,12 +22,26 @@ if($id != 0) {
 						</div>
 						<input type="hidden" name="item_id" value="'. $item['id'] .'">
 						<p class="book-title"><a href="item.php?id='. $item['id'] .'">'.$item['title'].'</a></p>
-						<p class="price" name="price">PHP '.$item['price'].'</p>
-						<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
+						<p class="price" name="price">P '.$item['price'].'</p>
+						<div class="item-process"> 
+							<input type="number" class="form-control" id="itemCount'. $item['id'] .'" min="0" value="1">';
+				if(isset($_SESSION['user_id'])) {
+					echo'
+							<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
+						';
+				} else {
+					echo '
+							<button type="submit" class="btn btn-primary basket-btn" onclick="register()">Add to Basket</button>
+					';
+				}
+				echo '
+						</div>		
 					</div>
 				';
+				
 			}
-			echo '</div>';
+			echo '
+				</div>';
 		}
 	}
 	
@@ -44,16 +60,28 @@ if($id != 0) {
 					<div class="col-lg-3 col-md-6">
 						<div class="thumbnail">
 								<a href="item.php?id='.$item['id'].'"><img src="' . $item['image'] . '" alt="'.$item['title'].'cover" class="book-img"></a>
-						</div>		
+						</div>
 						<input type="hidden" name="item_id" value="'. $item['id'] .'">
 						<p class="book-title"><a href="item.php?id='. $item['id'] .'">'.$item['title'].'</a></p>
-						<p class="price" name="price">PHP '.$item['price'].'</p>
-						<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
+						<p class="price" name="price">P '.$item['price'].'</p>
+						<div class="item-process"> 
+							<input type="number" class="form-control" id="itemCount'. $item['id'] .'" min="0" value="1">';
+				
+				if(isset($_SESSION['user_id'])) {
+					echo'
+							<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
+						';
+				} else {
+					echo '
+							<button type="submit" class="btn btn-primary basket-btn" onclick="register()">Add to Basket</button>
+					';
+				}
+				echo '
+						</div>		
 					</div>
 				';
 			}
 			echo '</div>';
-
 		}
 	}
 }

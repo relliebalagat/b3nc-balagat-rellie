@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$page_title = 'About Us';
+$page_title = 'Items';
 
 include 'partials/header.php';
 require 'mysqli_connect.php';
@@ -39,9 +39,7 @@ require 'mysqli_connect.php';
 									<h3 class="text-center">' . $item['title'] . '</h3>
 									<p class="text-center">' . $item['first_name'] . " " . $item['last_name'] . '</p>
 									<p class="item-description">'. $item['description'] .'</p>
-									<p class="price">PHP '. $item['price'] .'</p>
-									<p><i class="fas fa-rocket"></i>FREE DELIVERY WORLDWIDE</p>
-									<p><a href="#"><i class="fas fa-clock"></i>Check Order Arrival</a></p>
+									<p class="price">P  '. number_format($item['price'], 2) .'</p>
 									<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
 								</div> <!-- ./content -->
 							';
@@ -76,7 +74,7 @@ require 'mysqli_connect.php';
 									<a href="item.php?id='. $collection['id'] .'"><img src="'. $collection['image'] .'" alt="'.$collection['title'].'cover" class="book-img"></a>
 								</div>
 									<p class="book-title"><a href="#">'. $collection['title'] .'</a></p>
-									<p class="price">'. $collection['price'] .'</p>
+									<p class="price">P '. $collection['price'] .'</p>
 									<button type="submit" class="btn btn-primary basket-btn" onclick="addToCart('.$item['id'].')">Add to Basket</button>
 							</div>
 						';
@@ -94,8 +92,9 @@ require 'mysqli_connect.php';
 
 	<script type="text/javascript">
 		
-		function addToCart(value) {
-			
+		function addToCart(number) {
+
+			var quantity = document.getElementById("itemCount" + number).value;
 			var xhttp = new XMLHttpRequest();
 			
 			xhttp.onreadystatechange = function() {
@@ -105,7 +104,12 @@ require 'mysqli_connect.php';
             };
             xhttp.open("POST", "assets/add_to_cart.php", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("itemid=" + value);
+			xhttp.send("itemid=" + number + "&itemquantity=" + quantity);
+			alert("An item has been added to your basket.");
+		}
+
+		function register() {
+			alert("You must log in first");
 		}
 
 	</script>

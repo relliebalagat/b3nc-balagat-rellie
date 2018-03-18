@@ -51,30 +51,6 @@ require 'mysqli_connect.php';
 		</div> <!-- ./collections -->
 	</div> <!-- ./container -->
 
-	<!-- <div class="modal fade" id="addToCartMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-				</div>
-				<div class="modal-body">
-				<?php
-
-				// echo $_SESSION;
-
-				?>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
- -->
-
 	<script type="text/javascript">
 
 		
@@ -92,9 +68,9 @@ require 'mysqli_connect.php';
             xhttp.send();
 		}
 
+		function addToCart(number) {
 
-		function addToCart(value) {
-			
+			var quantity = document.getElementById("itemCount" + number).value;
 			var xhttp = new XMLHttpRequest();
 			
 			xhttp.onreadystatechange = function() {
@@ -104,11 +80,14 @@ require 'mysqli_connect.php';
             };
             xhttp.open("POST", "assets/add_to_cart.php", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("itemid=" + value);
+			xhttp.send("itemid=" + number + "&itemquantity=" + quantity);
 			alert("An item has been added to your basket.");
 		}
 
-		
+		function register() {
+			alert("You must log in first");
+		}
+
 	</script>
 
 

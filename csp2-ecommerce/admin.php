@@ -22,8 +22,8 @@ include 'partials/header.php';
             <!-- Sidebar Holder -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>Still no name for Project</h3>
-                    <strong>BS</strong>
+                    <h3>Book Repository</h3>
+                    <strong>BR</strong>
                 </div>
 
                 <ul class="list-unstyled components">

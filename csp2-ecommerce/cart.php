@@ -108,16 +108,15 @@ if(!empty($_SESSION['cart'])) {
 											<img src="' . $_SESSION['cart'][$key]['image'] . '">
 										</div> <!-- ./basket-item -->
 										<div class="content">
-											<h5>' . $_SESSION['cart'][$key]['title'] . '</h5>
-											<p class="price">PHP ' . $_SESSION['cart'][$key]['price'] . '</p>
+											<p class="price">P ' . $_SESSION['cart'][$key]['price'] . '</p>
+											<h3>' . $_SESSION['cart'][$key]['title'] . '</h3>
 											<p>'.$_SESSION['cart'][$key]['first_name'] ." " . $_SESSION['cart'][$key]['last_name'] . '</p>
 										</div> <!-- ./content -->
 										<div class="product-input">
-											
-												<label>Quantity</label>
-												<input type="number" name="quantity" value="' . $_SESSION['cart'][$key]['quantity'] . '">
-												<p class="price">PHP ' . number_format($totalperitem, 2) . '</p>
-												<button class="pull-right btn remove-btn"><a href="cart.php?action=remove&id='.$id.'">Remove</a></button>
+											<label>Quantity</label>
+											<input type="number" name="quantity" value="' . $_SESSION['cart'][$key]['quantity'] . '" disabled>
+											<p class="price">P ' . number_format($totalperitem, 2) . '</p>
+											<button class="pull-right btn remove-btn"><a href="cart.php?action=remove&id='.$id.'">Remove</a></button>
 										</div> 
 									</div> 
 								';
@@ -142,7 +141,7 @@ if(!empty($_SESSION['cart'])) {
 					echo '
 						<div class="panel">
 							<div class="basket-total">
-								<p class="price">Total <span>PHP ' . number_format($total, 2) . '</span></p>
+								<p class="price">Total <span>P ' . number_format($total, 2) . '</span></p>
 								<button class="btn btn-primary basket-btn"><a href="order.php">Place Order</a></button>
 							</div>
 						</div>
@@ -154,34 +153,6 @@ if(!empty($_SESSION['cart'])) {
 			</div> <!-- ./col-lg-12 -->
 		</div> <!-- ./row -->
 	</div> <!-- ./container -->
-
-	<script type="text/javascript">
-		
-		// function addToCart() {
-		// 	var xhttp = new XMLHttpRequest();
-		// 	var url = "add_to_cart.php";
-		// 	var params = "lorem=ipsum&name=binny";
-		// 	http.open("POST", url, true);
-
-		// 	//Send the proper header information along with the request
-		// 	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-		// 	http.onreadystatechange = function() {//Call a function when the state changes.
-		// 	    if(http.readyState == 4 && http.status == 200) {
-		// 	        alert(http.responseText);
-		// 	    }
-		// 	}
-		// 	http.send(params);
-		// }
-
-
-		
-		
-
-
-
-	</script>
-
 
 
 <?php

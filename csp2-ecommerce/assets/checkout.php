@@ -75,7 +75,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 					$total_price_per_item = $quantity * $price;
 
 					$order_items_query = "INSERT INTO order_items(order_id, book_id, price_per_item, quantity, total_price_per_item) VALUES ($last_id, $book_id, $price, $quantity, $total_price_per_item)";
-					$order_items_result = mysqli_query($dbconnect, $order_items_query)	;
+					$order_items_result = mysqli_query($dbconnect, $order_items_query);
+
+					$quantity_update_query = "UPDATE books b SET b.quantity=(b.quantity-$quantity) WHERE b.id=$book_id";
+					$quantity_update_result	= mysqli_query($dbconnect, $quantity_update_query);
 
 				}
 
