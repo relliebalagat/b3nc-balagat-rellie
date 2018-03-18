@@ -10,7 +10,7 @@
 function db_connect() {
 	static $dbconn;
 	if($dbconn === NULL) {
-		$dbconn = @mysqli_connect('localhost', 'root', '', 'bookstore_capstone2');		
+		$dbconn = @mysqli_connect('localhost', 'id5090860_rellie', 'balagat', 'id5090860_bookrepo');		
 	}
 
 	if(!$dbconn) {
